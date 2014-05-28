@@ -1,0 +1,164 @@
+html,
+body {
+  overflow-x: hidden; /* Prevent scroll on narrow devices */
+}
+body {
+  padding-top: 0;
+}
+footer {
+  	min-height: 260px;
+	background: url(../img/footer_bg.jpg) top left repeat;
+	color: #CFCDCB;
+} 
+footer ul li { 
+ list-style: none;
+} 
+
+footer p {
+	text-align: center;
+}
+.view-ad {
+	border: 1px solid #EDEEEF;
+	background: #F3F4F5;
+}
+
+.header_bg{
+	width: 100%;
+	min-height: 50px;
+	border-bottom: 2px solid #215698;
+	background: #0462AE url(../img/nav_bg.png) top left repeat;
+	padding: 5px 0;
+}
+.container .header img {
+	height: 30px;
+}
+.container {   
+ padding: 4px; 
+}
+.option_parent {
+	background: #CBD8DE;
+}
+ 
+.contact-seller h4 i {
+	color: #233987;
+}
+.jun_highlight {
+	opacity:0.4;
+    filter:alpha(opacity=40); /* For IE8 and earlier */
+}
+
+.seller-ad ul{ 
+	overflow: hidden;
+	padding: 0;
+	margin: 0;
+}
+
+.seller-ad li {
+	list-style: none;  
+	
+}
+.seller-ad li img {
+	width: 140px;
+	margin: 3px 3px 3px 3px;
+	border: 1px solid #D2D5D5;
+}
+.space-top {
+	margin-top: 20px;
+}
+
+.ads-info {
+    padding: 0;
+    margin-top: 20px;
+}
+
+.box {
+	width: 100%;
+	min-height: 160px;
+	margin: 0;
+	padding: 0;
+	color: #fff; 
+	text-align: center;
+}
+
+.box p { 
+}
+
+.blue {
+	background: #3AAEE7;
+	border: 1px solid #1A95D0;
+}
+
+.red {
+	background: #CD2327;
+	border: 1px solid #A91D20;
+}
+
+.orange {
+	background: #D84B10;
+	border: 1px solid #B6400E;
+}
+
+.green {
+	background: #50B405;
+	border: 1px solid #449904;
+}
+
+.purple {
+	background: #AD32C7;
+	border: 1px solid #972CAD;
+}
+
+.light-blue {
+	background: #FFCC00;
+	border: 1px solid #F2C100;
+} 
+
+.thumbImage ul li {
+	float: left;
+	width: 120px;
+	
+	margin: 2px 2px 2px 2px;
+	list-style: none;
+}
+
+.thumbImage ul {
+	border-left: 2px solid #ccc;
+	border-bottom: 2px solid #ccc;
+	border-right: 2px solid #ccc;
+	overflow: hidden;
+	background: #FAFAFA; 
+	padding: 0;
+	margin: 0;
+}
+
+.thumbImage ul li img {
+    display: block;
+	max-height: 120px;
+	max-width: 120px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+ 
+pre {  
+  word-break: normal; 
+  font-family: Arial;
+}
+ #jun_images {
+	float: left;
+	height: 550px;
+	width: 100%;
+	border: 2px solid #ccc;
+	background: #F7F9FB;
+	overflow: hidden;
+	padding: 0;
+}
+
+#jun_images img {  
+	max-height: 550px;
+	display: block;  
+    margin-left: auto;
+    margin-right: auto;
+	background: url(../img/ajax-loader.gif) no-repeat;
+	vertical-align: middle;
+} 

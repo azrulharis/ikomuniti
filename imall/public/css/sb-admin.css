@@ -1,0 +1,83 @@
+.right_bar {
+	display: none;
+}
+
+/* Edit Below to Customize Widths > 768px */
+@media (min-width:768px) {
+  
+  
+   
+  .iprihatin img {
+	max-width: 700px;
+  }
+   
+  .navbar-header img {
+	height: 26px;
+   }
+  /* Wrappers */
+  
+  .wrapper {
+	 max-width: 100%; 
+  }
+
+  #page-wrapper {
+	padding: 15px 25px;
+  }
+
+ 
+  
+	 #jun_images {
+		float: left;
+		height: 500px;
+		width: auto;
+		border: 2px solid #2E59AE;
+		background: #ccc;
+		overflow: hidden;
+		padding: 0;
+	}
+	
+	#jun_images img {
+		max-height: 500px;
+		max-width: auto;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		background: url(../img/ajax-loader.gif) no-repeat;
+	} 
+
+}
+
+@media (min-width: 992px) { 
+    .wrapper {
+		 max-width: 990px; 
+	} 
+ 
+}
+
+@media (min-width: 1020px) { 
+    .wrapper {
+		 width: 1020px; 
+		 float: left;
+	} 
+    .right_bar {
+		margin-left: 890px;
+		left: 225px;
+		width: 225px;
+		position: fixed;
+		top: 1px;
+		height: 100%;
+		border-radius: 0;
+		border: none;
+		background: url(../img/grey_bg.jpg) repeat;  
+		overflow-y: auto;
+		border: 1px solid #ccc;
+		color: #000;
+	}
+}
+ 
+@import url(http://fonts.googleapis.com/css?family=Roboto:400);
+
+
+label .red {
+	color: #FF0000;
+}
