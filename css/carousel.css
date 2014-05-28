@@ -1,0 +1,722 @@
+/* GLOBAL STYLES
+-------------------------------------------------- */
+/* Padding below the footer and lighter body text */
+
+body { 
+  color: #5a5a5a;
+  background: #FAFAFA;
+}
+.bottom p, .bottom h2, .bottom_blue h2, .marketing h2 {
+	font-family: 'Questrial', sans-serif;
+}
+.navbar-header img {
+	height: 40px;
+	margin-top: -10px;
+}
+
+/* CUSTOMIZE THE NAVBAR
+-------------------------------------------------- */
+
+/* Special class on .container surrounding .navbar, used for positioning it into place. */
+.navbar-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20; 
+  
+}
+
+.top_home {
+	min-height: 180px;
+	background: #EFF1F1;
+	border-bottom: 1px solid #ccc;
+	padding: 40px 100px 40px 100px;
+	font-family: 'Dancing Script', cursive;
+	font-weight: 700;
+}
+
+.top_home h2 {
+	font-size: 38px;
+}
+
+.top_home img {
+	min-height: 80px;
+}
+
+.top_home .left_logo {
+	margin-right: 30px;
+}
+.spacer {
+    margin-top: 40px;   
+}
+
+.spacer_80 {
+    margin-top: 80px;   
+}
+
+.spacer h2 {
+	text-align: center;
+	padding-bottom: 20px;
+}
+
+.content_page .col-md-6 {
+	min-height: 40px;
+	display: inline;
+}
+
+fieldset {
+	
+}
+
+fieldset legend { 
+    border: none;
+}
+
+.reg_error {
+	min-height: 10px;
+	padding: 3px 5px 3px 5px;
+	color: #DA0505;
+	display: block;
+	background: #F9CECE;
+	border: 1px solid #DE0A0A;
+	width: 100%;
+}
+
+/* Flip around the padding for proper display in narrow viewports */
+.navbar-wrapper .container {
+  padding-left: 0;
+  padding-right: 0;
+}
+.navbar-wrapper .navbar {
+  padding-left: 15px;
+  padding-right: 15px; 
+  
+}
+.container { 
+}
+.navbar { 
+  background: #EFF1F1 url(../img/nav_bg.png) top left repeat; 
+  border-bottom: 2px solid #135B97; 
+  color: #1E1E1E;
+  font-size: 14px;
+} 
+.google-map {
+	border: 4px solid #ccc;
+}
+.contact-form {
+	height: 300px;
+	text-align: center;
+	padding-top: 20px;
+}
+
+.pull-center h2 {
+	padding-left: 15px;
+}
+.sponsor {
+	text-align: center;
+}
+.sponsor img {
+	width: 230px;
+}
+.sponsor h4 {
+	text-align: center;
+}
+.justify {
+	text-align: justify;
+}
+
+.form-group {
+	margin: 10px 0 10px 0;
+}
+
+/* CUSTOMIZE THE CAROUSEL#F0F2F4
+-------------------------------------------------- */
+
+/* Carousel base class */
+.carousel {
+  height: 500px;
+  margin-bottom: 0px;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  z-index: 10;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel .item {
+  height: 500px;
+  background: #4683F4 url('../img/gplaypattern.png') top left repeat;
+}
+.first_slide > img {
+	padding-top: -130px;
+}
+.carousel-inner > .item > img {
+  display: block;  
+  max-height: 600px; 
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 30px;
+  text-align: center;
+}
+.required {
+	color: #FF0000;
+	font-weight: bold;
+	margin-top: 5px;
+	float: right;
+}
+fieldset {
+	border: 1px solid #ccc;
+	margin-bottom: 20px;
+	padding-bottom: 10px;
+}
+
+fieldset legend {
+	background: #18518F;
+	border: 1px solid #15467B;
+	padding: 3px 5px 3px 5px;
+	color: #F3F2F1;
+}
+
+.form-group { 
+    margin: 3px 0 3px 0;
+}
+
+
+/* MARKETING CONTENT
+-------------------------------------------------- */
+
+/* Pad the edges of the mobile views a bit */
+.marketing {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Center align the text within the three columns below the carousel */
+.marketing .col-lg-4 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.marketing h1 {
+  text-align: center;
+}
+.marketing h2 {
+  font-weight: normal;
+}
+.marketing .col-lg-4 p {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+
+/* Featurettes
+------------------------- */
+
+.featurette-divider {
+  margin: 40px 0; /* Space out the Bootstrap <hr> more */
+}
+
+/* Thin out the marketing headings */
+.featurette-heading {
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -1px;
+  margin-top: -60px;
+}
+
+footer {
+	min-height: 260px;
+	background: url(../img/footer_bg.jpg) top left repeat;
+	color: #CFCDCB;
+}
+footer ul {
+	width: 100%;
+	margin-top: 40px;
+}
+footer li a {
+	color: #C3C3C3;
+}
+footer li a:hover {
+	color: #fff;
+	text-decoration: none;
+}
+footer ul li {
+	padding: 3px 5px 3px 5px;
+	list-style: none;
+	
+}
+footer p {
+	text-align: left;
+	margin-top: 10px;
+}
+.box {
+	width: 100%;
+	height: 400px;
+	margin: 0;
+	padding: 0;
+	color: #4B4B4B; 
+}
+
+.bottom_blue {
+    text-align: center;
+	min-height: 140px; 
+	color: #4B4B4B;
+	text-align: center;
+	padding-bottom: 40px;
+	border-bottom: 1px solid #ccc; 
+}
+
+.bottom_blue img {  
+    margin-left: 20px;
+}
+
+.bottom_blue h2 {
+    margin-top: 20px;
+	margin-bottom: 30px;
+	text-align: center;
+}
+
+.bottom_blue .container {
+	padding: 0;
+	margin: 0;
+}
+
+.bottom h2 {
+	color: #606060;
+	padding: 40px 0 3px 0;
+}
+
+.bottom p {
+	color: #4B4B4B;
+	padding: 1px 0 25px 0;
+	font-size: 18px;
+}
+
+.bottom {
+	text-align: center;
+}
+
+.bottom_home {
+	background: #EFF1F1;
+	border-top: 4px solid #C3C3C3;
+}
+
+.bottom_home h2 {
+	text-align: center;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.testimoni {
+	margin-top: 10px;
+}
+
+.box img {
+	width: 300px;
+	height: 200px;
+}
+
+.box p {
+	 
+}
+
+.blue {
+	background: #3AAEE7;
+	border: 1px solid #1A95D0;
+}
+
+.red {
+	background: #CD2327;
+	border: 1px solid #A91D20;
+}
+
+.orange {
+	background: #D84B10;
+	border: 1px solid #B6400E;
+}
+
+.green {
+	background: #50B405;
+	border: 1px solid #449904;
+}
+
+.purple {
+	background: #AD32C7;
+	border: 1px solid #972CAD;
+}
+
+.light-blue {
+	background: #FFCC00;
+	border: 1px solid #F2C100;
+}
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (min-width: 768px) {
+
+  /* Remove the edge padding needed for mobile */
+  .marketing {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* Navbar positioning foo */
+  .navbar-wrapper {
+    margin-top: 20px;
+  }
+  .navbar-wrapper .container {
+    padding-left:  15px;
+    padding-right: 15px;
+  }
+  .navbar-wrapper .navbar {
+    padding-left:  0;
+    padding-right: 0;
+  }
+
+  /* The navbar becomes detached from the top, so we round the corners */
+  .navbar-wrapper .navbar {
+    border-radius: 4px;
+  }
+
+  /* Bump up size of carousel content */
+  .carousel-caption p {
+    margin-bottom: 20px;
+    font-size: 21px;
+    line-height: 1.4;
+  }
+
+  .featurette-heading {
+    font-size: 50px;
+  }
+
+}
+
+@media (min-width: 992px) {
+  .featurette-heading {
+    margin-top: 120px;
+  }
+}
+
+/*!
+* Pricely v1.0
+*
+* Copyright 2013 - Forever, Weborithm.com
+*
+* Designed and built by Weborithm
+*/
+
+
+.pricely-chart:after, .pricely-chart:after, .pricely-pro:after, .pricely-chart-three:after, .panel-heading li:after { content: " "; display: table; clear: both; }
+
+
+/* Parent Pricely Holder */
+.pricely-chart-one {  }
+.pricely-chart-two {  }
+.pricely-chart-three {  }
+.pricely-chart-four {  }
+
+
+/* Fonts */
+.pricely-chart { font-family: 'Karla', sans-serif; }
+.pricely-chart h1, h2, h3, h4, h5, h6 { font-family: 'Raleway', sans-serif; font-weight: 300; }
+.pricely-chart .glyphicon { color: #9b9b9b; }
+
+
+/* Vertical Alignment	
+#pricely-vertical { display: table; width: 100%; }
+#pricely-align { display: table-cell; vertical-align: middle; } */
+
+
+/* Headings */
+.pricely-chart .panel-heading { font-size: 22px; margin: 0; padding: 30px 20px; text-align: center; }
+.pricely-chart-one h3 span { display: block; font-size: 13px; font-weight: 300; letter-spacing: 0.5px; padding: 5px 0 0;  }
+
+
+/* Headings Formatting */
+.pricely-label { display: block; font-size: 32px; letter-spacing: 1px; margin: 0 auto 10px;   }
+.pricely-first-heading .pricely-label { font-weight: 600; }
+.pricely-figure { padding: 20px 0 30px; position: relative; }
+.pricely-currency { display: inline-block; font-size: 20px; font-weight: 400; position: absolute; top: 30px; }
+.pricely-amount { display: inline-block; font-size: 30px; line-height: 30px; padding: 0 0 0 17px; }
+.pricely-foreword { display: block; font-family: 'Karla', sans-serif; font-size: 14px; font-style: italic; padding: 0; }
+.pricely-paragraph { font-size: 18px; line-height: 20px; margin: 10px; text-align: center; }
+.pricely-paragraph span { font-size: 28px; }
+
+
+/* Headings - Backgrounds */
+.pricely-chart .with-diagonal { background-image: url(../img/diagonal-left.png); }
+.pricely-chart .with-featured-diagonal { background-image: url(../img/diagonal-right.png); font-weight: 600; }
+.pricely-chart .with-boxes { background-image: url(../img/boxes.png); }
+.pricely-chart .with-checks-1 { background-image: url(../img/checks_1.png); }
+.pricely-chart .with-checks-2 { background-image: url(../img/checks_2.png); }
+.pricely-chart .with-checks-3 { background-image: url(../img/checks_3.png); }
+
+
+/* Panel + Panel Header + Panel Footer */
+.pricely-chart .panel { margin: 0; }
+.pricely-chart-two .panel, .pricely-chart-two .panel-heading { border-radius: 0; }
+
+.pricely-chart .panel-footer { padding: 10px; }
+.pricely-chart-two .panel-footer { border-width: 0 1px 1px 1px; margin: 0px 0px 10px; padding: 0; border-radius: 0; }
+
+
+/* Collapse */
+.pricely-chart .panel-collapse p { margin: 10px 0; }
+
+
+/* Images */
+.pricely-chart .img-responsive { max-width: inherit; width: 100%; }
+
+
+/* Call to Action Buttons */
+.pricely-chart-one .pricely-call { }
+.pricely-chart-one .pricely-call a { font-size: 18px; }
+.col-md-2 .pricely-call a { font-size: 16px; /* Smaller font for narrow columsn */ }
+
+.pricely-chart-two .pricely-call {  }
+.pricely-chart-two .pricely-call a { font-size: 20px; }
+
+
+/* Pricely Indicators */
+ol.pricely-indicators { position: static; width: auto; margin: 0; padding: 0; text-align: right; }
+ol.pricely-indicators li.active { background: #f7931f; border-color: #f7931f; margin: 1px 3px; }
+ol.pricely-indicators li { background: #fff; border-color: #ebebeb; height: 12px; width: 12px; margin: 1px 3px; padding: 6px; }
+
+
+/* Tooltip */
+.tooltip { font-family: 'Karla', sans-serif; }
+.pricely-tooltip:hover { cursor: pointer; }
+
+
+/* Modal */
+.pricely-chart .modal p { margin: 0; }
+.pricely-chart .modal-body { padding: 0; }
+.pricely-chart .modal-body .thumbnail { border: 0; border-radius: 0; padding: 0; }
+.modal-backdrop.in { opacity: 0.5; filter: alpha(opacity=50); } 
+.pricely-chart .modal p.modal-text { padding: 10px 15px; }
+
+/* Buttons */
+.panel-footer .btn { line-height: 44px; }
+.btn-wide { border: 0; padding: 0; border-radius: 0; width: 100%; }
+
+
+/* Icons */
+.pricely-pro .glyphicon { display: block; text-align: center; }
+.pricely-pro .glyphicon { color: #3A87AD; }
+.pricely-pro .x { color: #B94A61; }
+
+
+/*===== Price Chart Specific =====*/
+
+	/* Classic */
+	
+	
+	/* Business */
+
+
+	/* Professional */
+	.pricely-pro .panel-heading { border-radius: 0; min-height: 160px; }
+	.pricely-pro li li.list-group-item { border-left-width: 1px; border-radius: 0; min-height: 45px; }
+	.pricely-pro li.pricely-first-heading li.list-group-item { border-left-width: 1px; border-radius: 0; min-height: 45px; }
+
+	.pricely-pro { list-style: none; margin: 0; padding: 0; }
+	.pricely-pro li.pricely-first-heading, .pricely-pro li.pricely-inner {  padding: 0; }
+
+	.pricely-pro .panel-heading { border-right: 1px solid #ddd; border-top: 1px solid #ddd; }
+	.pricely-pro li:first-child .panel-heading { border-left: 1px solid #ddd; }
+	
+	.pricely-professional li.list-group-item  .feature-hide { display: none; }
+	.pricely-professional li .glyphicon { display: inline-block; }
+	.pricely-professional li  .pricely-paragraph .glyphicon { display: block; }
+	.pricely-professional li.list-group-item { text-align: center; }
+	
+
+	/* Wizard */
+	.pricely-wizard { text-align: center; }
+
+	.pricely-wizard .dropdown-menu { -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; }
+	.pricely-wizard .dropdown-menu span { display: block; padding: 5px 10px; }
+	.pricely-wizard .pricely-inline { display: inline; }
+	
+	.pricely-wizard p.dropdown { background: #eee; border: 1px solid #fff; padding: 3px 9px; border-radius: 3px; text-align: left; }
+	.pricely-wizard p.dropdown:hover { background: #f9f9f9; border-color: #eee; color: #fff; }
+	.pricely-wizard p.dropdown  a:focus, .pricely-wizard p.dropdown  a:hover { text-decoration: none; }
+	.pricely-wizard p.dropdown span a {
+		-webkit-transition: 0.2s ease-in-out; /** Chrome & Safari **/
+		-moz-transition: 0.2s ease-in-out; /** Firefox **/
+		-o-transition: 0.2s ease-in-out; /** Opera **/ }
+	.pricely-wizard p.dropdown span a:hover { padding-left: 3px;
+		-webkit-transition: 0.2s ease-in-out; /** Chrome & Safari **/
+		-moz-transition: 0.2s ease-in-out; /** Firefox **/
+		-o-transition: 0.2s ease-in-out; /** Opera **/ text-decoration: none; }
+	.pricely-wizard p.pricely-wizard-selection { background: #5BC0DE; color: #fff; display: inline-block; margin: -1px 0 10px 0; padding: 3px 9px; text-transform: uppercase; border-radius: 3px; }
+	.pricely-wizard .tab-pane span.glyphicon { font-size: 24px; margin: 0 10px 0 0; position: relative; top: 7px; }
+	
+	.pricely-wizard .tab-inner { margin: 20px 0 0; padding: 0; }
+	.pricely-wizard .tab-inner-child { margin: 1px 0 0; padding: 20px 0 0; }
+	
+	.pricely-wizard .panel { border: 0 !important; border-radius: 0; box-shadow: none; padding: 0; }
+	.pricely-wizard .panel .panel-heading { border: 0; box-shadow: none; padding: 20px 0; }
+
+
+@media screen and (min-width:0\0) { /* Specific to IE */
+
+.pricely-currency { display: inline-block; font-size: 20px; font-weight: 400; position: relative; top: -30px; }
+.pricely-amount { font-size: 65px; line-height: 65px; }
+.pricely-chart .panel-footer { margin: 0 0 20px; padding: 0; }
+
+}
+
+
+@media screen and (max-width: 991px) {
+
+.pricely-chart-one { margin-bottom: 20px; }
+
+.tab-content { border-left: 0; }
+
+.pricely-pro li li.list-group-item { border-left-width: 1px; text-align: center; }
+
+.pricely-chart .panel-heading { padding: 15px 10px; }
+
+.pricely-pro .panel-heading { border-left: 1px solid #ddd; min-height: inherit; }
+
+.pricely-professional li.list-group-item .feature-hide { display: inline; padding: 0 0 0 10px; }
+
+.pricely-pro li.pricely-first-heading { display: none; }
+
+.pricely-pro .glyphicon { display: inline-block; text-align: center; }
+
+.pricely-foreword, .pricely-label { display: inline-block; margin: 0; }
+.pricely-foreword:before { content: " "; }
+
+}
+
+
+@media screen and (max-width: 767px) {
+
+#pricely-align { display: inherit; margin: 0 0 40px; vertical-align: none; }
+
+}
+/*!
+* Pricely Effects v1.0
+*
+* via http://tympanus.net/codrops/2013/08/06/creative-link-effects/
+*
+* License to be used commercially provided by http://tympanus.net
+*/ 
+ 
+ /* Effect 2: 3D rolling links, idea from http://hakim.se/thoughts/rolling-links */
+.cl-effect-2 a { 
+	line-height: 44px;
+	-webkit-perspective: 1000px;
+	-moz-perspective: 1000px;
+	perspective: 1000px;
+}
+
+.cl-effect-2 a span {
+	position: relative; width: 100%;
+	display: inline-block;
+	padding: 0 14px;
+	background: #5bc0de;
+	-webkit-transition: -webkit-transform 0.3s;
+	-moz-transition: -moz-transform 0.3s;
+	transition: transform 0.3s;
+	-webkit-transform-origin: 50% 0;
+	-moz-transform-origin: 50% 0;
+	transform-origin: 50% 0;
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+
+.csstransforms3d .cl-effect-2 a span::before {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #ffffff;
+	content: attr(data-hover); padding: 0;
+	-webkit-transition: background 0.8s;
+	-moz-transition: background 0.8s;
+	transition: background 0.8s;
+	-webkit-transform: rotateX(-90deg);
+	-moz-transform: rotateX(-90deg);
+	transform: rotateX(-90deg);
+	-webkit-transform-origin: 50% 0;
+	-moz-transform-origin: 50% 0;
+	transform-origin: 50% 0;
+}
+
+.cl-effect-2 a:hover span,
+.cl-effect-2 a:focus span {
+	-webkit-transform: rotateX(90deg) translateY(-22px);
+	-moz-transform: rotateX(90deg) translateY(-22px);
+	transform: rotateX(90deg) translateY(-22px);
+}
+
+.csstransforms3d .cl-effect-2 a:hover span::before,
+.csstransforms3d .cl-effect-2 a:focus span::before {
+	background: #39b3d7;	
+}
+
+/* Effect 10: reveal, push out */
+.cl-effect-10  {
+	position: relative;
+	z-index: 1;
+}
+
+.cl-effect-10 a {
+	position: relative;
+	overflow: hidden;
+	margin: 0;
+	display: inline-block;
+}
+
+.cl-effect-10 a span {
+	display: block;
+	padding: 10px 20px;
+	-webkit-transition: -webkit-transform 0.3s;
+	-moz-transition: -moz-transform 0.3s;
+	transition: transform 0.3s;
+}
+
+.cl-effect-10 a::before {
+	font-size: 16px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	padding: 11px 20px 0;
+	width: 100%;
+	height: 100%;
+	background: #fff;
+	content: attr(data-hover);
+	-webkit-transition: -webkit-transform 0.3s;
+	-moz-transition: -moz-transform 0.3s;
+	transition: transform 0.3s;
+	-webkit-transform: translateX(-25%);
+}
+
+.cl-effect-10 a:hover span,
+.cl-effect-10 a:focus span {
+	-webkit-transform: translateX(100%);
+	-moz-transform: translateX(100%);
+	transform: translateX(100%);
+}
+
+.cl-effect-10 a:hover::before,
+.cl-effect-10 a:focus::before {
+	-webkit-transform: translateX(0%);
+	-moz-transform: translateX(0%);
+	transform: translateX(0%);
+}
+
+.panel-default .cl-effect-10 a span { color: #333333; background-color: #f5f5f5; }
+.panel-info .cl-effect-10 a span { color: #3a87ad; background-color: #d9edf7; }
+.panel-primary .cl-effect-10 a span { color: #ffffff; background-color: #428bca; }
+.panel-danger .cl-effect-10 a span { color: #b94a48; background-color: #f2dede;}
+.panel-warning .cl-effect-10 a span { color: #c09853; background-color: #fcf8e3; }
+.panel-success .cl-effect-10 a span { color: #468847; background-color: #dff0d8; }

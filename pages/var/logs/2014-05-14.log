@@ -1,0 +1,7 @@
+[Wed, 14 May 14 22:42:44 +0800][ERROR] Undefined variable: posts /var/www/pages/var/volt/%%var%%www%%pages%%apps%%frontend%%views%%igaleri%%index.volt.php:8
+[Wed, 14 May 14 22:42:44 +0800][ERROR] Invalid argument supplied for foreach() /var/www/pages/var/volt/%%var%%www%%pages%%apps%%frontend%%views%%igaleri%%index.volt.php:8
+[Wed, 14 May 14 22:42:44 +0800][ERROR] Undefined variable: paginationUrl /var/www/pages/var/volt/%%var%%www%%pages%%apps%%frontend%%views%%igaleri%%index.volt.php:14
+[Wed, 14 May 14 22:44:11 +0800][ERROR] Undefined variable: posts /var/www/pages/var/volt/%%var%%www%%pages%%apps%%frontend%%views%%igaleri%%index.volt.php:8
+[Wed, 14 May 14 22:44:11 +0800][ERROR] Invalid argument supplied for foreach() /var/www/pages/var/volt/%%var%%www%%pages%%apps%%frontend%%views%%igaleri%%index.volt.php:8
+[Wed, 14 May 14 22:45:48 +0800][ERROR] Undefined variable: posts /var/www/pages/var/volt/%%var%%www%%pages%%apps%%frontend%%views%%igaleri%%index.volt.php:8
+[Wed, 14 May 14 22:45:48 +0800][ERROR] Invalid argument supplied for foreach() /var/www/pages/var/volt/%%var%%www%%pages%%apps%%frontend%%views%%igaleri%%index.volt.php:8
