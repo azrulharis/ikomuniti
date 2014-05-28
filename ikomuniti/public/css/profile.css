@@ -1,0 +1,88 @@
+#wrapper {
+  padding: 0;
+  
+}
+
+body {
+ background: #F8F8F8;
+ color: #4B4B4B;	
+} 
+#page-wrapper {
+  width: 100%; 
+  border: 1px solid #ccc; 
+} 
+.profile_container {
+	max-width: 1200px;
+	margin-left: auto;
+	margin-right: auto; 
+	min-height: 400px; 
+	margin-top: 50px;
+	padding: 10px 10px;
+}
+
+.profile-nav {
+	border: 1px solid #ccc;
+	padding: 12px 15px;
+	background: #EFF1F1;
+}
+
+.panel-profile .panel-body {
+	background: #fff;
+}
+.left-panel p {
+color: #3C3C3C;
+	font-weight: bold;
+	font-size: 13px;	
+}
+.panel-profile p {
+	
+}
+
+.left-panel hr {
+	padding: 4px 0 8px 0;
+	margin: 0;
+}
+
+.panel-profile p span {
+	color: #366285;
+}
+
+.panel-profile {
+    border: 1px solid #ccc;
+	margin-top: 10px; 
+}
+
+.profile-header {
+	padding: 0px 10px;
+	border-bottom: 1px solid #ccc;
+	background: #F1F0EF;
+}
+
+.wall {
+	font-size: 12px;
+	font-weight: normal;
+	width: 100%;
+}
+
+.wall p {
+	float: left;
+	width: 100%;
+}
+.wall span {
+	font-weight: bold;
+}
+.wall img {
+	width: 50px;
+	float: left;
+	margin-right: 5px;
+}
+.ads li {
+	list-style: none;
+}
+
+.cover {
+    padding-top: 160px;
+	background: #1394E1 url(../img/gplaypattern.png) top left repeat;
+	overflow: hidden;
+	color: #fff;
+}
