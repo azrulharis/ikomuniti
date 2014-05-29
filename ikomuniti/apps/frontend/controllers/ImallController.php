@@ -121,9 +121,9 @@ class ImallController extends ControllerBase {
 		parent::pageProtect();
 		
 		$auth = $this->session->get('jun_user_auth');
-		if($auth['role'] == 0) {
-			$this->flash->error('You are not allow to add new post on iMall, Please upgrade your account.');
-		}
+		
+		$this->role($auth['role'], array(4, 5, 6, 7, 8, 9)); 
+		
 		$offset = mt_rand(0, 9521000);  
 		$key = 'imall_myads_'.$auth['id'].'_'.$offset;
 		$exists = $this->view->getCache()->exists($key);
@@ -141,11 +141,13 @@ class ImallController extends ControllerBase {
 	    parent::pageProtect();
 	    $this->flashSession->output();
 	    $auth = $this->session->get('jun_user_auth');
+	    
+	    $this->role($auth['role'], array(4, 5, 6, 7, 8, 9)); 
+	    
 	    $this->view->urlajax = $this->url->get('ajax/ajaxcategory');
+	    
         if($this->request->isPost()) { 
-		    if($auth['role'] == 0) {
-			    $this->flash->error('You are not allow to add new post on iMall, Please upgrade your account.');
-		    } elseif($this->request->getPost('region_id') == 0) {
+		    if($this->request->getPost('region_id') == 0) {
 				$this->flash->error('Please select region');
 				
 			} elseif($this->request->getPost('category_id') == 0) {
@@ -175,6 +177,9 @@ class ImallController extends ControllerBase {
 	public function steptwoAction() {
 		parent::pageProtect();
 		$auth = $this->session->get('jun_user_auth');
+		
+		$this->role($auth['role'], array(4, 5, 6, 7, 8, 9)); 
+		
 		$this->view->setVar('navigations', $this->get_user($auth['id']));
 	    if($this->session->has('jun_post_data')) {
 	        $ses = $this->session->get('jun_post_data');
@@ -248,6 +253,9 @@ class ImallController extends ControllerBase {
 	public function stepthreeAction() {
 		parent::pageProtect();
 		$auth = $this->session->get('jun_user_auth');
+		
+		$this->role($auth['role'], array(4, 5, 6, 7, 8, 9)); 
+		
 		if(count($this->view_ad($this->dispatcher->getParam('slug'), $auth['id'])) == 1) {
 			$this->view->setVar('posts', $this->view_ad($this->dispatcher->getParam('slug'), $auth['id']));
 			$_SESSION['upload_token_name'] = $this->passwordHash(date('YmdHis'));
@@ -273,6 +281,8 @@ class ImallController extends ControllerBase {
 	public function finishAction() {
 		parent::pageProtect();
 		$auth = $this->session->get('jun_user_auth');
+		
+		$this->role($auth['role'], array(4, 5, 6, 7, 8, 9)); 
 		
 	    if(count($this->view_ad($this->dispatcher->getParam('slug'), $auth['id'])) == 1) {
 			$this->view->setVar('posts', $this->view_ad($this->dispatcher->getParam('slug'), $auth['id']));

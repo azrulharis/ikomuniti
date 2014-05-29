@@ -31,8 +31,14 @@ class IofferController extends ControllerBase {
 		    $this->view->setVar('navigations', $this->get_user($auth['id']));  
 		} 
 		$this->view->cache(array("key" => $key));
+		
+		// Set pagination link to view
 		$this->view->paginationUrl = $this->paginationUrl;
+		
+		// Set iOffer image path
 		$this->view->ioffer_thumb_dir = $this->ioffer_thumb_dir();
+		
+		// Set view listing into array
 		$this->view->setVar('posts', $this->view_listings());
 	}
 	
@@ -110,6 +116,9 @@ class IofferController extends ControllerBase {
 		parent::pageProtect(); 
 		$auth = $this->session->get('jun_user_auth');
 		
+		// Prevent access page for iSahabat
+		$this->role($auth['role'], array(4, 5, 6, 7, 8, 9));
+		
 		// View ipoint balance
 		$this->view->setVar('ipoints', $this->ipoint($auth['id'])); 
 		
@@ -175,7 +184,9 @@ class IofferController extends ControllerBase {
 	public function checkoutAction() {
 		parent::pageProtect(); 
 		$auth = $this->session->get('jun_user_auth');
-		 
+		
+		$this->role($auth['role'], array(4, 5, 6, 7, 8, 9));
+		
 		$id = $this->dispatcher->getParam('slug');
 		$offset = mt_rand(0, 21000);  
 		$key = 'ioffer_checkout_'.$auth['id'].'_'.$offset;
@@ -302,8 +313,12 @@ class IofferController extends ControllerBase {
 	public function verificationAction() {
 		parent::pageProtect(); 
 		$auth = $this->session->get('jun_user_auth'); 
+		
+		$this->role($auth['role'], array(4, 5, 6, 7, 8, 9));
+		
+		// Disable view because it only process payment by webcash 
 		$this->view->disable();
-		//print_r($_REQUEST);
+		
 		$id = $this->dispatcher->getParam('id');
 		if(!is_numeric($id)) { 
 			$this->flashSession->error('Not valid request.');

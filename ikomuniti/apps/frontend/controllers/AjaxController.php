@@ -99,7 +99,12 @@ class AjaxController extends ControllerBase {
 		if($request->isAjax() == true) {
 		    //print_r($_POST);
 		    if($this->request->isPost()) {
-		        if($this->request->getPost('post_token') == '') {
+		     
+		        // Check user role to prevent iSahabat buy on iOffer
+		        $auth = $this->session->get('jun_user_auth');
+		        if($auth['role'] < 4) {
+					$this->flash->error('Please upgrade your account to iKomuniti.');
+				} elseif($this->request->getPost('post_token') == '') {
 					$this->flash->error('Invalid token');
 				} elseif($this->request->getPost('post_token') != $_SESSION['XMPLV']) {
 					$this->flash->error('Error token');
