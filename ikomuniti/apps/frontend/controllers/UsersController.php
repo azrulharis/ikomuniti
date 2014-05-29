@@ -180,7 +180,7 @@ class UsersController extends ControllerBase {
 				} elseif(strlen($password) < 5 || strlen($password) > 18) {
 					$this->flash->error('Not valid password');
 				} else {
-					$user = Users::findFirst("username='$username' AND role != '0'");
+					$user = Users::findFirst("username='$username' AND role >= '3'");
 		            if ($user != false) {
 					    if($user->password == md5($password)) {
 					        $agent = sha1($this->request->getUserAgent());

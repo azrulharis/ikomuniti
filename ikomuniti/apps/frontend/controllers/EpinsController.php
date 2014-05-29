@@ -26,17 +26,12 @@ class EpinsController extends ControllerBase {
 		parent::pageProtect();
 		
 		$auth = $this->session->get('jun_user_auth');
-		$this->role($auth['role'], array(1, 2, 3, 4, 5, 6, 7, 8, 9));
-		$offset = mt_rand(0, 1000);
-		$key = 'index_epins_'.$offset;
-		$exists = $this->view->getCache()->exists($key);
-		if (!$exists) {
-		    $this->view->setVar('users', $this->get_user($auth['id'])); 
-		    $this->view->setVar('navigations', $this->get_user($auth['id'])); 
-			
-		}
-		$this->view->setVar('epins', $this->view_epin($auth['id']));
-		$this->view->cache(array("key" => $key));
+		$this->role($auth['role'], array(4, 5, 6, 7, 8, 9));
+		
+	    $this->view->setVar('users', $this->get_user($auth['id'])); 
+	    $this->view->setVar('navigations', $this->get_user($auth['id'])); 
+			 
+		$this->view->setVar('epins', $this->view_epin($auth['id'])); 
 		$this->view->paginationUrl = $this->paginationUrl;
 	}
 	
@@ -46,16 +41,10 @@ class EpinsController extends ControllerBase {
 		$auth = $this->session->get('jun_user_auth');
 		
 		// Role
-		$this->role($auth['role'], array(1, 2, 3, 4, 5, 6, 7, 8, 9));
-		
-		$offset = mt_rand(0, 1000);
-		$key = 'index_epins_'.$offset;
-		$exists = $this->view->getCache()->exists($key);
-		if (!$exists) { 
-		    $this->view->setVar('navigations', $this->get_user($auth['id']));  
-		}
-		$this->view->setVar('epins', $this->track_epin($auth['id']));
-		$this->view->cache(array("key" => $key));
+		$this->role($auth['role'], array(4, 5, 6, 7, 8, 9));
+		 
+		$this->view->setVar('navigations', $this->get_user($auth['id']));   
+		$this->view->setVar('epins', $this->track_epin($auth['id'])); 
 		$this->view->paginationUrl = $this->paginationUrl;
 	}
 	
@@ -64,7 +53,7 @@ class EpinsController extends ControllerBase {
 		$auth = $this->session->get('jun_user_auth');
 		
 		// Role
-		$this->role($auth['role'], array(1, 2, 3, 4, 5, 6, 7, 8, 9));
+		$this->role($auth['role'], array(4, 5, 6, 7, 8, 9));
 		
 		$this->view->hide = 0;  
 	    $this->view->setVar('navigations', $this->get_user($auth['id']));
@@ -224,7 +213,7 @@ class EpinsController extends ControllerBase {
 	*  Select count valid username
 	*/
     private function select_user($username) {
-		$phql = "SELECT * FROM JunMy\Models\Users WHERE username = '$username' AND role >= 1 LIMIT 1";
+		$phql = "SELECT * FROM JunMy\Models\Users WHERE username = '$username' AND role >= 4 LIMIT 1";
 		$rows = $this->modelsManager->executeQuery($phql);
 		return $rows;
 	}

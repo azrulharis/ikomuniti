@@ -19,7 +19,7 @@ class ActivationsController extends ControllerBase {
 		parent::pageProtect(); 
 		$auth = $this->session->get('jun_user_auth');
 	    // Role
-		$this->role($auth['role'], array(1, 2, 3, 4, 5, 6, 7, 8, 9));
+		$this->role($auth['role'], array(4, 5, 6, 7, 8, 9));
 		$this->flashSession->output();
 	    $this->view->setVar('users', $this->get_user($auth['id']));
 	    if(count($this->view_user($auth['username'], 0)) > 0) {
@@ -50,7 +50,7 @@ class ActivationsController extends ControllerBase {
 		parent::pageProtect(); 
 		$auth = $this->session->get('jun_user_auth');
 	    // Role
-		$this->role($auth['role'], array(1, 2, 3, 4, 5, 6, 7, 8, 9));
+		$this->role($auth['role'], array(4, 5, 6, 7, 8, 9));
 		$this->flashSession->output();
 	    $this->view->setVar('users', $this->get_user($auth['id']));
 	     
@@ -79,7 +79,8 @@ class ActivationsController extends ControllerBase {
 		parent::pageProtect(); 
 		$auth = $this->session->get('jun_user_auth');
 		// Role
-		$this->role($auth['role'], array(1, 2, 3, 4, 5, 6, 7, 8, 9));
+		$this->role($auth['role'], array(4, 5, 6, 7, 8, 9));
+		
 	    $this->view->setVar('users', $this->get_user($auth['id']));
 	    if($auth['role'] <= 1) {
 			$this->flash->error('No iKomuniti to activate');
@@ -107,7 +108,7 @@ class ActivationsController extends ControllerBase {
 		parent::pageProtect(); 
 		$auth = $this->session->get('jun_user_auth');
 		// Role
-		$this->role($auth['role'], array(1, 2, 3, 4, 5, 6, 7, 8, 9));
+		$this->role($auth['role'], array(4, 5, 6, 7, 8, 9));
 		$this->view->setVar('navigations', $this->get_user($auth['id']));
 		$username = $this->dispatcher->getParam('slug');
 		
@@ -191,12 +192,12 @@ Thank you very much for your priceless support. Please visit www.ishare.com.my a
 	
 	/*
 	*  Update users column 'verified' from 0 to 1
-	*  Return BOOLEAN
+	*  Return Update (iKomuniti = 4, iReseller = 5)
 	*/	
 	private function activate_user($id) {
 	    $date = date('Y-m-d H:i:s');	
 	    $phql = "UPDATE JunMy\Models\Users SET 
-		role = '1', verified = '1', created = '$date' WHERE id = '$id'";
+		role = '4', verified = '1', created = '$date' WHERE id = '$id'";
 		$update = $this->modelsManager->executeQuery($phql);
 		return $update;
 	}
