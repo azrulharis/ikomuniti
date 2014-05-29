@@ -10,53 +10,53 @@ class ControllerBase extends \Phalcon\Mvc\Controller
     {
         //Prepend the application name to the title
         $this->tag->prependTitle('iShare.com.my | ');
-        $this->view->web_host = 'http://ishare.com.my/';
+        $this->view->web_host = '/isharev1/';
     }
     
      
     
     public function iprihatin_image_dir() {
-		return 'http://ishare.com.my/ikomuniti/uploads/iprihatins/';
+		return '/isharev1/ikomuniti/uploads/iprihatins/';
 	}
 	
 	public function iprihatin_thumb_dir() {
-		return 'http://ishare.com.my/ikomuniti/uploads/iprihatins/';
+		return '/isharev1/ikomuniti/uploads/iprihatins/';
 	}
 	
 	public function thumb_image_dir() {
-		return 'http://ishare.com.my/ikomuniti/uploads/imall/thumbnails/';
+		return '/isharev1/ikomuniti/uploads/imall/thumbnails/';
 	}
 	
 	public function ipartner_thumb_image_dir() {
-		return 'http://ishare.com.my/ikomuniti/uploads/ipartners/thumbnails/';
+		return '/isharev1/ikomuniti/uploads/ipartners/thumbnails/';
 	}
 	
 	public function ipartner_image_dir() {
-		return 'http://ishare.com.my/ikomuniti/uploads/ipartners/images/';
+		return '/isharev1/ikomuniti/uploads/ipartners/images/';
 	}
 	
 	public function imall_image_dir() {
-		return 'http://ishare.com.my/ikomuniti/uploads/imall/images/';
+		return '/isharev1/ikomuniti/uploads/imall/images/';
 	}
 	
 	public function imall_thumb_image_dir() {
-		return 'http://ishare.com.my/ikomuniti/uploads/imall/thumbnails/';
+		return '/isharev1/ikomuniti/uploads/imall/thumbnails/';
 	}
 	
 	public function imall_dir() {
-		return 'http://ishare.com.my/imall';
+		return '/isharev1/imall';
 	}
 	
 	public function host() {
-		return 'http://ishare.com.my/';
+		return '/isharev1/';
 	}
 	
 	public function profile_image_dir() {
-		return 'http://ishare.com.my/ikomuniti/uploads/profiles/large/';
+		return '/isharev1/ikomuniti/uploads/profiles/large/';
 	}
 	
 	public function path() {
-		return 'http://ishare.com.my/pages/';
+		return '/isharev1/pages/';
 	}
 	
 	public function role($user_role, $allow_role) {
@@ -66,11 +66,11 @@ class ControllerBase extends \Phalcon\Mvc\Controller
 	}
 	
 	public function ioffer_image_dir() {
-		return 'http://ishare.com.my/ikomuniti/uploads/ioffers/images/';
+		return '/isharev1/ikomuniti/uploads/ioffers/images/';
 	}
 	
 	public function ioffer_thumb_dir() {
-		return 'http://ishare.com.my/ikomuniti/uploads/ioffers/thumbnails/';
+		return '/isharev1/ikomuniti/uploads/ioffers/thumbnails/';
 	}
 	
 }

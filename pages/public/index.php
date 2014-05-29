@@ -19,7 +19,7 @@ try {
 	 */
 	$di->set('url', function() { 
 		$url = new \Phalcon\Mvc\Url();
-		$url->setBaseUri('/pages/');
+		$url->setBaseUri('/isharev1/pages/');
 		return $url;
 	});
 	

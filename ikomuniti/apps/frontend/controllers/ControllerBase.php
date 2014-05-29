@@ -78,27 +78,27 @@ class ControllerBase extends \Phalcon\Mvc\Controller
 	}
 	
 	public function iprihatin_image_dir() {
-		return '/ikomuniti/uploads/iprihatins/';
+		return '/isharev1/ikomuniti/uploads/iprihatins/';
 	}
 	
 	public function iprihatin_thumb_dir() {
-		return '/ikomuniti/uploads/iprihatins/';
+		return '/isharev1/ikomuniti/uploads/iprihatins/';
 	}
 	
 	public function thumb_image_dir() {
-		return '/ikomuniti/uploads/imall/thumbnails/';
+		return '/isharev1/ikomuniti/uploads/imall/thumbnails/';
 	}
 	
 	public function ipartner_thumb_image_dir() {
-		return '/ikomuniti/uploads/ipartners/thumbnails/';
+		return '/isharev1/ikomuniti/uploads/ipartners/thumbnails/';
 	}
 	
 	public function imall_image_dir() {
-		return '/ikomuniti/uploads/imall/images/';
+		return '/isharev1/ikomuniti/uploads/imall/images/';
 	}
 	
 	public function imall_thumb_image_dir() {
-		return '/ikomuniti/uploads/imall/thumbnails/';
+		return '/isharev1/ikomuniti/uploads/imall/thumbnails/';
 	}
 	
 	public function imall_dir() {
@@ -106,15 +106,15 @@ class ControllerBase extends \Phalcon\Mvc\Controller
 	}
 	
 	public function host() {
-		return 'http://ishare.com.my/ikomuniti/';
+		return 'http://localhost/isharev1/ikomuniti/';
 	}
 	
 	public function profile_image_dir() {
-		return '/ikomuniti/uploads/profiles/large/';
+		return '/isharev1/ikomuniti/uploads/profiles/large/';
 	}
 	
 	public function path() {
-		return '/ikomuniti/';
+		return '/isharev1/ikomuniti/';
 	}
 	
 	public function role($user_role, $allow_role) {
@@ -124,11 +124,11 @@ class ControllerBase extends \Phalcon\Mvc\Controller
 	}
 	
 	public function ioffer_image_dir() {
-		return '/ikomuniti/uploads/ioffers/images/';
+		return '/isharev1/ikomuniti/uploads/ioffers/images/';
 	}
 	
 	public function ioffer_thumb_dir() {
-		return '/ikomuniti/uploads/ioffers/thumbnails/';
+		return '/isharev1/ikomuniti/uploads/ioffers/thumbnails/';
 	}
 	
 	

@@ -19,7 +19,7 @@ try {
 	 */
 	$di->set('url', function() { 
 		$url = new \Phalcon\Mvc\Url();
-		$url->setBaseUri('/ikomuniti/');
+		$url->setBaseUri('/isharev1/ikomuniti/');
 		return $url;
 	});
 	

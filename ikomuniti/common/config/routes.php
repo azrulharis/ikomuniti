@@ -29,6 +29,13 @@ $router->add('/index/index', array(
 	'action' => 'index'
 ));
 
+$router->add('/parent/index', array(
+	'module' => 'frontend',
+	'namespace' => 'JunMy\Frontend\Controllers\\',
+	'controller' => 'parent',
+	'action' => 'index'
+));
+
 $router->add('/epins/index', array(
 	'module' => 'frontend',
 	'namespace' => 'JunMy\Frontend\Controllers\\',
