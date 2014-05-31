@@ -158,7 +158,7 @@ class ActivationsController extends ControllerBase {
 		            // Send sms
 		            $user = Users::findFirst($used_user_id);
 		            if($this->update_counter($user->username_sponsor, $used_user_id, $user->ckey)) {
-						$this->send_sms($user->master_key, $user->username, $user->telephone);
+						$this->send_sms($user->master_key, $user->username, $user->telephone, $user->ckey);
 						$this->flashSession->success('Activation has been success.'); 
 						return $this->response->redirect('activations/index');
 					}

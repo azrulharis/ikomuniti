@@ -25,13 +25,13 @@ setInterval(function(){
   </div>
   <div class="col-lg-4 col-xs-12"> 
 	<h4 style="padding-top: 14px;">Status: 
-	  {% if user.role == 0 %} iSahabat 
-	  {% elseif user.role == 1 %} iKomuniti
-	  {% elseif user.role == 2 %} iReseller
-	  {% elseif user.role == 4 %} iCreator
-	  {% elseif user.role == 5 %} iAccount 
-	  {% elseif user.role == 6 %} iManager
-	  {% elseif user.role == 7 %} iDeveloper
+	  {% if user.role == 3 %} iSahabat 
+	  {% elseif user.role == 4 %} iKomuniti
+	  {% elseif user.role == 5 %} iReseller
+	  {% elseif user.role == 6 %} iCreator
+	  {% elseif user.role == 7 %} iAccount 
+	  {% elseif user.role == 8 %} iManager
+	  {% elseif user.role == 9 %} iDeveloper
 	  {% endif %}
 	</h4> 
   </div>
@@ -59,7 +59,7 @@ setInterval(function(){
   <hr>
 </div><!-- /.row -->
         
-{% if user.role == 0 %} 
+{% if user.role == 3 %} 
     {{ partial("partials/isahabat_dashboard_box") }}
 {% else %}
     {{ partial("partials/ikomuniti_dashboard_box") }}

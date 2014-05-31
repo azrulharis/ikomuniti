@@ -30,14 +30,13 @@
 			</form>
 		</div> 
 	</div>
-</div>     
+</div> 
  <div class="row">
-   
         <div class="col-lg-12">
           
       <div class="panel panel-primary">
         <div class="panel-heading">
-		  <h3 class="panel-title">Already Updated</h3>
+		  <h3 class="panel-title">iTakaful</h3>
 		</div>
 		  <div class="panel-body">  
       
@@ -45,11 +44,12 @@
 		  <ul class="breadcrumb" style="margin-bottom: 5px;">
 	        <li>{{ link_to("gghadmin/insuran/manage", "iManagement") }}</li>
 	        <li>{{ link_to("gghadmin/insuran/kiv", "Kiv") }}</li>
-	      <li class="active">Updated <b>{{count_updated}}</b></li>
-	      <li>{{ link_to("gghadmin/insuran/problems", "Problems") }}</li>
+	      <li>{{ link_to("gghadmin/insuran/quotation", "Updated") }}</li>
+	      <li class="active">Problems <b>{{count_user_kiv}}</b></li>
 	      <li>{{ link_to("gghadmin/insuran/done", "Done") }}</li>
 	      </ul>
-      </div>      
+      </div>  
+	  {{ content() }}    
 	   <div class="table-responsive">
 		      <table class="table table-bordered table-hover table-striped tablesorter"> 
 	    <tr>
@@ -57,7 +57,8 @@
 	    </tr>
 		{% for post in views %}
 		<tr>
-		    <td><p>{{ link_to('gghadmin/users/profile/' ~ post.username, post.username) }}</p></td>
+		    
+			<td><p>{{ link_to('gghadmin/users/profile/' ~ post.username, post.username) }}</p></td>
 			<td><p>{{post.reg_no}}</p></td>
 			<td><p>{{post.tel}}</p></td>
 			<td><p>{{post.due}}</p></td>
@@ -69,7 +70,7 @@
 			<td><p>{{post.year}}</p></td>
 			<td><p>{{ link_to("gghadmin/insuran/update/" ~ post.id, "Update", "class": "btn btn-primary") }}&nbsp;
 			{{ link_to("gghadmin/insuran/renew/" ~ post.id, "Renew", "class": "btn btn-success") }}&nbsp;
-			{{ link_to("gghadmin/insuran/addtokiv?user_id=" ~ post.id, "Problem", "class": "btn btn-danger", "onclick": "return confirm('Adakah anda pasti untuk memindahkan "~post.username~" ke bahagian Problem?')") }}</p></td>
+			{{ link_to("gghadmin/insuran/kiv?ref=b5x4tAV2BdzsMEKb2ZQMgY46cavQC0qXhZJoB4zdnJZIH6UCyk8DyP8bIaLAfxB&user_id=" ~ post.id, "Restore", "class": "btn btn-warning", "onclick": "return confirm('Adakah anda pasti untuk memindahkan "~post.username~" ke iManagement?')") }}</p></td>
 		</tr>
 		{% endfor %}
 		</table>

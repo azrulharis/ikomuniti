@@ -79,27 +79,27 @@ class ControllerBase extends \Phalcon\Mvc\Controller
 	}
 	
 	public function iprihatin_image_dir() {
-		return '/ikomuniti/uploads/iprihatins/';
+		return '/isharev1/ikomuniti/uploads/iprihatins/';
 	}
 	
 	public function iprihatin_thumb_dir() {
-		return '/ikomuniti/uploads/iprihatins/thumbs/';
+		return '/isharev1/ikomuniti/uploads/iprihatins/thumbs/';
 	}
 	
 	public function thumb_image_dir() {
-		return '/ikomuniti/uploads/imall/thumbnails/';
+		return '/isharev1/ikomuniti/uploads/imall/thumbnails/';
 	}
 	
 	public function imall_image_dir() {
-		return '/ikomuniti/uploads/imall/images/';
+		return '/isharev1/ikomuniti/uploads/imall/images/';
 	}
 	
 	public function ioffer_image_dir() {
-		return '/ikomuniti/uploads/ioffers/images/';
+		return '/isharev1/ikomuniti/uploads/ioffers/images/';
 	}
 	
 	public function ioffer_thumb_dir() {
-		return '/ikomuniti/uploads/ioffers/thumbnails/';
+		return '/isharev1/ikomuniti/uploads/ioffers/thumbnails/';
 	}
 	
 	public function imall_dir() {
@@ -111,11 +111,11 @@ class ControllerBase extends \Phalcon\Mvc\Controller
 	}
 	
 	public function path() {
-		return '/ikomuniti/';
+		return '/isharev1/ikomuniti/';
 	}
 	
 	public function admin_path() {
-		return '/ikomuniti/gghadmin/';
+		return '/isharev1/ikomuniti/gghadmin/';
 	}
 	
 	// 23/4/2014 2.35PM LAST DATA

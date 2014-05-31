@@ -42,9 +42,10 @@
       
       <div class="bs-example">
 		  <ul class="breadcrumb" style="margin-bottom: 5px;">
-	        <li>{{ link_to("gghadmin/insuran/manage", "iManagement", "class": "jun_button jun_button_current") }}</li>
-	      <li>{{ link_to("gghadmin/insuran/quotation", "Updated", "class": "jun_button") }}</li>
-	      <li>{{ link_to("gghadmin/insuran/kiv", "Problems", "class": "jun_button") }}</li>
+	        <li>{{ link_to("gghadmin/insuran/manage", "iManagement") }}</li>
+	        <li>{{ link_to("gghadmin/insuran/kiv", "Kiv") }}</li>
+	      <li>{{ link_to("gghadmin/insuran/quotation", "Updated") }}</li>
+	      <li>{{ link_to("gghadmin/insuran/problems", "Problems") }}</li>
 	      <li class="active">Done <b>{{count_user_done}}</b></li>
 	      </ul>
       </div>      

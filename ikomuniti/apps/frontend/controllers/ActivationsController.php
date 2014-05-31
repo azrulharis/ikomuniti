@@ -19,7 +19,7 @@ class ActivationsController extends ControllerBase {
 		parent::pageProtect(); 
 		$auth = $this->session->get('jun_user_auth');
 	    // Role
-		$this->role($auth['role'], array(4, 5, 6, 7, 8, 9));
+		$this->role($auth['role'], array(1, 2, 3, 4, 5, 6, 7, 8, 9));
 		$this->flashSession->output();
 	    $this->view->setVar('users', $this->get_user($auth['id']));
 	    if(count($this->view_user($auth['username'], 0)) > 0) {
@@ -50,7 +50,7 @@ class ActivationsController extends ControllerBase {
 		parent::pageProtect(); 
 		$auth = $this->session->get('jun_user_auth');
 	    // Role
-		$this->role($auth['role'], array(4, 5, 6, 7, 8, 9));
+		$this->role($auth['role'], array(1, 2, 3, 4, 5, 6, 7, 8, 9));
 		$this->flashSession->output();
 	    $this->view->setVar('users', $this->get_user($auth['id']));
 	     
@@ -79,7 +79,7 @@ class ActivationsController extends ControllerBase {
 		parent::pageProtect(); 
 		$auth = $this->session->get('jun_user_auth');
 		// Role
-		$this->role($auth['role'], array(4, 5, 6, 7, 8, 9));
+		$this->role($auth['role'], array(1, 2, 3, 4, 5, 6, 7, 8, 9));
 		
 	    $this->view->setVar('users', $this->get_user($auth['id']));
 	    if($auth['role'] <= 1) {
@@ -108,7 +108,7 @@ class ActivationsController extends ControllerBase {
 		parent::pageProtect(); 
 		$auth = $this->session->get('jun_user_auth');
 		// Role
-		$this->role($auth['role'], array(4, 5, 6, 7, 8, 9));
+		$this->role($auth['role'], array(1, 2, 3, 4, 5, 6, 7, 8, 9));
 		$this->view->setVar('navigations', $this->get_user($auth['id']));
 		$username = $this->dispatcher->getParam('slug');
 		
@@ -141,11 +141,10 @@ class ActivationsController extends ControllerBase {
 		            // Send sms
 		            $user = Users::findFirst($used_user_id);
 		            if($this->update_counter($user->username_sponsor, $used_user_id)) {
-						$this->send_sms($user->master_key, $user->username, $user->telephone);
+						$this->send_sms($user->master_key, $user->username, $user->telephone, $user->ckey);
 						$this->flashSession->success('Activation has been success.'); 
 						return $this->response->redirect('activations/index');
-					}
-		            
+					} 
 				} else {
 				    
 					$this->flash->error('Error E067 - Sila hubungi bahagian teknikal');

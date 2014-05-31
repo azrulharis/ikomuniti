@@ -1,4 +1,4 @@
-{{ partial("partials/navigation") }} 
+<?php echo $this->partial('partials/navigation'); ?> 
 <div class="row"> 
   	<div class="col-lg-4"> 
 		<div class="well"> 
@@ -42,37 +42,37 @@
       
       <div class="bs-example">
 		  <ul class="breadcrumb" style="margin-bottom: 5px;">
-	        <li>{{ link_to("gghadmin/insuran/manage", "iManagement") }}</li>
-	        <li class="active">Kiv <b>{{count_user_kiv}}</b></li>
-	      <li>{{ link_to("gghadmin/insuran/quotation", "Updated") }}</li>
-	      <li>Problems</li>
-	      <li>{{ link_to("gghadmin/insuran/done", "Done") }}</li>
+	        <li><?php echo $this->tag->linkTo(array('gghadmin/insuran/manage', 'iManagement')); ?></li>
+	        <li><?php echo $this->tag->linkTo(array('gghadmin/insuran/kiv', 'Kiv')); ?></li>
+	      <li><?php echo $this->tag->linkTo(array('gghadmin/insuran/quotation', 'Updated')); ?></li>
+	      <li class="active">Problems <b><?php echo $count_user_kiv; ?></b></li>
+	      <li><?php echo $this->tag->linkTo(array('gghadmin/insuran/done', 'Done')); ?></li>
 	      </ul>
       </div>  
-	  {{ content() }}    
+	  <?php echo $this->getContent(); ?>    
 	   <div class="table-responsive">
 		      <table class="table table-bordered table-hover table-striped tablesorter"> 
 	    <tr>
 	    <th>Username</th><th>Reg No</th><th>Telephone</th> <th>Due</th> <th>Insuran</th> <th>Roadtax</th> <th>Wallet</th> <th>Total</th> <th>Year</th> <th>Action</th>
 	    </tr>
-		{% for post in views %}
+		<?php foreach ($views as $post) { ?>
 		<tr>
 		    
-			<td><p>{{ link_to('gghadmin/users/profile/' ~ post.username, post.username) }}</p></td>
-			<td><p>{{post.reg_no}}</p></td>
-			<td><p>{{post.tel}}</p></td>
-			<td><p>{{post.due}}</p></td>
-			<td><p>{{post.ins_amount}}</p></td>
-			<td><p>{{post.r_amount}}</p></td>
-			<td><p>{{post.amount}}</p></td>
-			<td><p>{{post.total}}</p></td>
+			<td><p><?php echo $this->tag->linkTo(array('gghadmin/users/profile/' . $post->username, $post->username)); ?></p></td>
+			<td><p><?php echo $post->reg_no; ?></p></td>
+			<td><p><?php echo $post->tel; ?></p></td>
+			<td><p><?php echo $post->due; ?></p></td>
+			<td><p><?php echo $post->ins_amount; ?></p></td>
+			<td><p><?php echo $post->r_amount; ?></p></td>
+			<td><p><?php echo $post->amount; ?></p></td>
+			<td><p><?php echo $post->total; ?></p></td>
 			 
-			<td><p>{{post.year}}</p></td>
-			<td><p>{{ link_to("gghadmin/insuran/update/" ~ post.id, "Update", "class": "btn btn-primary") }}&nbsp;
-			{{ link_to("gghadmin/insuran/renew/" ~ post.id, "Renew", "class": "btn btn-success") }}&nbsp;
-			{{ link_to("gghadmin/insuran/kiv?ref=b5x4tAV2BdzsMEKb2ZQMgY46cavQC0qXhZJoB4zdnJZIH6UCyk8DyP8bIaLAfxB&user_id=" ~ post.id, "Restore", "class": "btn btn-warning", "onclick": "return confirm('Adakah anda pasti untuk memindahkan "~post.username~" ke iManagement?')") }}</p></td>
+			<td><p><?php echo $post->year; ?></p></td>
+			<td><p><?php echo $this->tag->linkTo(array('gghadmin/insuran/update/' . $post->id, 'Update', 'class' => 'btn btn-primary')); ?>&nbsp;
+			<?php echo $this->tag->linkTo(array('gghadmin/insuran/renew/' . $post->id, 'Renew', 'class' => 'btn btn-success')); ?>&nbsp;
+			<?php echo $this->tag->linkTo(array('gghadmin/insuran/kiv?ref=b5x4tAV2BdzsMEKb2ZQMgY46cavQC0qXhZJoB4zdnJZIH6UCyk8DyP8bIaLAfxB&user_id=' . $post->id, 'Restore', 'class' => 'btn btn-warning', 'onclick' => 'return confirm(\'Adakah anda pasti untuk memindahkan ' . $post->username . ' ke iManagement?\')')); ?></p></td>
 		</tr>
-		{% endfor %}
+		<?php } ?>
 		</table>
 		</div>
 		</div>
@@ -83,8 +83,8 @@
   	
 <div class="row">
   <div class="col-lg-12">
-    {{ paginationUrl }}
+    <?php echo $paginationUrl; ?>
   </div>
 </div>
 
-{{ partial("partials/footer") }}
+<?php echo $this->partial('partials/footer'); ?>

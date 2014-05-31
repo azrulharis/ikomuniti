@@ -161,6 +161,37 @@ class InsuranController extends ControllerBase {
     *    View user on pagination where type = 1
     *
     */
+	public function problemsAction() {
+		parent::pageProtect();
+		$this->flashSession->output();
+		$auth = $this->session->get('junauth');
+		$this->role($auth['role'], array(5, 6, 7)); 
+		$this->view->setVar('navigations', $this->get_user($auth['id'])); 
+		
+		$this->view->count_user_kiv = count($this->count_user_problem(1)); // count_user_kiv
+		// Restore user from kiv lists
+		if($this->request->isGet() && isset($_GET['user_id']) && isset($_GET['ref'])) {
+		    $user_id = $_GET['user_id'];
+		    $ref = $_GET['ref'];
+			if(is_numeric($user_id)) {
+				// Proceed restore
+				if($this->restore($user_id)) { 
+					$this->flashSession->success('User has been restore to iTakaful');
+					return $this->response->redirect('gghadmin/insuran/problems');
+				} 
+			} else {
+				$this->flash->error('Error! Not valid User Id');
+			}
+		}
+		$this->view->setVar('views', $this->view_user_problem(1)); // view_user_kiv
+		    
+		$this->view->paginationUrl = $this->paginationUrl;
+	}
+	
+	/*
+    *    View user on pagination where type = 2
+    *
+    */
 	public function kivAction() {
 		parent::pageProtect();
 		$this->flashSession->output();
@@ -168,7 +199,7 @@ class InsuranController extends ControllerBase {
 		$this->role($auth['role'], array(5, 6, 7)); 
 		$this->view->setVar('navigations', $this->get_user($auth['id'])); 
 		
-		$this->view->count_user_kiv = count($this->count_user_kiv());
+		$this->view->count_user_kiv = count($this->count_user_problem(2)); // count_user_kiv
 		// Restore user from kiv lists
 		if($this->request->isGet() && isset($_GET['user_id']) && isset($_GET['ref'])) {
 		    $user_id = $_GET['user_id'];
@@ -183,7 +214,7 @@ class InsuranController extends ControllerBase {
 				$this->flash->error('Error! Not valid User Id');
 			}
 		}
-		$this->view->setVar('views', $this->view_user_kiv());
+		$this->view->setVar('views', $this->view_user_problem(2)); // view_user_kiv
 		    
 		$this->view->paginationUrl = $this->paginationUrl;
 	}
@@ -375,8 +406,8 @@ class InsuranController extends ControllerBase {
     *  View user on pagination order by due date
     *
     */
-    private function view_user_kiv() {
-		$type = 1;
+    private function view_user_problem($type) {
+		
 	    $records_per_page = 30;
 	    $paginations = new Pagination();
         $paginate = (($paginations->get_page() - 1) * $records_per_page);
@@ -415,8 +446,7 @@ class InsuranController extends ControllerBase {
     *  View user on pagination order by due date
     *
     */
-    private function count_user_kiv() {
-		$type = 1; 
+    private function count_user_problem($type) { 
 		$phql = "SELECT
 		    u.id AS id,  
 			w.amount AS amount, 
@@ -429,6 +459,8 @@ class InsuranController extends ControllerBase {
 		return $rows;
 	
 	}
+	
+	
 
 	/*
     *    Select user where done updating
@@ -647,9 +679,17 @@ class InsuranController extends ControllerBase {
 						        if($this->renew_notification($user_id, $next_renewal, $insuran_amount, $road_tax, $cover, $service_charge, $total)) {
 						            // Insert renew history
 									if($this->renew_history($user_id)) {
-										// HEADER LOCATION payout/user_id FOR PAYOUT AND SMS
-										$this->sms_renew($reg_no, $total, $telephone, $tracking_code, $next_renewal);
-										$this->response->redirect('gghadmin/commissions/payout?user_id='.$user_id.'&ins_amount='.$insuran_amount);	
+									    // Change due date on users table
+									    $user_due = Users::findFirst($user_id);
+									    $user_due->insuran_due_date = $next_renewal;
+									    if($user_due->save()) {
+											// HEADER LOCATION payout/user_id FOR PAYOUT AND SMS
+											$this->sms_renew($reg_no, $total, $telephone, $tracking_code, $next_renewal);
+											$this->response->redirect('gghadmin/commissions/payout?user_id='.$user_id.'&ins_amount='.$insuran_amount);	
+										} else {
+											$this->flash->error('Error on insert payout renewal. Please contact Azrul Haris (Ref: InsuranceController 690)');
+										}
+											
 									} else {
 										$this->flash->error('Error on insert history, EIH98798. Please contact Azrul Haris');
 									}

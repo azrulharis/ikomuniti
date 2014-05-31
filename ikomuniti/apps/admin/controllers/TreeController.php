@@ -33,8 +33,10 @@ class TreeController extends ControllerBase {
 		if($request->isAjax() == true) {
 			$auth = $this->session->get('junauth'); 
 			$username = 'admin';
-			$phql = "SELECT id, username, name, role, DATE_FORMAT(insuran_due_date,'%d %b %Y') AS due_date 
-					FROM JunMy\Models\Users WHERE username_sponsor = '$username' LIMIT 1000";
+			$phql = "SELECT u.username AS username, u.name AS name, u.telephone AS telephone, u.role AS role, DATE_FORMAT(i.next_renewal,'%d %b %Y') AS due_date 
+					FROM JunMy\Models\Users AS u 
+					LEFT JOIN JunMy\Models\Insuran AS i ON(u.id = i.user_id)
+					WHERE u.username_sponsor = '$username' AND u.role != '0' LIMIT 1000";
 			$rows = $this->modelsManager->executeQuery($phql);
 			$result = array();
 			foreach($rows as $row) { 
@@ -58,8 +60,10 @@ class TreeController extends ControllerBase {
 		if($request->isAjax() == true) {
 		    $username = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_STRING); 
 			$phql = "SELECT 
-			    id, username, name, telephone, role, DATE_FORMAT(insuran_due_date,'%d %b %Y') AS due_date
-			    FROM JunMy\Models\Users WHERE username_sponsor = '$username' LIMIT 1000";
+			    u.username AS username, u.name AS name, u.telephone AS telephone, u.role AS role, DATE_FORMAT(i.next_renewal,'%d %b %Y') AS due_date 
+					FROM JunMy\Models\Users AS u 
+					LEFT JOIN JunMy\Models\Insuran AS i ON(u.id = i.user_id)
+					WHERE u.username_sponsor = '$username' AND u.role != '0' LIMIT 1000"; 
 			$rows = $this->modelsManager->executeQuery($phql);
 			$result = array();
 			foreach($rows as $row) { 

@@ -25,13 +25,13 @@ setInterval(function(){
   </div>
   <div class="col-lg-4 col-xs-12"> 
 	<h4 style="padding-top: 14px;">Status: 
-	  <?php if ($user->role == 0) { ?> iSahabat 
-	  <?php } elseif ($user->role == 1) { ?> iKomuniti
-	  <?php } elseif ($user->role == 2) { ?> iReseller
-	  <?php } elseif ($user->role == 4) { ?> iCreator
-	  <?php } elseif ($user->role == 5) { ?> iAccount 
-	  <?php } elseif ($user->role == 6) { ?> iManager
-	  <?php } elseif ($user->role == 7) { ?> iDeveloper
+	  <?php if ($user->role == 3) { ?> iSahabat 
+	  <?php } elseif ($user->role == 4) { ?> iKomuniti
+	  <?php } elseif ($user->role == 5) { ?> iReseller
+	  <?php } elseif ($user->role == 6) { ?> iCreator
+	  <?php } elseif ($user->role == 7) { ?> iAccount 
+	  <?php } elseif ($user->role == 8) { ?> iManager
+	  <?php } elseif ($user->role == 9) { ?> iDeveloper
 	  <?php } ?>
 	</h4> 
   </div>
@@ -59,7 +59,7 @@ setInterval(function(){
   <hr>
 </div><!-- /.row -->
         
-<?php if ($user->role == 0) { ?> 
+<?php if ($user->role == 3) { ?> 
     <?php echo $this->partial('partials/isahabat_dashboard_box'); ?>
 <?php } else { ?>
     <?php echo $this->partial('partials/ikomuniti_dashboard_box'); ?>

@@ -773,6 +773,13 @@ $router->add('/gghadmin/insuran/kiv', array(
 	'action' => 'kiv',
 ));
 
+$router->add('/gghadmin/insuran/problems', array(
+	'module' => 'admin',
+	'namespace' => 'JunMy\Admin\Controllers\\',
+	'controller' => 'insuran',
+	'action' => 'problems',
+));
+
 $router->add('/gghadmin/insuran/all', array(
 	'module' => 'admin',
 	'namespace' => 'JunMy\Admin\Controllers\\',
