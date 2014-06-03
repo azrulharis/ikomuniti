@@ -24,9 +24,13 @@ class CommissionsController extends ControllerBase {
 		 
 		 
 	   	if(isset($_GET['user_id']) && isset($_GET['ins_amount']) && isset($_GET['role']) && isset($_GET['token'])) {
+	   	 
+	   	    // Check token to prevent direct access page that cause iKomuniti will receive commission twice and so on. 
 	   	    if(!$_SESSION['COMMISSION_TOKEN']) {
 				$this->flashSession->error('Direct access are not allowed!');
 				return $this->response->redirect('gghadmin/insuran/manage');
+				
+			// Check if token is match
 			} elseif($_SESSION['COMMISSION_TOKEN'] != $_GET['token']) {
 				$this->flashSession->error('Not valid security token. Please try again.');
 				return $this->response->redirect('gghadmin/insuran/manage');
@@ -208,7 +212,7 @@ class CommissionsController extends ControllerBase {
 		}
 		$note = new Notifications();
 	    $note->user_id = $user_id;
-	    $note->body = 'Congratulations!. RM'.number_format($amount).' has been credited to your iPoint Acc. from '.$username.' ('.$status.') Takaful Renewal. Thank you very much for your priceless support!';
+	    $note->body = 'Congratulations!. RM'.number_format($amount, 2).' has been credited to your iPoint Acc. from '.$username.' ('.$status.') Takaful Renewal. Thank you very much for your priceless support!';
 	    $note->created = date('Y-m-d H:i:s');
 	    $note->read = 0;
 	    $note->type = 6;
@@ -227,7 +231,7 @@ class CommissionsController extends ControllerBase {
 		} elseif($role <= 3) {
 			$status = 'iSahabat';
 		}
-        $sms_msg = 'Congratulations!. RM'.number_format($amount).' has been credited to '.$receiver. ' iPoint Acc. from '.$username.' ('.$status.') Takaful Renewal. Total iPoint amount is RM'.$balance.'. Please visit www.ishare.com.my or Like! www.facebook.com/ishare.com.my for iShare latest news. Thank you very much for your priceless support!';
+        $sms_msg = 'Congratulations!. RM'.number_format($amount, 2).' has been credited to '.$receiver. ' iPoint Acc. from '.$username.' ('.$status.') Takaful Renewal. Total iPoint amount is RM'.$balance.'. Please visit www.ishare.com.my or Like! www.facebook.com/ishare.com.my for iShare latest news. Thank you very much for your priceless support!';
 
         $sms_type = 1;
         $sms_senderid = 1;

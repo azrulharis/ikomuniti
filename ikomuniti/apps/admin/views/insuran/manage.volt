@@ -51,7 +51,7 @@
       </div> 
 	  {{ content() }}     
 	   <div class="alert alert-info alert-dismissable">
-	      Senarai kereta yang akan tamat tempoh dalam masa 30 hari. Selepas update, ia akan pindah ke bahagian Updated untuk proses Renewal.
+	      Senarai kereta yang akan tamat tempoh dalam masa 1 bulan. Selepas update, ia akan pindah ke bahagian Updated untuk proses Renewal. Merah menandakan iSahabat.
 	    </div>
 	   <div class="table-responsive">
 		      <table class="table table-bordered table-hover table-striped tablesorter"> 
@@ -59,7 +59,7 @@
 	    <th>Username</th><th>Reg No</th><th>Telephone</th> <th>Due</th> <th>Insuran</th> <th>Roadtax</th> <th>Wallet</th> <th>Total</th> <th>Year</th> <th>Action</th>
 	    </tr>
 		{% for post in views %}
-		<tr>
+		<tr {%if post.role == 3%}class="danger"{%endif%}>
 		    
 			<td><p>{{ link_to('gghadmin/users/profile/' ~ post.username, post.username) }}</p></td>
 			<td><p>{{post.reg_no}}</p></td>

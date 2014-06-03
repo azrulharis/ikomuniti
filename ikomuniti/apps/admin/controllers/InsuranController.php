@@ -326,7 +326,7 @@ class InsuranController extends ControllerBase {
 			u.owner_name AS owner,  
 			u.model AS model, 
 			u.year_make AS year,
-			
+			u.role AS role,
 			w.amount AS amount,
 		    
 		    i.insurance AS ins_amount, 
@@ -337,7 +337,7 @@ class InsuranController extends ControllerBase {
 			FROM JunMy\Models\Users AS u
 			LEFT JOIN JunMy\Models\Wallets AS w ON(w.id = u.id)
 			LEFT JOIN JunMy\Models\Insuran AS i ON(i.user_id = u.id)
-			WHERE i.type = '$type' AND i.created <= '$created' AND i.next_renewal <= '$due_date'".$this->search_parameter().$this->search_date()." AND u.role != '0' ORDER BY DATE(i.next_renewal) ASC";
+			WHERE i.type = '$type' AND i.created <= '$created' AND i.next_renewal <= '$due_date'".$this->search_parameter().$this->search_date()." AND u.role >= '3' ORDER BY DATE(i.next_renewal) ASC";
 		 
 		$count = $this->modelsManager->executeQuery($phql);	
 		 
@@ -369,7 +369,7 @@ class InsuranController extends ControllerBase {
 			 LEFT JOIN JunMy\Models\Wallets AS w ON(w.id = u.id)
 			LEFT JOIN JunMy\Models\Insuran AS i ON(i.user_id = u.id)
 			WHERE (i.type = '$type' AND i.created <= '$created' AND i.next_renewal <= '$due_date'".$this->search_parameter().$this->search_date()." 
-			AND u.role != '0')";
+			AND u.role >= '3')";
 		 
 		$rows = $this->modelsManager->executeQuery($phql);	 
 		return $rows; 
@@ -432,7 +432,7 @@ class InsuranController extends ControllerBase {
 			u.owner_name AS owner,  
 			u.model AS model, 
 			u.year_make AS year,
-			
+			u.role AS role,
 			w.amount AS amount,
 		    
 		    i.insurance AS ins_amount, 
@@ -442,7 +442,7 @@ class InsuranController extends ControllerBase {
 			FROM JunMy\Models\Users AS u
 			 LEFT JOIN JunMy\Models\Wallets AS w ON(w.id = u.id)
 			LEFT JOIN JunMy\Models\Insuran AS i ON(i.user_id = u.id)
-			WHERE u.role != '0' AND i.type = '$type' ".$this->search_parameter().$this->search_date()." 
+			WHERE u.role >= '3' AND i.type = '$type' ".$this->search_parameter().$this->search_date()." 
 			ORDER BY i.next_renewal ASC";
 		$count = $this->modelsManager->executeQuery($phql);	
         $paginations->records(count($count));
@@ -467,7 +467,7 @@ class InsuranController extends ControllerBase {
 			FROM JunMy\Models\Users AS u
 			 LEFT JOIN JunMy\Models\Wallets AS w ON(w.id = u.id)
 			LEFT JOIN JunMy\Models\Insuran AS i ON(i.user_id = u.id)
-			WHERE u.role != '0' AND i.type = '$type' ".$this->search_parameter().$this->search_date()."";
+			WHERE u.role >= '3' AND i.type = '$type' ".$this->search_parameter().$this->search_date()."";
 		$rows = $this->modelsManager->executeQuery($phql);	 
 		return $rows;
 	
@@ -497,6 +497,7 @@ class InsuranController extends ControllerBase {
 			u.owner_name AS owner,  
 			u.model AS model, 
 			u.year_make AS year, 
+			u.role AS role,
 			w.amount AS amount, 
 		    i.insurance AS ins_amount, 
 			i.road_tax AS r_amount, 
@@ -505,7 +506,7 @@ class InsuranController extends ControllerBase {
 			FROM JunMy\Models\Users AS u
 			 LEFT JOIN JunMy\Models\Wallets AS w ON(w.id = u.id)
 			LEFT JOIN JunMy\Models\Insuran AS i ON(i.user_id = u.id)
-			WHERE (i.next_renewal <= '$due_date' AND i.created >= '$created' AND u.role != '0' AND i.type = '0'".$this->search_parameter().$this->search_date().") ORDER BY i.next_renewal ASC";
+			WHERE (i.next_renewal <= '$due_date' AND i.created >= '$created' AND u.role >= '3' AND i.type = '0'".$this->search_parameter().$this->search_date().") ORDER BY i.next_renewal ASC";
 			
 		$count = $this->modelsManager->executeQuery($phql);	
         $paginations->records(count($count));
@@ -535,7 +536,7 @@ class InsuranController extends ControllerBase {
 			FROM JunMy\Models\Users AS u
 			LEFT JOIN JunMy\Models\Wallets AS w ON(w.id = u.id)
 			LEFT JOIN JunMy\Models\Insuran AS i ON(i.user_id = u.id)
-		WHERE (i.next_renewal <= '$due_date' AND i.created >= '$created' AND u.role != '0' AND i.type = '0'".$this->search_parameter().$this->search_date().")";
+		WHERE (i.next_renewal <= '$due_date' AND i.created >= '$created' AND u.role >= '3' AND i.type = '0'".$this->search_parameter().$this->search_date().")";
 		$rows = $this->modelsManager->executeQuery($phql); 
 		return $rows; 
 	}
@@ -565,6 +566,7 @@ class InsuranController extends ControllerBase {
 			u.owner_name AS owner,  
 			u.model AS model, 
 			u.year_make AS year, 
+			u.role AS role,
 			w.amount AS amount, 
 		    i.insurance AS ins_amount, 
 			i.road_tax AS r_amount, 
@@ -573,7 +575,7 @@ class InsuranController extends ControllerBase {
 			FROM JunMy\Models\Users AS u
 			LEFT JOIN JunMy\Models\Wallets AS w ON(w.id = u.id)
 			LEFT JOIN JunMy\Models\Insuran AS i ON(i.user_id = u.id)
-			WHERE i.next_renewal > '$created' AND u.role != '0' AND i.type = '0'".$this->search_parameter().$this->search_date()." ORDER BY i.next_renewal ASC";
+			WHERE i.next_renewal > '$created' AND u.role >= '3' AND i.type = '0'".$this->search_parameter().$this->search_date()." ORDER BY i.next_renewal ASC";
 		$count = $this->modelsManager->executeQuery($phql);	
         $paginations->records(count($count));
         $rows = $this->modelsManager->executeQuery($phql." LIMIT $paginate , $records_per_page");	
@@ -602,7 +604,7 @@ class InsuranController extends ControllerBase {
 			FROM JunMy\Models\Users AS u
 			 LEFT JOIN JunMy\Models\Wallets AS w ON(w.id = u.id)
 			LEFT JOIN JunMy\Models\Insuran AS i ON(i.user_id = u.id)
-			WHERE i.next_renewal > '$created' AND u.role != '0' AND i.type = '0'".$this->search_parameter().$this->search_date()." ORDER BY i.next_renewal ASC";
+			WHERE i.next_renewal > '$created' AND u.role >= '3' AND i.type = '0'".$this->search_parameter().$this->search_date()." ORDER BY i.next_renewal ASC";
 		$rows = $this->modelsManager->executeQuery($phql);	
          
 		return $rows;
@@ -621,8 +623,8 @@ class InsuranController extends ControllerBase {
 	public function renewAction() {
 		parent::pageProtect();
 		$auth = $this->session->get('junauth');
-		$this->role($auth['role'], array(5, 6, 7));
-		// Set date picker year 
+		$this->role($auth['role'], array(6, 7, 8, 9));
+		// Set date picker year + 3 year
 		$this->view->date_picker_from = date('Y');
 		$this->view->date_picker_to = date('Y', strtotime('+3 years'));
 		
@@ -716,7 +718,7 @@ class InsuranController extends ControllerBase {
 				            }
 						}
 					} else {
-						$this->flash->error('Fail to deduct wallet');
+						$this->flash->error('Fail to deduct wallet, Please contact Azrul Haris (Ref: InsuranceController 719)');
 					}
 				} else {
 				    // Error jika ewallet kurang dari total
@@ -878,8 +880,8 @@ class InsuranController extends ControllerBase {
 			
 			w.id AS w_id, w.user_id AS u_id, w.amount AS amount,
 		    
-		    i.second_driver AS second_driver, i.wind_screen AS wind_screen, i.insurance AS ins_amount, i.road_tax AS r_amount, i.cover AS cover, i.service_charge AS charge, i.total AS total, i.next_renewal AS due_date, i.tracking_code AS tracking_code, i.delivery_method AS delivery_method, i.crp AS crp, i.pa AS pa
-		    
+		    i.second_driver AS second_driver, i.wind_screen AS wind_screen, i.insurance AS ins_amount, i.road_tax AS r_amount, i.cover AS cover, i.service_charge AS charge, i.total AS total, i.next_renewal AS due_date, i.tracking_code AS tracking_code, i.delivery_method AS delivery_method, i.crp AS crp, i.pa AS pa,
+		    i.ncd AS ncd
 			FROM JunMy\Models\Users AS u
 			INNER JOIN JunMy\Models\Wallets AS w ON(w.id = u.id)
 			LEFT JOIN JunMy\Models\Insuran AS i ON(i.user_id = u.id)

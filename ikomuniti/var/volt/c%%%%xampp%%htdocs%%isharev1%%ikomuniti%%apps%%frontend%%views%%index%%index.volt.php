@@ -37,7 +37,7 @@ setInterval(function(){
   </div>
    
   <div class="col-lg-4 pull-right text-right">
-<?php if ($user->role >= 1) { ?>    
+<?php if ($user->role >= 4) { ?>    
 <?php echo $this->tag->linkTo(array('itakaful/index', '<button type="button" class="btn btn-primary btn-lg right-button">
   <i class="fa fa-umbrella"></i> iTakaful
 </button>')); ?>
@@ -46,9 +46,9 @@ setInterval(function(){
   <i class="fa fa-plus-circle"></i> Post On iMall
 </button>')); ?>
 <?php } ?>
-<?php if ($user->role == 0) { ?>
+<?php if ($user->role == 3) { ?>
 <?php echo $this->tag->linkTo(array('isahabat/index', '<button type="button" class="btn btn-primary btn-lg right-button">
-  <i class="glyphicon glyphicon-new-window"></i> Compare
+  <i class="glyphicon glyphicon-new-window"></i> Compare Plan
 </button>')); ?>
 
 <?php echo $this->tag->linkTo(array('isahabat/upgrade', '<button type="button" class="btn btn-success btn-lg right-button">

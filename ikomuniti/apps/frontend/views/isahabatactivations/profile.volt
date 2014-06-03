@@ -22,7 +22,9 @@
         <ul class="list-group"> 
 	       <h4><b>Personal Information</b></h4> 
 	       <li class="list-group-item"> 
-		   {{ link_to("activations/index?ref=" ~ user.password ~ "&action=activate&activate=bljkX3BjVziItYbEqMZ1SOU2e8Xv6ZuRuTAztmdjVz8fOHeomyeLpuLaIZF4lHT&ntsv=" ~ user.id, "Activate", "class": "btn btn-success", "onclick": "return confirm('Adakah anda pasti untuk mengaktifkan "~user.username~"?')") }}
+		   	   {{ link_to("activations/index?ref=" ~ user.password ~ "&action=activate&activate=bljkX3BjVziItYbEqMZ1SOU2e8Xv6ZuRuTAztmdjVz8fOHeomyeLpuLaIZF4lHT&ntsv=" ~ user.id, "Activate As iKomuniti", "class": "btn btn-success", "onclick": "return confirm('Adakah anda pasti untuk mengaktifkan "~user.username~" sebagai iKomuniti?')") }}
+		   &nbsp;&nbsp;&nbsp;&nbsp;
+		   {{ link_to("isahabatactivations/index?ref=" ~ user.password ~ "&action=activate&activate=bljkX3BjVziItYbEqMZ1SOU2e8Xv6ZuRuTAztmdjVz8fOHeomyeLpuLaIZF4lHT&ntsv=" ~ user.id, "Activate As iSahabat", "class": "btn btn-primary", "onclick": "return confirm('Adakah anda pasti untuk mengaktifkan "~user.username~" sebagai iSahabat?')") }}
 		   &nbsp;&nbsp;&nbsp;&nbsp;
 		   {{ link_to("activations/index?ref=" ~ user.password ~ "&action=problem&activate=bljkX3BjVziItYbEqMZ1SOU2e8Xv6ZuRuTAztmdjVz8fOHeomyeLpuLaIZF4lHT&ntsv=" ~ user.id, "Problem", "class": "btn btn-danger", "onclick": "return confirm('Adakah anda pasti untuk memindahkan "~user.username~" ke bahagian Problem?')") }} 
 		    
@@ -71,9 +73,11 @@
 	      
 	      <li class="list-group-item">Grant Serial: <span class="space-left col-xs-12"><b>{{user.grant_serial_number|e}}</b></span></li>
 	      <li class="list-group-item"> 
-		   {{ link_to("activations/index?ref=" ~ user.password ~ "&action=activate&activate=bljkX3BjVziItYbEqMZ1SOU2e8Xv6ZuRuTAztmdjVz8fOHeomyeLpuLaIZF4lHT&ntsv=" ~ user.id, "Activate", "class": "btn btn-success", "onclick": "return confirm('Adakah anda pasti untuk mengaktifkan "~user.username~"?')") }}
+		   {{ link_to("activations/index?ref=" ~ user.password ~ "&action=activate&activate=bljkX3BjVziItYbEqMZ1SOU2e8Xv6ZuRuTAztmdjVz8fOHeomyeLpuLaIZF4lHT&ntsv=" ~ user.id, "Activate As iKomuniti", "class": "btn btn-success", "onclick": "return confirm('Adakah anda pasti untuk mengaktifkan "~user.username~" sebagai iKomuniti?')") }}
 		   &nbsp;&nbsp;&nbsp;&nbsp;
-		   {{ link_to("activations/index?ref=" ~ user.password ~ "&action=problem&activate=bljkX3BjVziItYbEqMZ1SOU2e8Xv6ZuRuTAztmdjVz8fOHeomyeLpuLaIZF4lHT&ntsv=" ~ user.id, "Problem", "class": "btn btn-danger", "onclick": "return confirm('Adakah anda pasti untuk memindahkan "~user.username~" ke bahagian Problem?')") }} 
+		   {{ link_to("isahabatactivations/index?ref=" ~ user.password ~ "&action=activate&activate=bljkX3BjVziItYbEqMZ1SOU2e8Xv6ZuRuTAztmdjVz8fOHeomyeLpuLaIZF4lHT&ntsv=" ~ user.id, "Activate As iSahabat", "class": "btn btn-primary", "onclick": "return confirm('Adakah anda pasti untuk mengaktifkan "~user.username~" sebagai iSahabat?')") }}
+		   &nbsp;&nbsp;&nbsp;&nbsp;
+		   {{ link_to("isahabatactivations/index?ref=" ~ user.password ~ "&action=problem&activate=bljkX3BjVziItYbEqMZ1SOU2e8Xv6ZuRuTAztmdjVz8fOHeomyeLpuLaIZF4lHT&ntsv=" ~ user.id, "Problem", "class": "btn btn-danger", "onclick": "return confirm('Adakah anda pasti untuk memindahkan "~user.username~" ke bahagian Problem?')") }} 
 		    
 		   
 		   </li>

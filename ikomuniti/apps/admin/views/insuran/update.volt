@@ -26,11 +26,11 @@
 				
 				<select name="pa" class="form-control">
 				       <option value="0">Select</option>
-					   <option value="50">RM50 (Sum Covered RM10K/Person)</option>  
-				       <option value="90">RM90 (Sum Covered RM20K/Person)</option> 
-				       <option value="130">RM130 (Sum Covered RM30K/Person)</option>
-				       <option value="170">RM170 (Sum Covered RM40K/Person)</option> 
-				       <option value="210">RM210 (Sum Covered RM50K/Person)</option>
+					   <option value="50"{%if post.pa == 50 %} selected{%endif%}>RM50 (Sum Covered RM10K/Person)</option>  
+				       <option value="90"{%if post.pa == 90 %} selected{%endif%}>RM90 (Sum Covered RM20K/Person)</option> 
+				       <option value="130"{%if post.pa == 130 %} selected{%endif%}>RM130 (Sum Covered RM30K/Person)</option>
+				       <option value="170"{%if post.pa == 170 %} selected{%endif%}>RM170 (Sum Covered RM40K/Person)</option> 
+				       <option value="210"{%if post.pa == 210 %} selected{%endif%}>RM210 (Sum Covered RM50K/Person)</option>
 				    </select>
 				</div>
 				<div class="form-group"> 
@@ -40,8 +40,8 @@
 				<label><p>CRP (Hanya Untuk Rekod GGHSB)</p></label>
 				<select name="crp" class="form-control">
 				       <option value="0">Dont include CRP</option>
-				       <option value="78">RM78 - 14 Days CRP (For premium 500 and above)</option>
-				       <option value="120">RM120 - 14 Days CRP (For premium less than 500)</option> 
+				       <option value="78"{%if post.crp == 78 %} selected{%endif%}>RM78 - 14 Days CRP (For premium 500 and above)</option>
+				       <option value="120"{%if post.crp == 120 %} selected{%endif%}>RM120 - 14 Days CRP (For premium less than 500)</option> 
 				    </select>
 				</div>
 				<div class="form-group"> 
@@ -61,12 +61,12 @@
 		 
 				<select class="form-control" name="insuran_ncb">
 					<option value="">Pilih</option>
-					<option value="0">0%</option>
-					<option value="25">25%</option>
-					<option value="30">30%</option>
-					<option value="38.33">38.33%</option>
-					<option value="45">45%</option>
-					<option value="55">55%</option>
+					<option value="0"{%if post.ncd == 0 %} selected{%endif%}>0%</option>
+					<option value="25"{%if post.ncd == 25 %} selected{%endif%}>25%</option>
+					<option value="30"{%if post.ncd == 30 %} selected{%endif%}>30%</option>
+					<option value="38.33"{%if post.ncd == 38.33 %} selected{%endif%}>38.33%</option>
+					<option value="45"{%if post.ncd == 45 %} selected{%endif%}>45%</option>
+					<option value="55"{%if post.ncd == 55 %} selected{%endif%}>55%</option>
 				</select> 
 		        </div>
 

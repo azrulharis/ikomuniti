@@ -56,7 +56,7 @@
 	    <th>Username</th><th>Reg No</th><th>Telephone</th> <th>Due</th> <th>Insuran</th> <th>Roadtax</th> <th>Wallet</th> <th>Total</th> <th>Year</th> <th>Action</th>
 	    </tr>
 		{% for post in views %}
-		<tr>
+		<tr {%if post.role == 3%}class="danger"{%endif%}>
 		    
 			<td><p>{{ link_to('gghadmin/users/profile/' ~ post.username, post.username) }}</p></td>
 			<td><p>{{post.reg_no}}</p></td>

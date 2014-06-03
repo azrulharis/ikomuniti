@@ -37,7 +37,7 @@ setInterval(function(){
   </div>
    
   <div class="col-lg-4 pull-right text-right">
-{% if user.role >= 1 %}    
+{% if user.role >= 4 %}    
 {{ link_to('itakaful/index', '<button type="button" class="btn btn-primary btn-lg right-button">
   <i class="fa fa-umbrella"></i> iTakaful
 </button>')}}
@@ -46,9 +46,9 @@ setInterval(function(){
   <i class="fa fa-plus-circle"></i> Post On iMall
 </button>')}}
 {% endif %}
-{% if user.role == 0 %}
+{% if user.role == 3 %}
 {{ link_to('isahabat/index', '<button type="button" class="btn btn-primary btn-lg right-button">
-  <i class="glyphicon glyphicon-new-window"></i> Compare
+  <i class="glyphicon glyphicon-new-window"></i> Compare Plan
 </button>')}}
 
 {{ link_to('isahabat/upgrade', '<button type="button" class="btn btn-success btn-lg right-button">

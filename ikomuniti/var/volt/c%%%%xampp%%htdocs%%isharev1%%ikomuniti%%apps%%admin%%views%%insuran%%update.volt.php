@@ -26,11 +26,11 @@
 				
 				<select name="pa" class="form-control">
 				       <option value="0">Select</option>
-					   <option value="50">RM50 (Sum Covered RM10K/Person)</option>  
-				       <option value="90">RM90 (Sum Covered RM20K/Person)</option> 
-				       <option value="130">RM130 (Sum Covered RM30K/Person)</option>
-				       <option value="170">RM170 (Sum Covered RM40K/Person)</option> 
-				       <option value="210">RM210 (Sum Covered RM50K/Person)</option>
+					   <option value="50"<?php if ($post->pa == 50) { ?> selected<?php } ?>>RM50 (Sum Covered RM10K/Person)</option>  
+				       <option value="90"<?php if ($post->pa == 90) { ?> selected<?php } ?>>RM90 (Sum Covered RM20K/Person)</option> 
+				       <option value="130"<?php if ($post->pa == 130) { ?> selected<?php } ?>>RM130 (Sum Covered RM30K/Person)</option>
+				       <option value="170"<?php if ($post->pa == 170) { ?> selected<?php } ?>>RM170 (Sum Covered RM40K/Person)</option> 
+				       <option value="210"<?php if ($post->pa == 210) { ?> selected<?php } ?>>RM210 (Sum Covered RM50K/Person)</option>
 				    </select>
 				</div>
 				<div class="form-group"> 
@@ -40,8 +40,8 @@
 				<label><p>CRP (Hanya Untuk Rekod GGHSB)</p></label>
 				<select name="crp" class="form-control">
 				       <option value="0">Dont include CRP</option>
-				       <option value="78">RM78 - 14 Days CRP (For premium 500 and above)</option>
-				       <option value="120">RM120 - 14 Days CRP (For premium less than 500)</option> 
+				       <option value="78"<?php if ($post->crp == 78) { ?> selected<?php } ?>>RM78 - 14 Days CRP (For premium 500 and above)</option>
+				       <option value="120"<?php if ($post->crp == 120) { ?> selected<?php } ?>>RM120 - 14 Days CRP (For premium less than 500)</option> 
 				    </select>
 				</div>
 				<div class="form-group"> 
@@ -61,12 +61,12 @@
 		 
 				<select class="form-control" name="insuran_ncb">
 					<option value="">Pilih</option>
-					<option value="0">0%</option>
-					<option value="25">25%</option>
-					<option value="30">30%</option>
-					<option value="38.33">38.33%</option>
-					<option value="45">45%</option>
-					<option value="55">55%</option>
+					<option value="0"<?php if ($post->ncd == 0) { ?> selected<?php } ?>>0%</option>
+					<option value="25"<?php if ($post->ncd == 25) { ?> selected<?php } ?>>25%</option>
+					<option value="30"<?php if ($post->ncd == 30) { ?> selected<?php } ?>>30%</option>
+					<option value="38.33"<?php if ($post->ncd == 38.33) { ?> selected<?php } ?>>38.33%</option>
+					<option value="45"<?php if ($post->ncd == 45) { ?> selected<?php } ?>>45%</option>
+					<option value="55"<?php if ($post->ncd == 55) { ?> selected<?php } ?>>55%</option>
 				</select> 
 		        </div>
 

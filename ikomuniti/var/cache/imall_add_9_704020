@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="iShare Komuniti Area">
+    <meta name="author" content="Azrul Haris">
+    <link rel="shortcut icon" href="http://ishare.com.my/ico/favicon.ico">
+
+    <title>iShare.com.my | iPartner</title>
+    <link rel="stylesheet" href="/isharev1/ikomuniti/css/bootstrap.css" type="text/css" />
+   
+    <link rel="stylesheet" href="/isharev1/ikomuniti/font-awesome/css/font-awesome.min.css" type="text/css" />
+	<link rel="stylesheet" href="/isharev1/ikomuniti/css/jquery-ui.css" type="text/css" />
+  
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<script src="/isharev1/ikomuniti/js/jquery-1.10.2.js" type="text/javascript"></script>
+ 
+	<link rel="stylesheet" href="/isharev1/ikomuniti/css/sb-admin.css" type="text/css" />
+	<link rel="stylesheet" href="/isharev1/ikomuniti/css/jquery-ui.css" type="text/css" />
+  
+	<script>
+	  $(function() {
+		$( "#datepicker" ).datepicker({changeMonth: true,
+      changeYear: true, dateFormat: "yy-mm-dd", stepMonths: 12});
+		});
+	</script>
+  </head>
+  <body>
+    
+      
+<div id="wrapper">
+      <!-- Sidebar -->
+      <nav class="navbar navbar-default navbar-fixed-top" role="navigation"> 
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/isharev1/ikomuniti/index"><img src="/isharev1/ikomuniti/images/logo.png" /></a>        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse jun_line">
+          <ul class="nav navbar-nav side-nav">
+            <li><a href="/isharev1/ikomuniti/index"><i class="fa fa-home"></i> iDashboard</a></li> 
+            
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-usd"></i> iPoint <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/isharev1/ikomuniti/wallets/index"><i class="fa fa-money"></i> iPoint Balance</a></li>
+                <li><a href="/isharev1/ikomuniti/wallets/histories"><i class="fa fa-bars"></i> Transaction History</a></li> 
+                <li><a href="/isharev1/ikomuniti/wallets/redeem"><i class="fa fa-level-down"></i> Withdraw iPoint</a></li>
+                <li><a href="/isharev1/ikomuniti/wallets/status"><i class="fa fa-random"></i> Withdrawal Status</a></li>
+				<li><a href="/isharev1/ikomuniti/wallets/transfer"><i class="fa fa-exchange"></i> Transfer iPoint</a></li> 
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bookmark"></i> iAds <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/isharev1/ikomuniti/iprihatin/index"><i class="fa fa-wheelchair"></i> iPrihatin</a></li>
+				<li><a href="/isharev1/ikomuniti/imall/index"><i class="fa fa-shopping-cart"></i> iMall</a></li>
+                <li><a href="/isharev1/ikomuniti/ipartner/index"><i class="fa fa-tag"></i> iPartner</a></li>  
+                <li><a href="/isharev1/ikomuniti/ioffer/index"><i class="fa fa-tags"></i> iOffer</a></li> 
+                <li><a href="/isharev1/ikomuniti/news/index"><i class="fa fa-info-circle"></i> iNews</a></li> 
+                <li><a href="/isharev1/ikomuniti/itools/index"><i class="fa fa-bullhorn"></i> iTool</a></li> 
+              </ul>
+            </li>
+            
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-unlock-alt"></i> iPin <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+			    <li><a href="/isharev1/ikomuniti/epins/index"><i class="fa fa-key"></i> iPin</a></li>
+			    <li><a href="/isharev1/ikomuniti/isahabatpins/index"><i class="fa fa-key"></i> iSahabat iPin</a></li>
+			  </ul>
+            </li>
+			
+            <li><a href="/isharev1/ikomuniti/itakaful/index"><i class="fa fa-umbrella"></i> iTakaful</a></li>
+            
+            
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> iKomuniti <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/isharev1/ikomuniti/activations/index"><i class="fa fa-plus-square"></i> Activate iKomuniti</a></li>
+                <li><a href="/isharev1/ikomuniti/isahabatactivations/index"><i class="fa fa-plus-square"></i> Activate iSahabat</a></li>
+                <li><a href="/isharev1/ikomuniti/tree/index"><i class="fa fa-sitemap"></i> iTree</a></li> 
+                <li><a href="http://ishare.com.my/pages/register" target="_blank"><i class="fa fa-pencil-square"></i> iRegister</a></li> 
+              </ul>
+            </li>
+            <li><a href="/isharev1/ikomuniti/messages/index"><i class="fa fa-comments"></i> iMail</a></li> 
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-cogs"></i> iSetting <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/isharev1/ikomuniti/settings/profile"><i class="fa fa-edit"></i> Profile Informations</a></li>
+                <li><a href="/isharev1/ikomuniti/settings/personal"><i class="fa fa-edit"></i> Personal Informations</a></li>
+                <li><a href="/isharev1/ikomuniti/settings/vehicle"><i class="fa fa-edit"></i> Vehicle Informations</a></li>
+                <li><a href="/isharev1/ikomuniti/settings/account"><i class="fa fa-edit"></i> Account Setting</a></li> 
+              </ul>
+            </li>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right navbar-user">
+          <li><a href="http://ishare.com.my/imall" target="_blank"><i class="fa fa-tags"></i> iMall</a></li> 
+            <li class="dropdown messages-dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> Messages  <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li class="dropdown-header"></li>
+                
+                			    
+                <li><a href="/isharev1/ikomuniti/messages/index">View iMail <span class='badge'>0</span></a></li>   
+              </ul>
+            </li>
+            <li class="dropdown alerts-dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> Notification  <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                              <li class="divider"></li>
+                <li><a href="/isharev1/ikomuniti/notifications/index">View All</a></li>
+              </ul>
+            </li>
+            
+            <li class="dropdown user-dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> azrulharis <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/isharev1/ikomuniti/profile/azrulharis"><i class="fa fa-user"></i> Profile</a></li> 
+                <li class="divider"></li>
+                <li><a href="/isharev1/ikomuniti/users/logout"><i class='fa fa-power-off'></i> Log Out</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </nav>
+      <div id="page-wrapper">   
+<div class="row">
+	<div class="col-lg-12">  
+  		<div class="panel-body">
+		    <a class="btn btn-primary" href="/isharev1/ikomuniti/ipartner/index"><i class="fa fa-plus"></i> My iPartner</a>  
+			<a class="btn btn-success" href="/isharev1/ikomuniti/ipartner/add"><i class="fa fa-plus"></i> Post New iPartner</a> 
+	    </div>
+	</div>
+</div>
+<div class="row">
+  <div class="col-lg-12"> 
+      <div class="panel panel-primary">  
+		  <div class="panel-body">    
+            <div class="alert alert-info alert-dismissable">
+              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+              <p><b>Step 1 of 3: Fill Up the Insert Ad Form</b>Your ad will be reviewed according to the rules of iPartner. Please post your ads in the correct category. iPartner reserves the right to edit or remove images or content that do not follow the rules and regulations.</p>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-body">
+                   
+                
+            <div class="form-group">
+			<form method="post" action="/isharev1/ikomuniti/ipartner/add"> 
+				<div class="form-group">
+				<label>Region</label>
+					<select name="region_id" class="form-control" id="selectregion">
+					<option value="0">Select Region</option>				
+										    <option value="1">Johor</option>
+										    <option value="2">Melaka</option>
+										    <option value="3">Negeri Sembilan</option>
+										    <option value="4">Selangor</option>
+										    <option value="5">Kuala Lumpur</option>
+										    <option value="6">Pahang</option>
+										    <option value="7">Perak</option>
+										    <option value="8">Kedah</option>
+										    <option value="9">Pulau Pinang</option>
+										    <option value="10">Perlis</option>
+										    <option value="11">Terengganu</option>
+										    <option value="12">Kelantan</option>
+										    <option value="13">Sabah</option>
+										    <option value="14">Sarawak</option>
+										</select>
+				</div>
+				<div class="form-group"> 
+				<label>Category</label>
+				    <select name="category_id" class="form-control" id="category"> 
+					    <option value="0">Select Categories</option>
+					    					        <option value="1" class="jun_select_parent" value=""disabled>Services</option>
+					    					        <option value="2" >Restaurants</option>
+					    					        <option value="3" >Suppliers</option>
+					    					        <option value="4" >Healthy & Medicine</option>
+					    					        <option value="5" >Educations</option>
+					    					        <option value="6" >Organisations</option>
+					    					        <option value="7" class="jun_select_parent" value=""disabled>Travels</option>
+					    					        <option value="8" >Hardware & Constructions</option>
+					    					        <option value="9" >Food & Beverages</option>
+					    					        <option value="10" >Logistic & Transports</option>
+					    					        <option value="11" >Machinery & Engineering</option>
+					    					        <option value="12" >Vehicles</option>
+					    					        <option value="13" >Clothing & Wears</option>
+					    					        <option value="14" class="jun_select_parent" value=""disabled>Electronic & Electric</option>
+					    					        <option value="15" >Mobile Phones & Gadgets</option>
+					    					        <option value="16" >TV/Audio/Video/Cameras</option>
+					    					        <option value="17" >Computers & Accessories</option>
+					    					        <option value="18" class="jun_select_parent" value=""disabled>HOME & PERSONAL ITEMS</option>
+					    					        <option value="19" >Home & Gardens</option>
+					    					        <option value="20" >Watches/Accessories</option>
+					    					        <option value="21" >For Children</option>
+					    					        <option value="22" >Clothes & Fashions</option>
+					    					        <option value="23" class="jun_select_parent" value=""disabled>LEISURE/SPORTS/HOBBIES</option>
+					    					        <option value="24" >Sports & Outdoors</option>
+					    					        <option value="25" >Hobby & Collectibles</option>
+					    					        <option value="26" >Music/Movies/Books</option>
+					    					        <option value="27" >Pets</option>
+					    					        <option value="28" class="jun_select_parent" value=""disabled>BUSINESS TO BUSINESS</option>
+					    					        <option value="29" >Professional/Office Equipment</option>
+					    					        <option value="30" >Business for Sale</option>
+					    					        <option value="31" class="jun_select_parent" value=""disabled>JOBS & SERVICES</option>
+					    					        <option value="32" >Jobs</option>
+					    					        <option value="33" >Services</option>
+					    					        <option value="34" class="jun_select_parent" value=""disabled>TRAVEL</option>
+					    					        <option value="35" >Accommodation</option>
+					    					        <option value="36" >Tours and Holidays</option>
+					    					        <option value="37" class="jun_select_parent" value=""disabled>FOODS & BEVERAGES</option>
+					    					        <option value="38" >Food & Beverages</option>
+					    					        <option value="39" class="jun_select_parent" value=""disabled>OTHERS</option>
+					    					        <option value="40" >Courses/Seminars/Educations</option>
+					    					        <option value="41" >Agroculture</option>
+					    					        <option value="42" >Dropships & Consignment</option>
+					    					        <option value="43" >Others</option>
+					    					</select>
+				</div>	
+				 
+				<div class="form-group">
+				    <input value="Next Step" class="btn btn-primary" type="submit" />				 </div>
+		           </form>
+		         </div>
+              </div>
+            </div>
+		  </div>
+	  </div>
+  </div>
+</div> 
+</div><!-- /#page-wrapper -->
+</div><!-- /#wrapper --> 
+ 
+ 
+   
+	<script src="/isharev1/ikomuniti/js/jquery-ui.js" type="text/javascript"></script>
+  
+    <script src="/isharev1/ikomuniti/js/bootstrap.js" type="text/javascript"></script>
+ 
+    <script src="/isharev1/ikomuniti/js/raphael-min.js" type="text/javascript"></script>
+  
+  </body>
+</html>

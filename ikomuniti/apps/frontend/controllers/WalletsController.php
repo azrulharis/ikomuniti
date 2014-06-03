@@ -378,7 +378,7 @@ class WalletsController extends ControllerBase {
 	public function statusAction() {
 		parent::pageProtect(); 
 		$auth = $this->session->get('jun_user_auth');
-		$this->role($auth['role'], array(1, 2, 3, 4, 5, 6, 7, 8));
+		$this->role($auth['role'], array(4, 5, 6, 7, 8, 9));
 		$offset = mt_rand(0, 95897695);
 		$key = 'wallet_redeem_'.$auth['id'].'_'.$offset;
 		$exists = $this->view->getCache()->exists($key);
@@ -398,7 +398,7 @@ class WalletsController extends ControllerBase {
 		$this->view->token_name = $this->security->getTokenKey(); 
 		
 		$auth = $this->session->get('jun_user_auth');
-		$this->role($auth['role'], array(1, 2, 3, 4, 5, 6, 7, 8));
+		$this->role($auth['role'], array(4, 5, 6, 7, 8, 9));
 			
 		$offset = mt_rand(0, 95897695);
 		$key = 'wallet_redeem_'.$auth['id'].'_'.$offset;
@@ -514,7 +514,7 @@ class WalletsController extends ControllerBase {
 	    $sms_username = "ishare.com.my";
         $sms_password = "rahsiajun.228";
 		$sms_dstno = $user->telephone;
-        $sms_msg = 'iPoint transfer to '.$username.' TAC Id: '.$tac.'. Not made any transfer? Call 03 8922 2277. TQ';
+        $sms_msg = 'iPoint transfer to '.$username.' TAC Id: '.$tac.'. Not make a transfer? Call 03 8922 2277. TQ';
 
         $sms_type = 1;
         $sms_senderid = 1;

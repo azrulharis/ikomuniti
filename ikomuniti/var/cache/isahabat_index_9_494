@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="iShare Komuniti Area">
+    <meta name="author" content="Azrul Haris">
+    <link rel="shortcut icon" href="http://ishare.com.my/ico/favicon.ico">
+
+    <title>iShare.com.my | iSahabat</title>
+    <link rel="stylesheet" href="/isharev1/ikomuniti/css/bootstrap.css" type="text/css" />
+   
+    <link rel="stylesheet" href="/isharev1/ikomuniti/font-awesome/css/font-awesome.min.css" type="text/css" />
+	<link rel="stylesheet" href="/isharev1/ikomuniti/css/jquery-ui.css" type="text/css" />
+  
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<script src="/isharev1/ikomuniti/js/jquery-1.10.2.js" type="text/javascript"></script>
+ 
+	<link rel="stylesheet" href="/isharev1/ikomuniti/css/sb-admin.css" type="text/css" />
+	<link rel="stylesheet" href="/isharev1/ikomuniti/css/jquery-ui.css" type="text/css" />
+  
+	<script>
+	  $(function() {
+		$( "#datepicker" ).datepicker({changeMonth: true,
+      changeYear: true, dateFormat: "yy-mm-dd", stepMonths: 12});
+		});
+	</script>
+  </head>
+  <body>
+    
+      
+<div id="wrapper">
+      <!-- Sidebar -->
+      <nav class="navbar navbar-default navbar-fixed-top" role="navigation"> 
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/isharev1/ikomuniti/index"><img src="/isharev1/ikomuniti/images/logo.png" /></a>        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse jun_line">
+          <ul class="nav navbar-nav side-nav">
+            <li><a href="/isharev1/ikomuniti/index"><i class="fa fa-home"></i> iDashboard</a></li> 
+            
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-usd"></i> iPoint <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/isharev1/ikomuniti/wallets/index"><i class="fa fa-money"></i> iPoint Balance</a></li>
+                <li><a href="/isharev1/ikomuniti/wallets/histories"><i class="fa fa-bars"></i> Transaction History</a></li> 
+                <li><a href="/isharev1/ikomuniti/wallets/redeem"><i class="fa fa-level-down"></i> Withdraw iPoint</a></li>
+                <li><a href="/isharev1/ikomuniti/wallets/status"><i class="fa fa-random"></i> Withdrawal Status</a></li>
+				<li><a href="/isharev1/ikomuniti/wallets/transfer"><i class="fa fa-exchange"></i> Transfer iPoint</a></li> 
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bookmark"></i> iAds <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/isharev1/ikomuniti/iprihatin/index"><i class="fa fa-wheelchair"></i> iPrihatin</a></li>
+				<li><a href="/isharev1/ikomuniti/imall/index"><i class="fa fa-shopping-cart"></i> iMall</a></li>
+                <li><a href="/isharev1/ikomuniti/ipartner/index"><i class="fa fa-tag"></i> iPartner</a></li>  
+                <li><a href="/isharev1/ikomuniti/ioffer/index"><i class="fa fa-tags"></i> iOffer</a></li> 
+                <li><a href="/isharev1/ikomuniti/news/index"><i class="fa fa-info-circle"></i> iNews</a></li> 
+                <li><a href="/isharev1/ikomuniti/itools/index"><i class="fa fa-bullhorn"></i> iTool</a></li> 
+              </ul>
+            </li>
+            
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-unlock-alt"></i> iPin <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+			    <li><a href="/isharev1/ikomuniti/epins/index"><i class="fa fa-key"></i> iPin</a></li>
+			    <li><a href="/isharev1/ikomuniti/isahabatpins/index"><i class="fa fa-key"></i> iSahabat iPin</a></li>
+			  </ul>
+            </li>
+			
+            <li><a href="/isharev1/ikomuniti/itakaful/index"><i class="fa fa-umbrella"></i> iTakaful</a></li>
+            
+            
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> iKomuniti <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/isharev1/ikomuniti/activations/index"><i class="fa fa-plus-square"></i> Activate iKomuniti</a></li>
+                <li><a href="/isharev1/ikomuniti/isahabatactivations/index"><i class="fa fa-plus-square"></i> Activate iSahabat</a></li>
+                <li><a href="/isharev1/ikomuniti/tree/index"><i class="fa fa-sitemap"></i> iTree</a></li> 
+                <li><a href="http://ishare.com.my/pages/register" target="_blank"><i class="fa fa-pencil-square"></i> iRegister</a></li> 
+              </ul>
+            </li>
+            <li><a href="/isharev1/ikomuniti/messages/index"><i class="fa fa-comments"></i> iMail</a></li> 
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-cogs"></i> iSetting <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/isharev1/ikomuniti/settings/profile"><i class="fa fa-edit"></i> Profile Informations</a></li>
+                <li><a href="/isharev1/ikomuniti/settings/personal"><i class="fa fa-edit"></i> Personal Informations</a></li>
+                <li><a href="/isharev1/ikomuniti/settings/vehicle"><i class="fa fa-edit"></i> Vehicle Informations</a></li>
+                <li><a href="/isharev1/ikomuniti/settings/account"><i class="fa fa-edit"></i> Account Setting</a></li> 
+              </ul>
+            </li>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right navbar-user">
+          <li><a href="http://ishare.com.my/imall" target="_blank"><i class="fa fa-tags"></i> iMall</a></li> 
+            <li class="dropdown messages-dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> Messages  <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li class="dropdown-header"></li>
+                
+                			    
+                <li><a href="/isharev1/ikomuniti/messages/index">View iMail <span class='badge'>0</span></a></li>   
+              </ul>
+            </li>
+            <li class="dropdown alerts-dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> Notification <span class="badge badge-error">1</span> <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+               
+                <li><a href="/isharev1/ikomuniti/notifications/view/521"><span class='label label-info'>Congratulations!. RM3 has bee</span></a></li> 
+                              <li class="divider"></li>
+                <li><a href="/isharev1/ikomuniti/notifications/index">View All</a></li>
+              </ul>
+            </li>
+            
+            <li class="dropdown user-dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> azrulharis <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/isharev1/ikomuniti/profile/azrulharis"><i class="fa fa-user"></i> Profile</a></li> 
+                <li class="divider"></li>
+                <li><a href="/isharev1/ikomuniti/users/logout"><i class='fa fa-power-off'></i> Log Out</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </nav>
+      <div id="page-wrapper">   
+    <div class="row">
+	<div class="col-lg-12">	
+		<div class="alert alert-dismissable alert-danger">
+		  <button type="button" class="close" data-dismiss="alert">&times;</button>
+		  <strong>Dear azrulharis.</strong> You&#39;re accessing to iSahabat account that some function are disabled. Please upgrade to iKomuniti account to get extra benefit by iShare.
+	    </div> 	
+	</div>
+</div> 
+<div class="row">
+  <div class="col-lg-12">
+    <h4>Naik Taraf Akaun</h4>
+    <p>Untuk menaik taraf akaun iSahabat kepada akaun iKomuniti, anda boleh menghubungi senarai iReseller yang terdekat. Anda perlu memaklumkan maklumat seperti berikut kepada iReseller bagi mengelakkan sebarang kesilapan:<br/>
+	<b>1. Username</b><br/>
+	<b>2. No Pendaftaran Kenderaan</b><br/>
+	<b>3. Nama Penuh Pemilik Akaun</b><br/>
+	</p>
+    
+	<p>Anda akan menerima SMS dari iShare selepas akaun anda dinaik taraf.</p>
+	<h4>Senarai iReseller</h4>
+	<div class="table-responsive">
+      <table class="table table-bordered table-hover table-striped tablesorter"> 
+	    <tr>
+	    <th>Username</th> <th>Name</th><th>Location</th>  <th>Location</th>
+	    </tr>
+				<tr>
+			<td><p><b>rajanurrez</b></p></td>
+			<td><p>Raja Nurreza Bin Raja Usman</p></td> 
+			<td><p>Sungai Buloh Selangor</p></td> 
+			<td><p><b>0107831070</b></p></td> 
+		</tr>
+				<tr>
+			<td><p><b>razadeba</b></p></td>
+			<td><p>Razman Nizwan Bin Rahmat</p></td> 
+			<td><p>Puchong Selangor</p></td> 
+			<td><p><b>0162061776</b></p></td> 
+		</tr>
+				<tr>
+			<td><p><b>faraelcobain</b></p></td>
+			<td><p>Farah Binti Abd Ghani</p></td> 
+			<td><p>UITM Shah Alam & Puncak Alam</p></td> 
+			<td><p><b>01123867381</b></p></td> 
+		</tr>
+				<tr>
+			<td><p><b>nettrajamal</b></p></td>
+			<td><p>Rohaya Anita Bt Mohammed Rajamal</p></td> 
+			<td><p>Sungai Petani Kedah</p></td> 
+			<td><p><b>0105669904</b></p></td> 
+		</tr>
+				<tr>
+			<td><p><b>azroyazid</b></p></td>
+			<td><p>Muhammad Yazid Bin Yahya</p></td> 
+			<td><p>Kuala Lumpur</p></td> 
+			<td><p><b>0126364696</b></p></td> 
+		</tr>
+				<tr>
+			<td><p><b>qasehazfa1</b></p></td>
+			<td><p>Azwa Sharil Bin Abdul Hamid</p></td> 
+			<td><p>Banting Selangor</p></td> 
+			<td><p><b>0122861075</b></p></td> 
+		</tr>
+				<tr>
+			<td><p><b>boesman</b></p></td>
+			<td><p>Bustaman Bin Mat</p></td> 
+			<td><p>Melaka</p></td> 
+			<td><p><b>01139346755</b></p></td> 
+		</tr>
+				<tr>
+			<td><p><b>harizan8888</b></p></td>
+			<td><p>Harizan Bin Abdul Aziz</p></td> 
+			<td><p>Putrajaya</p></td> 
+			<td><p><b>0123306254</b></p></td> 
+		</tr>
+				<tr>
+			<td><p><b>KKIM4U</b></p></td>
+			<td><p>Zara Impiana Sdn Bhd</p></td> 
+			<td><p>Perak</p></td> 
+			<td><p><b>0173349325</b></p></td> 
+		</tr>
+				<tr>
+			<td><p><b>abeyemas</b></p></td>
+			<td><p>Ahmad Hakimi Bin Che Din</p></td> 
+			<td><p>Kelantan</p></td> 
+			<td><p><b>0173403353</b></p></td> 
+		</tr>
+				<tr>
+			<td><p><b>AbgAji</b></p></td>
+			<td><p>AbgAji Aji</p></td> 
+			<td><p>Kuala Lumpur Bukit Aman</p></td> 
+			<td><p><b>0126709437 / 0123108483</b></p></td> 
+		</tr>
+				<tr>
+			<td><p><b>pejalmusa</b></p></td>
+			<td><p>Muhamad Faizal Faiz Bin Musa</p></td> 
+			<td><p>Johor</p></td> 
+			<td><p><b>0173057031 / 0179575836</b></p></td> 
+		</tr>
+				<tr>
+			<td><p><b>ISamir</b></p></td>
+			<td><p>Amir Hazim Bin Che Din</p></td> 
+			<td><p>Beaufort / Kota Kinabalu</p></td> 
+			<td><p><b>0198419134</b></p></td> 
+		</tr>
+				<tr>
+			<td><p><b>mohdadzhar1230</b></p></td>
+			<td><p>Mohd Adzhar Bin Saikulani</p></td> 
+			<td><p>Semporna / Tawau / Lahad Datu</p></td> 
+			<td><p><b>0165856283</b></p></td> 
+		</tr>
+				<tr>
+			<td><p><b>master</b></p></td>
+			<td><p>Superb Integrated Solution</p></td> 
+			<td><p>Penang</p></td> 
+			<td><p><b>0122613588 / 0133750089</b></p></td> 
+		</tr>
+				<tr>
+			<td><p><b>HAMZAH</b></p></td>
+			<td><p>Hamidon Bin Kamal</p></td> 
+			<td><p>Kluang Johor</p></td> 
+			<td><p><b>0106011022 / 0106074022</b></p></td> 
+		</tr>
+				<tr>
+			<td><p><b>ZULSHAARI</b></p></td>
+			<td><p>Zulkifli Bin Shaari</p></td> 
+			<td><p>Desa Pandan</p></td> 
+			<td><p><b>0123965147 / 0193068274</b></p></td> 
+		</tr>
+				</table>
+	</div>
+	 
+  </div>
+</div>
+ <div class="row"> 
+			<div class="separator col-lg-12">
+				<h3 class="example-heading">Select iShare Plan</h3>
+				<!--### Pricely Professional Starts Here, Copy Paste Starts Here ###-->
+				<div class="pricely-chart pricely-professional">
+					
+					<section class="pricely-chart-three col-xs-12">
+						
+						<ul class="pricely-pro">
+							<li class="pricely-first-heading panel-default col-md-4">
+								<h3 class="panel-heading">
+									<span class="pricely-label">Features</span>  
+									 
+								</h3>
+								<ul class="list-group">
+									<li class="list-group-item">Access Member Area</li>
+									<li class="list-group-item">Insurance Renewal</li>
+									<li class="list-group-item">Free Towing RM200</li>
+									<li class="list-group-item">Free Personal Accident (PA)</li>
+									<li class="list-group-item">Free CRP</li>
+									<li class="list-group-item">Earn Commission</li>
+									<li class="list-group-item">Post On iMall</li>
+									<li class="list-group-item">Buy On iMall</li>
+									<li class="list-group-item">iPrihatin Donation</li>
+									<li class="list-group-item">Introduce New iKomuniti</li>
+									<li class="list-group-item">Activate iKomuniti</li>
+									<li class="list-group-item">Activate All iKomuniti</li>
+									<li class="list-group-item">View iTree Genealogy</li>
+									<li class="list-group-item">Send iMail To iKomuniti</li>
+									<li class="list-group-item">Help & Support</li>
+									<li class="list-group-item">Withdraw iPoint</li>
+									<li class="list-group-item">Transfer iPoint</li>
+									<li class="list-group-item">Add iPoint</li> 
+									<li class="list-group-item">Post On iPartner</li>
+									<li class="list-group-item">Buy On iOffer</li>
+									<li class="list-group-item">Price</li>
+								</ul>
+							</li>
+							
+							<li class="pricely-inner panel-danger col-xs-12 col-md-4">
+								<h3 class="panel-heading">
+									<span class="pricely-label">iSahabat</span>   
+								</h3>
+								<ul class="list-group">
+									<li class="list-group-item"><span class="glyphicon glyphicon-ok"></span></li>
+									<li class="list-group-item"><span class="glyphicon glyphicon-ok"></span></li>
+									<li class="list-group-item"><span class="glyphicon glyphicon-ok"></span></li>
+									<li class="list-group-item"><span class="glyphicon glyphicon-remove x"></span></li>
+									<li class="list-group-item"><span>Premium RM500 and above</span></li>
+									<li class="list-group-item"><span class="glyphicon glyphicon-remove x"></span></li> 
+									<li class="list-group-item"><span class="glyphicon glyphicon-remove x"></span></li>
+									<li class="list-group-item"><span class="glyphicon glyphicon-ok"></span></li>
+									<li class="list-group-item"><span class="glyphicon glyphicon-ok"></span></li>
+									<li class="list-group-item"><span class="glyphicon glyphicon-remove x"></span></li>
+									<li class="list-group-item"><span class="glyphicon glyphicon-remove x"></span></li>
+									<li class="list-group-item"><span class="glyphicon glyphicon-remove x"></span></li>
+									<li class="list-group-item"><span class="glyphicon glyphicon-remove x"></span></li>
+									<li class="list-group-item"><span class="glyphicon glyphicon-remove x"></span></li>
+									<li class="list-group-item"><span class="glyphicon glyphicon-remove x"></span></li>
+									<li class="list-group-item"><span class="glyphicon glyphicon-remove x"></span></li>
+									<li class="list-group-item"><span class="glyphicon glyphicon-remove x"></span></li>   
+									<li class="list-group-item"><span class="glyphicon glyphicon-ok"></span></li> 
+									<li class="list-group-item"><span class="glyphicon glyphicon-remove x"></span></li>
+									<li class="list-group-item"><span class="glyphicon glyphicon-remove x"></span></li>     
+									<li class="list-group-item"><span>RM10</span></li>      
+									                 
+								</ul>
+							</li>
+							
+							<li class="pricely-inner panel-success col-xs-12 col-md-4">
+								<h3 class="panel-heading">
+									<span class="pricely-label">iKomuniti</span>   
+								</h3>
+								
+								<ul class="list-group">
+								    <li class="list-group-item"><span class="glyphicon glyphicon-ok"></span></li>
+									<li class="list-group-item"><span class="glyphicon glyphicon-ok"></span></li>
+									<li class="list-group-item"><span class="glyphicon glyphicon-ok"></span></li>
+									<li class="list-group-item"><span class="glyphicon glyphicon-ok"></span></li>
+									<li class="list-group-item"><span>Premium RM500 and above</span></li>
+									<li class="list-group-item"><span class="glyphicon glyphicon-ok"></span></li> 
+									<li class="list-group-item"><span class="glyphicon glyphicon-ok"></span></li>
+									<li class="list-group-item"><span class="glyphicon glyphicon-ok"></span></li>
+									<li class="list-group-item"><span class="glyphicon glyphicon-ok"></span></li>
+									<li class="list-group-item"><span class="glyphicon glyphicon-ok"></span></li>
+									<li class="list-group-item"><span class="glyphicon glyphicon-ok"></span></li>
+									<li class="list-group-item"><span class="glyphicon glyphicon-ok"></span></li>
+									<li class="list-group-item"><span class="glyphicon glyphicon-ok"></span></li>
+									<li class="list-group-item"><span class="glyphicon glyphicon-ok"></span></li>
+									<li class="list-group-item"><span class="glyphicon glyphicon-ok"></span></li>
+									<li class="list-group-item"><span class="glyphicon glyphicon-ok"></span></li>
+									<li class="list-group-item"><span class="glyphicon glyphicon-ok"></span></li>
+									<li class="list-group-item"><span class="glyphicon glyphicon-ok"></span></li>
+									<li class="list-group-item"><span class="glyphicon glyphicon-ok"></span></li>
+									<li class="list-group-item"><span class="glyphicon glyphicon-ok"></span></li>
+									<li class="list-group-item"><span>RM100</span></li>
+									
+								</ul>
+							</li>
+							
+							
+						</ul>
+						
+					</section>
+
+				</div><!-- /.pricely-chart -->
+				<!--### Pricely Professional Ends Here, Copy Paste Ends Here ###-->
+				
+			</div><!-- /.separator .col-md-12 -->
+			
+		 
+	</div><!-- /.container -->
+</div>
+  
+</div><!-- /#page-wrapper -->
+</div><!-- /#wrapper -->  
+	<script src="/isharev1/ikomuniti/js/jquery-ui.js" type="text/javascript"></script>
+  
+    <script src="/isharev1/ikomuniti/js/bootstrap.js" type="text/javascript"></script>
+ 
+    <script src="/isharev1/ikomuniti/js/raphael-min.js" type="text/javascript"></script>
+  
+  </body>
+</html>

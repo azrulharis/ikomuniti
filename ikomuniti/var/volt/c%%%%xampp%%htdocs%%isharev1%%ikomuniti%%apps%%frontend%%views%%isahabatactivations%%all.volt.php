@@ -39,7 +39,7 @@
 			<td><p><?php echo $this->escaper->escapeHtml($post->reg_number); ?></p></td>
 			<td><p><?php echo $this->escaper->escapeHtml($post->telephone); ?></p></td>
 			<td><p>
-			<?php echo $this->tag->linkTo(array('activations/profile/' . $post->username, 'View Profile', 'class' => 'btn btn-success')); ?> </p></td>
+			<?php echo $this->tag->linkTo(array('isahabatactivations/profile/' . $post->username, 'View Profile', 'class' => 'btn btn-success')); ?> </p></td>
 		</tr>
 		<?php } ?>
 		</table>

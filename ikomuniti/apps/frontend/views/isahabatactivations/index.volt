@@ -29,7 +29,7 @@
 			<td><p>{{post.reg_number|e}}</p></td>
 			<td><p>{{post.telephone|e}}</p></td>
 			<td><p>
-			{{ link_to("activations/profile/" ~ post.username, "View Profile", "class": "btn btn-success") }} 
+			{{ link_to("isahabatactivations/profile/" ~ post.username, "View Profile", "class": "btn btn-success") }} 
 			</p></td>
 		</tr>
 		{% endfor %}

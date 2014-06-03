@@ -56,7 +56,7 @@
 	    <th>Username</th><th>Reg No</th><th>Telephone</th> <th>Due</th> <th>Insuran</th> <th>Roadtax</th> <th>Wallet</th> <th>Total</th> <th>Year</th> <th>Action</th>
 	    </tr>
 		<?php foreach ($views as $post) { ?>
-		<tr>
+		<tr <?php if ($post->role == 3) { ?>class="danger"<?php } ?>>
 		    <td><p><?php echo $this->tag->linkTo(array('gghadmin/users/profile/' . $post->username, $post->username)); ?></p></td>
 			<td><p><?php echo $post->reg_no; ?></p></td>
 			<td><p><?php echo $post->tel; ?></p></td>

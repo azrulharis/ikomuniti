@@ -27,6 +27,9 @@ class IsahabatController extends ControllerBase {
 		    $this->view->setVar('navigations', $this->get_user($auth['id']));  
 		} 
 		$this->view->cache(array("key" => $key));
+		
+		// Set view for iReseller lists
+		$this->view->setVar('resellers', $this->get_ireseller());
 	}
 	
 	public function upgradeAction() {
@@ -57,10 +60,15 @@ class IsahabatController extends ControllerBase {
 	    $paginations = new Pagination();
         $paginate = (($paginations->get_page() - 1) * $records_per_page);
 		$phql = "SELECT 
-		        username, name, telephone, address, postcode
-			FROM JunMy\Models\Users
-			WHERE role = '2' 
-			ORDER BY id ASC";
+				i.name AS reseller_name,
+				i.location AS location,
+				i.phone AS phone,
+				i.username AS reseller_username,
+				u.profile_image AS image
+			FROM JunMy\Models\Iresellers AS i
+			LEFT JOIN JunMy\Models\Users AS u ON(u.id = i.user_id)
+			WHERE u.role = '5' 
+			ORDER BY i.id ASC";
 		$count = $this->modelsManager->executeQuery($phql);	
         $paginations->records(count($count));
         $rows = $this->modelsManager->executeQuery($phql." LIMIT $paginate , $records_per_page");	
