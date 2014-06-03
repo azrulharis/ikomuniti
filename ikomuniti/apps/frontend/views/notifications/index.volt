@@ -8,7 +8,7 @@
           <i class="glyphicon glyphicon-info-sign"></i> Notifications
         </a>
         {% for notification in notifications %}
-        <a href="/ikomuniti/notifications/view/{{ notification.id }}" class="list-group-item"> 
+        <a href="view/{{ notification.id }}" class="list-group-item"> 
 		<p class="list-group-item-text">{{ notification.body }}...</p>
 		<span class="glyphicon glyphicon-time"></span> On {{ notification.created }}
 		</a> 

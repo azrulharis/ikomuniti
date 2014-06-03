@@ -17,7 +17,7 @@ class TreeController extends ControllerBase {
 		// Get session in array
 	    $auth = $this->session->get('jun_user_auth');
 	    // Role
-		$this->role($auth['role'], array(1, 2, 3, 4, 5, 6, 7, 8, 9));
+		$this->role($auth['role'], array(4, 5, 6, 7, 8, 9));
 	    
 	    // Check vip 
 	    $this->check_vip($auth['id'], $auth['username']);

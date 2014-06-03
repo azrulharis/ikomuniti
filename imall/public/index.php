@@ -18,7 +18,7 @@ try {
 	 */
 	$di->set('url', function() { 
 		$url = new \Phalcon\Mvc\Url();
-		$url->setBaseUri('/imall/');
+		$url->setBaseUri('/isharev1/imall/');
 		return $url;
 	});
 	

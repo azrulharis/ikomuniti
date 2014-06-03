@@ -42,9 +42,9 @@
       
       <div class="bs-example">
 		  <ul class="breadcrumb" style="margin-bottom: 5px;">
-	        <li>{{ link_to("gghadmin/insuran/manage", "iManagement") }}</li>
-	        <li class="active">Kiv <b>{{count_user_kiv}}</b></li>
+	        <li>{{ link_to("gghadmin/insuran/manage", "iManagement") }}</li> 
 	      <li>{{ link_to("gghadmin/insuran/quotation", "Updated") }}</li>
+		  <li class="active">Kiv <b>{{count_user_kiv}}</b></li>
 	      <li>Problems</li>
 	      <li>{{ link_to("gghadmin/insuran/done", "Done") }}</li>
 	      </ul>

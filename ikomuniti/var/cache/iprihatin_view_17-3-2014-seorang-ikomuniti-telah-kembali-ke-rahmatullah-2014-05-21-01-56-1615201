@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="http://ishare.com.my/ico/favicon.ico">
+    <title>iShare.com.my | iPrihatin</title>
+    <link rel="stylesheet" href="/isharev1/ikomuniti/css/bootstrap.css" type="text/css" />
+ 
+    <link rel="stylesheet" href="/isharev1/ikomuniti/css/sb-admin.css" type="text/css" />
+    <link rel="stylesheet" href="/isharev1/ikomuniti/font-awesome/css/font-awesome.min.css" type="text/css" />
+	<link rel="stylesheet" href="/isharev1/ikomuniti/css/jquery-ui.css" type="text/css" />
+  
+	<script src="/isharev1/ikomuniti/js/jquery-1.10.2.js" type="text/javascript"></script>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	
+	  
+	<script>
+		$(function() {
+		$( "#datepicker_from" ).datepicker({changeMonth: true,
+      changeYear: true, dateFormat: "yy-mm-dd", stepMonths: 12});
+		});
+		$(function() {
+		$( "#datepicker_to" ).datepicker({changeMonth: true,
+      changeYear: true, dateFormat: "yy-mm-dd", stepMonths: 12});
+		});
+	</script>
+  </head>
+  <body>
+    
+     <div id="wrapper">
+      <!-- Sidebar -->
+      <nav class="navbar navbar-default navbar-fixed-top" role="navigation"> 
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/isharev1/ikomuniti/gghadmin/index"><img src="/isharev1/ikomuniti/images/logo.png" /></a>        </div>
+
+        <!-- class="active" Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse jun_line">
+          <ul class="nav navbar-nav side-nav">
+            <li><a href="/isharev1/ikomuniti/gghadmin/index"><i class="fa fa-home"></i> iDashboard</a></li>
+            <li><a href="/isharev1/ikomuniti/gghadmin/insuran/manage"><i class="fa fa-umbrella"></i> iTakaful</a></li>
+            
+            
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-sitemap"></i> iKomuniti <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/isharev1/ikomuniti/gghadmin/activations/index"><i class="fa fa-plus-circle"></i> Activate iKomuniti</a></li>
+                <li><a href="/isharev1/ikomuniti/gghadmin/tree/index"><i class="fa fa-sitemap"></i> iTree</a></li> 
+                <li><a href="/isharev1/ikomuniti/gghadmin/users/view"><i class="fa fa-users"></i> iKomuniti</a></li> 
+                <li><a href="/isharev1/ikomuniti/gghadmin/isahabat/index"><i class="fa fa-user"></i> iSahabat</a></li> 
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-briefcase"></i> iAccount <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+            	<li><a href="/isharev1/ikomuniti/gghadmin/wallets/index"><i class="fa fa-money"></i> iPoint</a></li>
+            	<li><a href="/isharev1/ikomuniti/gghadmin/epins/index"><i class="fa fa-unlock"></i> iPin</a></li>
+            	<li><a href="/isharev1/ikomuniti/gghadmin/isahabatpins/index"><i class="fa fa-unlock"></i> iSahabat iPin</a></li>
+            	<li><a href="/isharev1/ikomuniti/gghadmin/withdrawals/index"><i class="fa fa-random"></i> Withdrawals</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bookmark-o"></i>  iAds <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/isharev1/ikomuniti/gghadmin/imall/index"><i class="fa fa-shopping-cart"></i> iMall</a></li>
+                <li><a href="/isharev1/ikomuniti/gghadmin/ioffer/index"><i class="fa fa-tag"></i> iOffer</a></li>
+                <li><a href="/isharev1/ikomuniti/gghadmin/ipartner/index"><i class="fa fa-tags"></i> iPartner</a></li>
+                <li><a href="/isharev1/ikomuniti/gghadmin/imerchant/index"><i class="fa fa-tags"></i> iMerchant</a></li>
+                <li><a href="/isharev1/ikomuniti/gghadmin/iprihatin/index"><i class="fa fa-wheelchair"></i> iPrihatin</a></li>
+                <li><a href="/isharev1/ikomuniti/gghadmin/inews/index"><i class="fa fa-bullhorn"></i> iNews</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-book"></i> iReport <b class="caret"></b></a>
+              <ul class="dropdown-menu"> 
+                <li><a href="/isharev1/ikomuniti/gghadmin/reports/index"><i class="fa fa-print"></i> Reports</a></li> 
+                <li><a href="/isharev1/ikomuniti/gghadmin/cashflow/index"><i class="fa fa-bar-chart-o"></i> Cash Flow</a></li>
+                <li><a href="/isharev1/ikomuniti/gghadmin/statistic/index"><i class="fa fa-signal"></i> Statistic</a></li>
+              </ul>
+            </li>
+            
+            <li><a href="/isharev1/ikomuniti/gghadmin/messages/index"><i class="fa fa-comments-o"></i> iMail</a></li> 
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-gears"></i> iSetting <b class="caret"></b></a>
+              <ul class="dropdown-menu"> 
+                <li><a href="/isharev1/ikomuniti/gghadmin/settings/index"><i class="fa fa-pencil-square-o"></i> Account Information</a></li>
+                <li><a href="/isharev1/ikomuniti/gghadmin/settings/password"><i class="fa fa-pencil-square-o"></i> Password</a></li>
+              </ul>
+            </li>
+            <li><a href="/isharev1/ikomuniti/gghadmin/event/index"><i class="fa fa-trophy"></i> Achievement</a></li>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right navbar-user">
+            <li class="dropdown messages-dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> Messages  <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li class="dropdown-header"></li>
+                
+                			    
+                <li><a href="/isharev1/ikomuniti/gghadmin/messages/index">View iMail <span class='badge'>0</span></a></li>   
+              </ul>
+            </li>
+            <li class="dropdown alerts-dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> Notification  <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                              <li class="divider"></li>
+                <li><a href="/isharev1/ikomuniti/gghadmin/notifications/index">View All</a></li>
+              </ul>
+            </li>
+            
+            <li class="dropdown user-dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> azrulharis <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#"><i class="fa fa-user"></i> Profile</a></li> 
+                <li class="divider"></li>
+                <li><a href="/isharev1/ikomuniti/gghadmin/users/logout"><i class='fa fa-power-off'></i> Log Out</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </nav>
+      <div id="page-wrapper">  <div class="row">
+    <div class="col-lg-8"> 
+    	<div class="panel panel-primary">
+           <div class="panel-heading">iPrihatin</div>
+   			<div class="panel-body">
+   			
+			      <a class="btn btn-primary" href="/isharev1/ikomuniti/gghadmin/iprihatin/index">iPrihatin</a>				  <a class="btn btn-success" href="/isharev1/ikomuniti/gghadmin/iprihatin/add">New Post</a>				  				  
+				  
+				    <div class="jun_view_iprihatin"> 
+				    					    
+				        <h4><a href="/isharev1/ikomuniti/gghadmin/iprihatin/view/17-3-2014-seorang-ikomuniti-telah-kembali-ke-rahmatullah-2014-05-21-01-56-16">17/3/2014 - Seorang iKomuniti telah kembali ke rahmatullah</a></h4>
+				        						    <img class="img-responsive imall_image" src="/isharev1/ikomuniti/uploads/iprihatins/20140521015447-3477479210.jpg" /> 
+												   
+				        <p>Tarikh 16 Mar 05:56 PM</p><p>Jumlah Sumbangan <b>RM0.00</b></p>
+				        <a class="btn btn-danger" href="/isharev1/ikomuniti/gghadmin/iprihatin/edit/17-3-2014-seorang-ikomuniti-telah-kembali-ke-rahmatullah-2014-05-21-01-56-16">Edit This Post</a>				        <pre>Assalamualaikum... Salah seorang iKomuniti kita dari Sungai Petani iaitu saudara Mahdzir Bin Ahmad (username that21) telah kembali ke rahmatullah pada pagi tadi (17/03/2014). &#13;&#10;Kami di fahamkan, Allahyarham Mahdzir Bin Ahmad mengalami serangan jantung dan &#13;&#10;menghembuskan nafas terakhir lebih kurang jam 4 pagi. Sama-sama kita iringi pemergian &#13;&#10;beliau dengan surah Al-Fatihah dan moga beliau ditempatkan di kalangan orang-orang yan&#13;&#10;g beriman. Bagi sesiapa yang ingin menghulurkan sumbangan iklas kepada keluarga Allahyarham, &#13;&#10;boleh berbuat demikian melalui tabung iPrihatin. Info daripada iReseller Amirul Aman, Sg Petani, Kedah.&#13;&#10;</pre>
+					         
+					            </div> 
+        </div> 
+    </div>
+	</div>
+	<div class="col-lg-4"> 
+		 <div class="bs-example wgreen">
+          <div class="list-group">
+            <a href="/ishare/isharephal/iprihatin/index" class="list-group-item active">
+              <i class="glyphicon glyphicon-info-sign"></i>  iPrihatin
+            </a>
+                        <a href="/ishare/isharephal/gghadmin/iprihatin/view/program-1-al-quran-1-pelajar-tahfiz-2014-05-21-01-49-27" class="list-group-item"><h4>PROGRAM 1 AL-QURAN 1 PELAJAR TAHFIZ</h4> 
+			<p class="list-group-item-text">Assalamualaikum semua pang5 yang di rahmati Allah.&#13;&#10;Untuk makl...</p>
+			</a> 
+                        <a href="/ishare/isharephal/gghadmin/iprihatin/view/sumbangan-ikhlas-pn-munawarah-binti-abdullah-2014-05-21-01-46-23" class="list-group-item"><h4>Sumbangan Ikhlas - Pn Munawarah binti Abdullah</h4> 
+			<p class="list-group-item-text">Assalamualaikum Pang5 sekalian...&#13;&#10;Dukacita dimaklumkan Pang5 ...</p>
+			</a> 
+                        <a href="/ishare/isharephal/gghadmin/iprihatin/view/17-3-2014-seorang-ikomuniti-telah-kembali-ke-rahmatullah-2014-05-21-01-56-16" class="list-group-item"><h4>17/3/2014 - Seorang iKomuniti telah kembali ke rahmatullah</h4> 
+			<p class="list-group-item-text">Assalamualaikum... Salah seorang iKomuniti kita dari Sungai Petani iai...</p>
+			</a> 
+                        <a href="/ishare/isharephal/gghadmin/iprihatin/view/maahad-tahfiz-muhammadiah-bukit-rangin-musnah-dijilat-api-2014-05-14-20-29-37" class="list-group-item"><h4>Maahad Tahfiz Muhammadiah Bukit Rangin Musnah Dijilat Api</h4> 
+			<p class="list-group-item-text">Maahad Tahfiz Muhammadiah Bukit Rangin, Kuantan Pahang Musnah Dijilat ...</p>
+			</a> 
+                        <a href="/ishare/isharephal/gghadmin/iprihatin/view/darul-tahfiz-ummul-qura-jalan-kebun-2014-05-14-20-16-35" class="list-group-item"><h4>Darul Tahfiz Ummul Qura Jalan Kebun</h4> 
+			<p class="list-group-item-text">Darul Tahfiz Ummul Qura Jalan Kebun asalnya dikenali sebagai Ma&#39;ah...</p>
+			</a> 
+                        <a href="/ishare/isharephal/gghadmin/iprihatin/index" class="list-group-item"> View All 
+                  <i class="fa fa-arrow-circle-right"></i> 
+          </a>
+          </div>
+        </div> 
+	</div> 
+</div>
+</div><!-- /#page-wrapper -->
+</div><!-- /#wrapper -->     <!-- JavaScript -->
+	
+    
+    <script src="/isharev1/ikomuniti/js/thumbimage.js" type="text/javascript"></script>
+	<script src="/isharev1/ikomuniti/js/jquery-ui.js" type="text/javascript"></script>
+  
+    <script src="/isharev1/ikomuniti/js/bootstrap.min.js" type="text/javascript"></script>
+    <!-- Page Specific Plugins -->
+    
+    <script src="/isharev1/ikomuniti/js/raphael-min.js" type="text/javascript"></script>
+     
+  </body>
+</html>

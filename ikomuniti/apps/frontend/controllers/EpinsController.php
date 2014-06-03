@@ -65,9 +65,9 @@ class EpinsController extends ControllerBase {
             // Check valid number
             if(!is_numeric($count)) { 
                 // Check epin balance
-				$this->flash->error('Jumlah ePin tidak sah, Sila masukan nombor sahaja'); 	 
+				$this->flash->error('Not valid total iPin. Please enter number only'); 	 
 			} elseif(strlen($username) < 5 && strlen($username) > 18) {
-				$this->flash->error('Username penerima tidak sah');
+				$this->flash->error('Invalid username');
 			} elseif(!ctype_alnum($username)) {
 				$this->flash->error('Please enter valid username');
 			} elseif($count > count($this->select_epin($auth['id']))) {
@@ -82,7 +82,7 @@ class EpinsController extends ControllerBase {
 			    $this->view->hide = 1;
 			    
 			    $users = Users::findFirst("username='$username'");
-				$this->flash->success('<h3>Adakah anda pasti?</h3>');
+				$this->flash->success('<h3>Are you sure?</h3>');
 				     
 				    echo '<form action="" method="get">';
 				    echo '<input type="hidden" name="csrset" value="'.$_SESSION['csrf'].'">';
@@ -91,12 +91,12 @@ class EpinsController extends ControllerBase {
 				    echo '<input type="hidden" name="status" value="'.$users->id.'">';
 					echo '<input type="hidden" name="username" value="'.$users->username.'">';
 				    echo '<input type="hidden" name="nt" value="'.$count.'">';
-					echo '<p class="lead">Username Penerima:<b>'.$users->username.'</b></p>';
-					echo '<p class="lead">Nama Penerima: <b>'.$users->name.'</b></p>';
-					echo '<p class="lead">No Pendaftaran: <b>'.$users->reg_number.'</b></p>';
-					echo '<p class="lead">No Telefon: <b>'.$users->telephone.'</b></p>';
-				    echo '<input type="submit" name="proceed" value="Batal" class="btn btn-danger">&nbsp;
-					<input type="submit" name="proceed" value="Teruskan" class="btn btn-success">';
+					echo '<p class="lead">Recipient Username:<b>'.$users->username.'</b></p>';
+					echo '<p class="lead">Recipient Name: <b>'.$users->name.'</b></p>';
+					echo '<p class="lead">Registration Number: <b>'.$users->reg_number.'</b></p>';
+					echo '<p class="lead">Phone: <b>'.$users->telephone.'</b></p>';
+				    echo '<input type="submit" name="proceed" value="Cancel" class="btn btn-danger">&nbsp;
+					<input type="submit" name="proceed" value="Proceed" class="btn btn-success">';
 					echo '</form>';
 			
 			} 
@@ -107,9 +107,9 @@ class EpinsController extends ControllerBase {
 	    
 	     // Confirmation transfer epin
 		if(isset($_GET['ref']) && isset($_GET['ntsv']) && isset($_GET['status']) && isset($_GET['proceed']) && isset($_GET['nt'])) {
-			if($_GET['proceed'] == 'Batal') {
+			if($_GET['proceed'] == 'Cancel') {
 				$this->response->redirect('epins/transfer');
-			} elseif($_GET['proceed'] == 'Teruskan' && is_numeric($_GET['status']) && is_numeric($_GET['nt']) && ctype_alnum($_GET['ref'])) {
+			} elseif($_GET['proceed'] == 'Proceed' && is_numeric($_GET['status']) && is_numeric($_GET['nt']) && ctype_alnum($_GET['ref'])) {
 				
 				// Prevent REFRESH PAGE
 				$token = $_GET['ref'];

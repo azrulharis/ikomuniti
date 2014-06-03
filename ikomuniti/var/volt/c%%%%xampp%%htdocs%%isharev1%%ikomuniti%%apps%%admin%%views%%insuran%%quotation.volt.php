@@ -43,9 +43,9 @@
       
       <div class="bs-example">
 		  <ul class="breadcrumb" style="margin-bottom: 5px;">
-	        <li><?php echo $this->tag->linkTo(array('gghadmin/insuran/manage', 'iManagement')); ?></li>
-	        <li><?php echo $this->tag->linkTo(array('gghadmin/insuran/kiv', 'Kiv')); ?></li>
+	        <li><?php echo $this->tag->linkTo(array('gghadmin/insuran/manage', 'iManagement')); ?></li> 
 	      <li class="active">Updated <b><?php echo $count_updated; ?></b></li>
+		  <li><?php echo $this->tag->linkTo(array('gghadmin/insuran/kiv', 'Kiv')); ?></li>
 	      <li><?php echo $this->tag->linkTo(array('gghadmin/insuran/problems', 'Problems')); ?></li>
 	      <li><?php echo $this->tag->linkTo(array('gghadmin/insuran/done', 'Done')); ?></li>
 	      </ul>
@@ -69,7 +69,7 @@
 			<td><p><?php echo $post->year; ?></p></td>
 			<td><p><?php echo $this->tag->linkTo(array('gghadmin/insuran/update/' . $post->id, 'Update', 'class' => 'btn btn-primary')); ?>&nbsp;
 			<?php echo $this->tag->linkTo(array('gghadmin/insuran/renew/' . $post->id, 'Renew', 'class' => 'btn btn-success')); ?>&nbsp;
-			<?php echo $this->tag->linkTo(array('gghadmin/insuran/addtokiv?user_id=' . $post->id, 'Problem', 'class' => 'btn btn-danger', 'onclick' => 'return confirm(\'Adakah anda pasti untuk memindahkan ' . $post->username . ' ke bahagian Problem?\')')); ?></p></td>
+			</p></td>
 		</tr>
 		<?php } ?>
 		</table>

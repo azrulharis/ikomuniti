@@ -41,16 +41,22 @@
               </ul>
             </li>
             
-			<li><a href="{{path}}epins/index"><i class="fa fa-key"></i> iPin</a></li>
-			
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-unlock-alt"></i> iPin <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+			    <li><a href="{{path}}epins/index"><i class="fa fa-key"></i> iPin</a></li>
+			    <li><a href="{{path}}isahabatpins/index"><i class="fa fa-key"></i> iSahabat iPin</a></li>
+			  </ul>
+            </li>
 			
             <li><a href="{{path}}itakaful/index"><i class="fa fa-umbrella"></i> iTakaful</a></li>
             
             
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-users"></i> iKomuniti <b class="caret"></b></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> iKomuniti <b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li><a href="{{path}}activations/index"><i class="fa fa-plus-square"></i> Activate iKomuniti</a></li>
+                <li><a href="{{path}}isahabatactivations/index"><i class="fa fa-plus-square"></i> Activate iSahabat</a></li>
                 <li><a href="{{path}}tree/index"><i class="fa fa-sitemap"></i> iTree</a></li> 
                 <li><a href="http://ishare.com.my/pages/register" target="_blank"><i class="fa fa-pencil-square"></i> iRegister</a></li> 
               </ul>

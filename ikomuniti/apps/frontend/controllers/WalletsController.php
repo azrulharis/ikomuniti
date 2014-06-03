@@ -188,7 +188,7 @@ class WalletsController extends ControllerBase {
 		parent::pageProtect(); 
 		$this->flashSession->output();
 		$auth = $this->session->get('jun_user_auth');
-		$this->role($auth['role'], array(1, 2, 3, 4, 5, 6, 7, 8));
+		$this->role($auth['role'], array(4, 5, 6, 7, 8, 9));
 		$this->view->setVar('navigations', $this->get_user($auth['id'])); 
 		if($this->request->isPost()) {
 			if(strlen($this->request->getPost('recipient_username')) < 5 || strlen($this->request->getPost('recipient_username')) > 18) {
@@ -503,9 +503,9 @@ class WalletsController extends ControllerBase {
 		$phql = "SELECT
 		    id, username, name, telephone, email, reg_number 
 			FROM JunMy\Models\Users 
-			WHERE username = :username:
+			WHERE username = '$username' AND role > '3'
 			LIMIT 1";
-		$rows = $this->modelsManager->executeQuery($phql, array('username' => $username));	
+		$rows = $this->modelsManager->executeQuery($phql);	
 		return $rows;
 	}
 
@@ -514,7 +514,7 @@ class WalletsController extends ControllerBase {
 	    $sms_username = "ishare.com.my";
         $sms_password = "rahsiajun.228";
 		$sms_dstno = $user->telephone;
-        $sms_msg = 'Your request transfer to '.$username.' TAC Id: '.$tac.'. Please call 0389222277 if you are not make a transfer. Tq from iShare';
+        $sms_msg = 'iPoint transfer to '.$username.' TAC Id: '.$tac.'. Not made any transfer? Call 03 8922 2277. TQ';
 
         $sms_type = 1;
         $sms_senderid = 1;

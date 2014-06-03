@@ -50,6 +50,48 @@ $router->add('/epins/track', array(
 	'action' => 'track'
 ));
 
+$router->add('/epins/transfer', array(
+	'module' => 'frontend',
+	'namespace' => 'JunMy\Frontend\Controllers\\',
+	'controller' => 'epins',
+	'action' => 'transfer',
+));
+
+$router->add('/epins/confirmation', array(
+	'module' => 'frontend',
+	'namespace' => 'JunMy\Frontend\Controllers\\',
+	'controller' => 'epins',
+	'action' => 'confirmation',
+));
+
+$router->add('/isahabatpins/index', array(
+	'module' => 'frontend',
+	'namespace' => 'JunMy\Frontend\Controllers\\',
+	'controller' => 'isahabatpins',
+	'action' => 'index'
+));
+
+$router->add('/isahabatpins/track', array(
+	'module' => 'frontend',
+	'namespace' => 'JunMy\Frontend\Controllers\\',
+	'controller' => 'isahabatpins',
+	'action' => 'track'
+));
+
+$router->add('/isahabatpins/transfer', array(
+	'module' => 'frontend',
+	'namespace' => 'JunMy\Frontend\Controllers\\',
+	'controller' => 'isahabatpins',
+	'action' => 'transfer',
+));
+
+$router->add('/isahabatpins/confirmation', array(
+	'module' => 'frontend',
+	'namespace' => 'JunMy\Frontend\Controllers\\',
+	'controller' => 'isahabatpins',
+	'action' => 'confirmation',
+));
+
 $router->add('/index', array(
 	'module' => 'frontend',
 	'namespace' => 'JunMy\Frontend\Controllers\\',
@@ -248,6 +290,36 @@ $router->add('/activations/profile/{slug}', array(
 	'action' => 'profile',
 ));
 
+/* Isahabat */
+
+$router->add('/isahabatactivations/index', array(
+	'module' => 'frontend',
+	'namespace' => 'JunMy\Frontend\Controllers\\',
+	'controller' => 'isahabatactivations',
+	'action' => 'index',
+));
+
+$router->add('/isahabatactivations/all', array(
+	'module' => 'frontend',
+	'namespace' => 'JunMy\Frontend\Controllers\\',
+	'controller' => 'isahabatactivations',
+	'action' => 'all',
+));
+
+$router->add('/isahabatactivations/problems', array(
+	'module' => 'frontend',
+	'namespace' => 'JunMy\Frontend\Controllers\\',
+	'controller' => 'isahabatactivations',
+	'action' => 'problems',
+));
+
+$router->add('/isahabatactivations/profile/{slug}', array(
+	'module' => 'frontend',
+	'namespace' => 'JunMy\Frontend\Controllers\\',
+	'controller' => 'isahabatactivations',
+	'action' => 'profile',
+));
+
 $router->add('/messages/index', array(
 	'module' => 'frontend',
 	'namespace' => 'JunMy\Frontend\Controllers\\',
@@ -372,20 +444,6 @@ $router->add('/imall/edit/{slug}', array(
 	'namespace' => 'JunMy\Frontend\Controllers\\',
 	'controller' => 'imall',
 	'action' => 'edit',
-));
-
-$router->add('/epins/transfer', array(
-	'module' => 'frontend',
-	'namespace' => 'JunMy\Frontend\Controllers\\',
-	'controller' => 'epins',
-	'action' => 'transfer',
-));
-
-$router->add('/epins/confirmation', array(
-	'module' => 'frontend',
-	'namespace' => 'JunMy\Frontend\Controllers\\',
-	'controller' => 'epins',
-	'action' => 'confirmation',
 ));
 
 $router->add('/graph/username', array(
@@ -856,13 +914,43 @@ $router->add('/gghadmin/epins/viewuseripin', array(
 	'controller' => 'epins',
 	'action' => 'viewuseripin',
 ));
+ 
 
-$router->add('/gghadmin/epins/track', array(
+$router->add('/gghadmin/isahabatpins/index', array(
 	'module' => 'admin',
 	'namespace' => 'JunMy\Admin\Controllers\\',
-	'controller' => 'epins',
+	'controller' => 'isahabatpins',
+	'action' => 'index',
+));
+
+$router->add('/gghadmin/isahabatpins/add', array(
+	'module' => 'admin',
+	'namespace' => 'JunMy\Admin\Controllers\\',
+	'controller' => 'isahabatpins',
+	'action' => 'add',
+));
+
+$router->add('/gghadmin/isahabatpins/transfer', array(
+	'module' => 'admin',
+	'namespace' => 'JunMy\Admin\Controllers\\',
+	'controller' => 'isahabatpins',
+	'action' => 'transfer',
+));
+
+$router->add('/gghadmin/isahabatpins/track', array(
+	'module' => 'admin',
+	'namespace' => 'JunMy\Admin\Controllers\\',
+	'controller' => 'isahabatpins',
 	'action' => 'track',
 ));
+
+$router->add('/gghadmin/isahabatpins/viewuseripin', array(
+	'module' => 'admin',
+	'namespace' => 'JunMy\Admin\Controllers\\',
+	'controller' => 'isahabatpins',
+	'action' => 'viewuseripin',
+));
+ 
 
 $router->add('/gghadmin/reports/index', array(
 	'module' => 'admin',

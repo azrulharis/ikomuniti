@@ -42,9 +42,9 @@
       
       <div class="bs-example">
 		  <ul class="breadcrumb" style="margin-bottom: 5px;">
-	        <li><?php echo $this->tag->linkTo(array('gghadmin/insuran/manage', 'iManagement')); ?></li>
-	        <li class="active">Kiv <b><?php echo $count_user_kiv; ?></b></li>
+	        <li><?php echo $this->tag->linkTo(array('gghadmin/insuran/manage', 'iManagement')); ?></li> 
 	      <li><?php echo $this->tag->linkTo(array('gghadmin/insuran/quotation', 'Updated')); ?></li>
+		  <li class="active">Kiv <b><?php echo $count_user_kiv; ?></b></li>
 	      <li>Problems</li>
 	      <li><?php echo $this->tag->linkTo(array('gghadmin/insuran/done', 'Done')); ?></li>
 	      </ul>

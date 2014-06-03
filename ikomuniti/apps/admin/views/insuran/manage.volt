@@ -42,9 +42,9 @@
       
       <div class="bs-example">
 		  <ul class="breadcrumb" style="margin-bottom: 5px;">
-	        <li class="active">iManagement <b>{{count_imanagement}}</b></li>
-	        <li>{{ link_to("gghadmin/insuran/kiv", "Kiv") }}</li>
+	        <li class="active">iManagement <b>{{count_imanagement}}</b></li> 
 	      <li>{{ link_to("gghadmin/insuran/quotation", "Updated") }}</li>
+		  <li>{{ link_to("gghadmin/insuran/kiv", "Kiv") }}</li>
 	      <li>{{ link_to("gghadmin/insuran/problems", "Problems") }}</li>
 	      <li>{{ link_to("gghadmin/insuran/done", "Done") }}</li>
 	      </ul>
@@ -72,7 +72,7 @@
 			 
 			<td><p>{{post.year}}</p></td>
 			<td><p>{{ link_to("gghadmin/insuran/update/" ~ post.id, "Update", "class": "btn btn-primary") }} &nbsp; 
-			{{ link_to("gghadmin/insuran/addtokiv?user_id=" ~ post.id, "Problem", "class": "btn btn-danger", "onclick": "return confirm('Adakah anda pasti untuk memindahkan "~post.username~" ke bahagian Problem?')") }}</p></td>
+			</p></td>
 		</tr>
 		{% endfor %}
 		</table>

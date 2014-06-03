@@ -79,7 +79,8 @@
 									<li class="list-group-item"><span class="glyphicon glyphicon-ok"></span></li> 
 									<li class="list-group-item"><span class="glyphicon glyphicon-remove x"></span></li>
 									<li class="list-group-item"><span class="glyphicon glyphicon-ok"></span></li>     
-									<li class="list-group-item"><span>Free</span></li>                       
+									<li class="list-group-item"><span>RM10</span></li>      
+									<li class="list-group-item"><span class="pricely-button"><a href="#" class="btn btn-primary">Upgrade</a></span></li>                 
 								</ul>
 							</li>
 							
@@ -111,7 +112,7 @@
 									<li class="list-group-item"><span class="glyphicon glyphicon-ok"></span></li>
 									<li class="list-group-item"><span class="glyphicon glyphicon-ok"></span></li>
 									<li class="list-group-item"><span>RM100</span></li>
-									<li class="list-group-item"><span class="pricely-button"><a href="#" class="btn btn-primary">Upgrade</a></span></li>
+									
 								</ul>
 							</li>
 							

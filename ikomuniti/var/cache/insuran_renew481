@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="http://ishare.com.my/ico/favicon.ico">
+    <title>iShare.com.my | iTakaful</title>
+    <link rel="stylesheet" href="/isharev1/ikomuniti/css/bootstrap.css" type="text/css" />
+ 
+    <link rel="stylesheet" href="/isharev1/ikomuniti/css/sb-admin.css" type="text/css" />
+    <link rel="stylesheet" href="/isharev1/ikomuniti/font-awesome/css/font-awesome.min.css" type="text/css" />
+	<link rel="stylesheet" href="/isharev1/ikomuniti/css/jquery-ui.css" type="text/css" />
+  
+	<script src="/isharev1/ikomuniti/js/jquery-1.10.2.js" type="text/javascript"></script>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	
+	  
+	<script>
+		$(function() {
+		$( "#datepicker_from" ).datepicker({changeMonth: true,
+      changeYear: true, dateFormat: "yy-mm-dd", stepMonths: 12});
+		});
+		$(function() {
+		$( "#datepicker_to" ).datepicker({changeMonth: true,
+      changeYear: true, dateFormat: "yy-mm-dd", stepMonths: 12});
+		});
+	</script>
+  </head>
+  <body>
+    
+     <script>
+  $(function() {
+	$( "#due_date" ).datepicker({
+	 changeMonth: true,
+     changeYear: true, 
+	 dateFormat: "yy-mm-dd", 
+	 stepMonths: 12,
+	 minDate: new Date(2014, 11 - 1, 6),
+     yearRange: '2014:2017'
+	 });
+	});  
+</script>
+<div id="wrapper">
+      <!-- Sidebar -->
+      <nav class="navbar navbar-default navbar-fixed-top" role="navigation"> 
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/isharev1/ikomuniti/gghadmin/index"><img src="/isharev1/ikomuniti/images/logo.png" /></a>        </div>
+
+        <!-- class="active" Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse jun_line">
+          <ul class="nav navbar-nav side-nav">
+            <li><a href="/isharev1/ikomuniti/gghadmin/index"><i class="fa fa-home"></i> iDashboard</a></li>
+            <li><a href="/isharev1/ikomuniti/gghadmin/insuran/manage"><i class="fa fa-umbrella"></i> iTakaful</a></li>
+            
+            
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-sitemap"></i> iKomuniti <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/isharev1/ikomuniti/gghadmin/activations/index"><i class="fa fa-plus-circle"></i> Activate iKomuniti</a></li>
+                <li><a href="/isharev1/ikomuniti/gghadmin/tree/index"><i class="fa fa-sitemap"></i> iTree</a></li> 
+                <li><a href="/isharev1/ikomuniti/gghadmin/users/view"><i class="fa fa-users"></i> iKomuniti</a></li> 
+                <li><a href="/isharev1/ikomuniti/gghadmin/isahabat/index"><i class="fa fa-user"></i> iSahabat</a></li> 
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-briefcase"></i> iAccount <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+            	<li><a href="/isharev1/ikomuniti/gghadmin/wallets/index"><i class="fa fa-money"></i> iPoint</a></li>
+            	<li><a href="/isharev1/ikomuniti/gghadmin/epins/index"><i class="fa fa-unlock"></i> iPin</a></li>
+            	<li><a href="/isharev1/ikomuniti/gghadmin/isahabatpins/index"><i class="fa fa-unlock"></i> iSahabat iPin</a></li>
+            	<li><a href="/isharev1/ikomuniti/gghadmin/withdrawals/index"><i class="fa fa-random"></i> Withdrawals</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bookmark-o"></i>  iAds <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/isharev1/ikomuniti/gghadmin/imall/index"><i class="fa fa-shopping-cart"></i> iMall</a></li>
+                <li><a href="/isharev1/ikomuniti/gghadmin/ioffer/index"><i class="fa fa-tag"></i> iOffer</a></li>
+                <li><a href="/isharev1/ikomuniti/gghadmin/ipartner/index"><i class="fa fa-tags"></i> iPartner</a></li>
+                <li><a href="/isharev1/ikomuniti/gghadmin/imerchant/index"><i class="fa fa-tags"></i> iMerchant</a></li>
+                <li><a href="/isharev1/ikomuniti/gghadmin/iprihatin/index"><i class="fa fa-wheelchair"></i> iPrihatin</a></li>
+                <li><a href="/isharev1/ikomuniti/gghadmin/inews/index"><i class="fa fa-bullhorn"></i> iNews</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-book"></i> iReport <b class="caret"></b></a>
+              <ul class="dropdown-menu"> 
+                <li><a href="/isharev1/ikomuniti/gghadmin/reports/index"><i class="fa fa-print"></i> Reports</a></li> 
+                <li><a href="/isharev1/ikomuniti/gghadmin/cashflow/index"><i class="fa fa-bar-chart-o"></i> Cash Flow</a></li>
+                <li><a href="/isharev1/ikomuniti/gghadmin/statistic/index"><i class="fa fa-signal"></i> Statistic</a></li>
+              </ul>
+            </li>
+            
+            <li><a href="/isharev1/ikomuniti/gghadmin/messages/index"><i class="fa fa-comments-o"></i> iMail</a></li> 
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-gears"></i> iSetting <b class="caret"></b></a>
+              <ul class="dropdown-menu"> 
+                <li><a href="/isharev1/ikomuniti/gghadmin/settings/index"><i class="fa fa-pencil-square-o"></i> Account Information</a></li>
+                <li><a href="/isharev1/ikomuniti/gghadmin/settings/password"><i class="fa fa-pencil-square-o"></i> Password</a></li>
+              </ul>
+            </li>
+            <li><a href="/isharev1/ikomuniti/gghadmin/event/index"><i class="fa fa-trophy"></i> Achievement</a></li>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right navbar-user">
+            <li class="dropdown messages-dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> Messages  <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li class="dropdown-header"></li>
+                
+                			    
+                <li><a href="/isharev1/ikomuniti/gghadmin/messages/index">View iMail <span class='badge'>0</span></a></li>   
+              </ul>
+            </li>
+            <li class="dropdown alerts-dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> Notification  <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                              <li class="divider"></li>
+                <li><a href="/isharev1/ikomuniti/gghadmin/notifications/index">View All</a></li>
+              </ul>
+            </li>
+            
+            <li class="dropdown user-dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> azrulharis <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#"><i class="fa fa-user"></i> Profile</a></li> 
+                <li class="divider"></li>
+                <li><a href="/isharev1/ikomuniti/gghadmin/users/logout"><i class='fa fa-power-off'></i> Log Out</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </nav>
+      <div id="page-wrapper">   
+<div class="row">
+  <div class="col-lg-6">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <h3 class="panel-title">Renew hafiza Insurance</h3>
+	  </div>
+	  <div class="panel-body">  
+	   
+	  
+       
+		
+        			<form method="post" action="/isharev1/ikomuniti/gghadmin/insuran/renew/2437">			    
+				  <div class="form-group"> 
+				    <label>Insurance Premium RM</label> <input size="20" value="1031.62" class="form-control" name="insuran_amount" id="insuran_amount" type="text" />				  </div>
+				  <div class="form-group"> 
+				
+				    <label>Road Tax RM</label> <input size="20" value="90.00" class="form-control" name="road_tax" id="road_tax" type="text" />				</div>
+				  <div class="form-group"> 
+				
+				
+				    <label>Sum Insured RM</label> <input size="20" value="46000" class="form-control" name="cover" id="cover" type="text" />				</div>
+				  <div class="form-group"> 
+				
+				     <label>Service Charge RM</label> <input size="20" value="20.00" class="form-control" name="service_charge" id="service_charge" type="text" />				</div>
+				  <div class="form-group"> 
+				
+				     <label>Total RM</label> <input size="20" value="1141.62" class="form-control" name="total" id="total" type="text" />				     <input type="hidden" name="reg_no" value="WTX 7096">
+				     <input type="hidden" name="telephone" value="0122865228">
+				</div>
+				  <div class="form-group"> 
+				     <label>iWallet Balance RM</label> 0.00<input size="20" value="0.00" name="wallet" id="wallet" type="hidden" />				</div>
+				  <div class="form-group"> 
+				
+				     <label>Amount To Pay RM</label> 1141.62<input size="20" value="1141.62" name="amount_to_pay" id="amount_to_pay" type="hidden" /> 
+				</div>
+				<div class="form-group"> 
+				
+				     <label>Next Due Date <span style="color: #FF0000;">IMPORTANT! Must be + 1 year</span></label> <input id="due_date" value="2014-05-26" class="form-control" name="next_renewal" type="text" />				</div>
+				<div class="form-group"> 
+				
+				     <label>Tracking Code</label> <input value="0" class="form-control" name="tracking_code" id="tracking_code" type="text" />				</div>
+				  <div class="form-group"> 
+				
+				     <label>Add iWallet RM</label> <input size="20" placeholder="1141.62" class="form-control" name="add_iwallet" id="add_iwallet" value="" type="text" /> 
+				<input value="WTX 7096" name="reg_no" id="reg_no" type="hidden" />				<input value="2437" name="user_id" id="user_id" type="hidden" />				</div>
+				   
+				
+				
+				<div class="form-group">
+			     
+				    <input value="Renew" class="btn btn-success" onclick="return confirm(&#x22;Adakah anda pasti untuk memperbaharui Takaful dan Cukai Jalan hafiza? Sila semak dengan teliti sebelum menekan butang OK.&#x22;)" type="submit" />				</div>
+		    </form>
+		      
+      </div>        
+      </div>
+    </div>
+    
+<div class="col-lg-6">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <h3 class="panel-title">Roadtax Calculator</h3>
+	  </div>
+	  <div class="panel-body">  
+	   <div style="width: 100%; height: 386px; border: 1px solid #ccc; overflow: hidden; z-index: 999; padding-bottom: 5px;">
+	   <iframe style="width: 100%; height: 680px; border: none; margin-top: -210px;" scrolling="no" id="extFrame" src="http://www.einsuran.com/roadtax.aspx"></iframe>
+       </div>
+      
+      </div>        
+      </div>
+    </div>    
+    
+    
+    
+</div><!-- /.row -->
+      
+
+<div class="row">
+<div class="col-lg-12">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+	  <h3 class="panel-title">hafiza Profile</h3>
+	</div>
+	<div class="panel-body">   
+          
+      <div class="bs-example user-profile">
+            <ul class="list-group">
+         
+        
+	       <h4><b>Personal Information</b></h4> 
+		   
+		     <li class="list-group-item">Sponsor: <span class="space-left col-xs-12"><b>alizaento</b></span></li>
+		      <li class="list-group-item">Username: <span class="space-left col-xs-12"><b>hafiza</b></span></li>
+		      <li class="list-group-item">Full Name: <span class="space-left col-xs-12 capitalize"><b>NORRAFIZAH BINTI JALALUDDIN</b></span></li>
+		      <li class="list-group-item">NRIC: <span class="space-left col-xs-12"><b>750919-10-5418</b></span></li>
+		      <li class="list-group-item">Occupation: <span class="space-left col-xs-12 capitalize"><b></b></span></li>
+		      <li class="list-group-item">Next Of Kin: <span class="space-left col-xs-12 capitalize"><b>ZAILI B BADROL SALEH</b></span></li>
+		      <li class="list-group-item">Kin Phone: <span class="space-left col-xs-12"><b>162684999</b></span></li>
+		      <li class="list-group-item">Relation: <span class="space-left col-xs-12 capitalize"><b>HUSBAND</b></span></li>
+		      <li class="list-group-item">Kin NRIC: <span class="space-left col-xs-12"><b>710507</b></span></li> 
+		      <li class="list-group-item">Address: <span class="space-left col-xs-12 capitalize"><b>NO 19, JALAN BAWAL 17/3, SEKSYEN 17, 40200 SHAH ALAM, SELANGOR</b></span></li>
+		      <li class="list-group-item">Address Line 2: <span class="space-left col-xs-12 capitalize"><b></b></span></li>
+		      
+		      <li class="list-group-item">Postcode: <span class="space-left col-xs-12"><b>40200</b></span></li>
+		      <li class="list-group-item">City: <span class="space-left col-xs-12 capitalize"><b></b></span></li>
+		      <li class="list-group-item">Region: <span class="space-left col-xs-12"><b></b></span></li>
+		      <li class="list-group-item">Phone: <span class="space-left col-xs-12"><b>0122865228</b></span></li>
+		      <li class="list-group-item">Email: <span class="space-left col-xs-12"><b>hafiza1909@gmail.com.my</b></span></li>
+		      <li class="list-group-item">Join Date: <span class="space-left col-xs-12"><b>2014-05-02 13:41:39</b></span></li>
+		   </ul>
+	      
+  </div>
+     
+      <div class="bs-example user-profile">
+            <ul class="list-group">
+	   <h4><b>Vehicle Information</b></h4> 
+	      <li class="list-group-item">Previous Insurance: <span class="space-left col-xs-12 capitalize"><b>MAYBANK ISLAMIC</li>
+	      <li class="list-group-item">Cover Note: <span class="space-left col-xs-12"><b></b></span></li>
+	      <li class="list-group-item">NCD: <span class="space-left col-xs-12"><b>55</b></span></li>
+	      <li class="list-group-item">Road Tax: <span class="space-left col-xs-12"><b>90.00</b></span></li>
+	      <li class="list-group-item">Due Date: <span class="space-left col-xs-12"><b>2014-05-26</b></span></li>
+	      
+	      <li class="list-group-item">Reg No: <span class="space-left col-xs-12"><b>WTX 7096</b></span></li>
+	      <li class="list-group-item">Owner Name: <span class="space-left col-xs-12 capitalize"><b>A 9355076</b></span></li>
+	      <li class="list-group-item">Owner NRIC: <span class="space-left col-xs-12"><b>710507</b></span></li>
+	      <li class="list-group-item">Owner DOB: <span class="space-left col-xs-12"><b>0000-00-00</b></span></li>
+	      <li class="list-group-item">Model: <span class="space-left col-xs-12 capitalize"><b>PERODUA ALZA 1500 EZI (AUTO)</b></span></li>
+	      <li class="list-group-item">Year Make: <span class="space-left col-xs-12"><b>2010</b></span></li>
+	      <li class="list-group-item">Cubic Capacity: <span class="space-left col-xs-12"><b>1495</b></span></li>
+	      <li class="list-group-item">Engine No: <span class="space-left col-xs-12"><b>G33A10C</b></span></li>
+	      <li class="list-group-item">Chasis No: <span class="space-left col-xs-12"><b>PM2M502G002023169</b></span></li>
+	      
+	      <li class="list-group-item">Grant Serial: <span class="space-left col-xs-12"><b></b></span></li>
+	    </ul>  
+           
+ 
+  </div>
+</div> 
+      </div>
+	</div>
+  </div>
+</div> 
+</div><!-- /#page-wrapper -->
+</div><!-- /#wrapper -->     <!-- JavaScript -->
+	
+    
+    <script src="/isharev1/ikomuniti/js/thumbimage.js" type="text/javascript"></script>
+	<script src="/isharev1/ikomuniti/js/jquery-ui.js" type="text/javascript"></script>
+  
+    <script src="/isharev1/ikomuniti/js/bootstrap.min.js" type="text/javascript"></script>
+    <!-- Page Specific Plugins -->
+    
+    <script src="/isharev1/ikomuniti/js/raphael-min.js" type="text/javascript"></script>
+     
+  </body>
+</html>

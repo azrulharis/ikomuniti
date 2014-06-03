@@ -17,8 +17,7 @@ class Module
 			'JunMy\Components\Pagination' => __DIR__.'/../../common/library/Pagination/',
 			'JunMy\Components\Imageupload' => __DIR__.'/../../common/library/Imageupload/',
 			/*'JunMy\Components\Watermark' => __DIR__.'/../../common/library/Watermark/',*/
-			'JunMy\Components\Thumbnail' => __DIR__.'/../../common/library/Thumbnail/',
-			'JunMy\Components\Recaptcha' => __DIR__.'/../../common/library/Recaptcha/'
+			'JunMy\Components\Thumbnail' => __DIR__.'/../../common/library/Thumbnail/' 
 		));
 
 		$loader->register();

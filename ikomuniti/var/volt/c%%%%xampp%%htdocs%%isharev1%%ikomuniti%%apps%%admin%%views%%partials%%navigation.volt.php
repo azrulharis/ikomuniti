@@ -34,6 +34,7 @@
               <ul class="dropdown-menu">
             	<li><a href="<?php echo $admin_path; ?>wallets/index"><i class="fa fa-money"></i> iPoint</a></li>
             	<li><a href="<?php echo $admin_path; ?>epins/index"><i class="fa fa-unlock"></i> iPin</a></li>
+            	<li><a href="<?php echo $admin_path; ?>isahabatpins/index"><i class="fa fa-unlock"></i> iSahabat iPin</a></li>
             	<li><a href="<?php echo $admin_path; ?>withdrawals/index"><i class="fa fa-random"></i> Withdrawals</a></li>
               </ul>
             </li>

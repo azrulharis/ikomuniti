@@ -47,6 +47,8 @@ class ReportsController extends ControllerBase {
 		if(isset($_GET['username'])) {
 			if(ctype_alnum($_GET['username'])) {
 				$username = $_GET['username']; 
+				$this->view->start = '';
+				$this->view->end = '';
 				$this->view->set_view = 1;
 				$this->view->set_print = 2;
 				$this->view->username = $username;
@@ -401,15 +403,15 @@ class ReportsController extends ControllerBase {
 		$phql = "SELECT  
 					u.id AS uid, u.username_sponsor AS username_sponsor, u.username AS username, u.name AS name, 
 					u.nric_new AS nric_new, u.kin_name AS kin_name, u.relation AS relation, u.nric_new_kin AS nric_new_kin,
-					u.bank_number AS bank_number, u.bank_name AS bank_name, u.address AS address, u.postcode AS postcode, 
-					u.telephone AS telephone, 
+					u.bank_number AS bank_number, u.bank_name AS bank_name, u.address AS address, u.second_address AS second_address, u.city AS city, u.region AS region, u.postcode AS postcode, u.kin_phone AS kin_phone,
+					u.telephone AS telephone, u.occupation AS occupation,
 					u.email AS email, u.previous_insuran_company AS previous_insuran_company,
 					u.cover_note AS cover_note, u.insuran_ncb AS insuran_ncb, u.road_tax AS road_tax, 
 					u.insuran_due_date AS insuran_due_date, u.reg_number AS reg_number, u.owner_name AS owner_name,
 					u.owner_nric AS owner_nric, u.owner_dob AS owner_dob, u.model AS model, u.year_make AS year_make, 
 					u.capacity AS capacity, u.engine_number AS engine_number,
 					u.chasis_number AS chasis_number, u.grant_serial_number AS grant_serial_number, 
-					u.created AS created,
+					u.created AS created_at,
 					e.epin AS epin, e.last_owner AS last_owner  
 		  FROM JunMy\Models\Users AS u
 		  LEFT OUTER JOIN JunMy\Models\Epins AS e ON(e.used_user_id = u.id)  

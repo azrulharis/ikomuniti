@@ -31,7 +31,7 @@ class EpinsController extends ControllerBase {
     
     public function addAction() {
         parent::pageProtect();
-        
+        $this->flashSession->output();
         $auth = $this->session->get('junauth');
         $this->role($auth['role'], array(6, 7));
         $this->view->setVar('navigations', $this->get_user($auth['id'])); 
@@ -49,14 +49,14 @@ class EpinsController extends ControllerBase {
 	                    $epin->user_id = $auth['id'];
 						$epin->epin = $gen_plus; 
 						$epin->created = date('Y-m-d H:i:s'); 
-						$epin->status = 1;
-						$epin->used_username = 0;
+						$epin->status = 1; 
 						$epin->used_user_id = 0;
 						$epin->last_owner = 'system';
 						$epin->token = 0;
 						$epin->save(); 
 					}
-					$this->flash->success('iPin has been saved');
+					$this->flashSession->success('iPin has been generated successfully');
+					return $this->response->redirect('gghadmin/epins/add');
 					//return $this->modelsManager->executeQuery($phql);	
 				} elseif($this->request->getPost('count') == 1) {
 					// Generate E-Pin without comma (,)
@@ -66,13 +66,13 @@ class EpinsController extends ControllerBase {
                     $epin->user_id = $auth['id'];
 					$epin->epin = $gen_plus; 
 					$epin->created = date('Y-m-d H:i:s'); 
-					$epin->status = 1;
-					$epin->used_username = 0;
+					$epin->status = 1; 
 					$epin->used_user_id = 0;
 					$epin->last_owner = 'system';
 					$epin->token = 0;
 					if($epin->save()) {
-						$this->flash->success('iPin has been saved');
+						$this->flashSession->success('iPin has been generated successfully');
+						return $this->response->redirect('gghadmin/epins/add');
 					} else {
 			            foreach ($epin->getMessages() as $message) {
 			                $this->flash->error((string) $message);
@@ -106,6 +106,7 @@ class EpinsController extends ControllerBase {
 	
 	public function transferAction() {
 		parent::pageProtect();
+		$this->flashSession->output();
 		$auth = $this->session->get('junauth');
 		$this->role($auth['role'], array(4, 6, 7));
 		$this->view->hide = 0; 
@@ -175,7 +176,8 @@ class EpinsController extends ControllerBase {
 					$sender_id = $auth['id'];
 					$sender_username = $auth['username'];
 				    if($this->update_epin($receiver_id, $sender_id, $sender_username, $total_epin, $token)) {
-						$this->flash->success('Pemindahan iPin telah berjaya');
+						$this->flashSession->success('iPin has been transfer successfully');
+						return $this->response->redirect('gghadmin/epins/transfer');
 					} else {
 						$this->flash->error('Error pada iPin transfer');
 				    } 	
@@ -215,7 +217,7 @@ class EpinsController extends ControllerBase {
 	*  Select count valid username
 	*/
     private function select_user($username) {
-		$phql = "SELECT * FROM JunMy\Models\Users WHERE username = '$username' LIMIT 1";
+		$phql = "SELECT * FROM JunMy\Models\Users WHERE username = '$username' AND role != '0' LIMIT 1";
 		$rows = $this->modelsManager->executeQuery($phql);
 		return $rows;
 	}
@@ -233,7 +235,7 @@ class EpinsController extends ControllerBase {
 	*  Select id from username, used on viewuseripin
 	*/
 	private function usernametoid($username) {
-		$phql = "SELECT id FROM JunMy\Models\Users WHERE username = '$username' LIMIT 1";
+		$phql = "SELECT id FROM JunMy\Models\Users WHERE username = '$username' AND role != '0' LIMIT 1";
 		$rows = $this->modelsManager->executeQuery($phql);
 		foreach($rows as $row) {
 			return $row['id'];
@@ -263,11 +265,7 @@ class EpinsController extends ControllerBase {
 	
 	private function get_user($id) {
 	    $phql = "SELECT * FROM JunMy\Models\Users WHERE id = '$id' LIMIT 1";
-		$rows = $this->modelsManager->executeQuery($phql);
-		//$this->view->since = date('j F, Y', strtotime($rows['users']['created']));
-		foreach($rows as $key => $row) {
-			$this->due = $key['created'];
-		}
+		$rows = $this->modelsManager->executeQuery($phql); 
 		return $rows;
 	}
 	
@@ -310,7 +308,7 @@ class EpinsController extends ControllerBase {
 		$phql = "SELECT
 		    e.id AS id, e.user_id AS user_id, e.epin AS epin, e.created AS created, 
 			e.status AS status, e.used_user_id AS used_user_id, SUBSTRING_INDEX(e.last_owner, ', ', -5) AS last_owner,
-		    u.username AS username, used.username AS used_username
+		    u.username AS username 
 			FROM JunMy\Models\Epins as e
 			INNER JOIN JunMy\Models\Users AS u ON(e.user_id = u.id)
 			LEFT JOIN JunMy\Models\Users AS used ON (e.used_user_id = used.id)

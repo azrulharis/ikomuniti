@@ -85,6 +85,10 @@
 				
 			     <div class="form-group"> 
 				    <?php echo $this->tag->submitButton(array('submit', 'value' => 'Update', 'class' => 'btn btn-primary', 'onclick' => 'return confirm("Adakah anda pasti untuk update Takaful ' . $post->username . '? Sila semak dengan teliti sebelum menekan butang OK.")')); ?> 
+				    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				    <?php echo $this->tag->linkTo(array('gghadmin/insuran/addtokiv?action=problem&user_id=' . $post->u_id, 'Problem', 'class' => 'btn btn-danger', 'onclick' => 'return confirm(\'Adakah anda pasti untuk memindahkan ' . $post->username . ' ke bahagian Problem?\')')); ?>
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       <?php echo $this->tag->linkTo(array('gghadmin/insuran/addtokiv?action=kiv&user_id=' . $post->u_id, 'Kiv', 'class' => 'btn btn-warning', 'onclick' => 'return confirm(\'Adakah anda pasti untuk memindahkan ' . $post->username . ' ke bahagian Kiv?\')')); ?>
 				</div>
 		    </form>
 		    <?php } ?>
@@ -113,7 +117,7 @@
 	     <div style="width: 100%; height: 386px; border: 1px solid #ccc; overflow: hidden; z-index: 999; padding-bottom: 5px;">
 	   <iframe style="width: 100%; height: 680px; border: none; margin-top: -210px;" scrolling="no" id="extFrame" src="http://www.einsuran.com/roadtax.aspx"></iframe>
        </div>
-      
+       
       </div>        
     </div>
 </div>      

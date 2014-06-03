@@ -1,7 +1,7 @@
 // First Chart Example - Area Line Chart
  
 $.ajax({
-url: 'http://ishare.com.my/ikomuniti/gghadmin/index/jsongrid',
+url: '/isharev1/ikomuniti/gghadmin/index/jsongrid',
         success: function(data) {
             var $graph = data;
             var obj = $.parseJSON($graph);
@@ -26,7 +26,7 @@ Morris.Area({
 }); 
 
 $.ajax({
-url: 'http://ishare.com.my/ikomuniti/gghadmin/index/jsongridmonth',
+url: '/isharev1/ikomuniti/gghadmin/index/jsongridmonth',
         success: function(data) {
             var $graph = data;
             var obj = $.parseJSON($graph);

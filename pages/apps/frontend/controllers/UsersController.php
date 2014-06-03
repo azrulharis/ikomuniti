@@ -99,8 +99,13 @@ class UsersController extends ControllerBase {
             $auth = $this->session->get('jun_user_auth'); 
 		}
         if($this->request->isPost()) { 
+         
+            //echo $this->request->getPost('role');
+            
 			$this->rules(array(
 				'username_sponsor' => array('check_upline' => array('table' => 'users', 'field' => 'username', 'error' => 'Username tidak wujud')),
+				'role' => array('not_empty' => 'Sila pilih jenis akaun'),
+				
 				'username' => array('between' => array('min' => 6, 'max' => 18, 'error' => 'ID Pengguna 6 hingga 18 karakter'),
 				                    'is_uniq' => array('table' => 'users', 'field' => 'username', 'error' => 'Username telah didaftarkan'),
 									'alphanumeric' => 'ID Pengguna tidak sah A-Z, a-z, 0-9 sahaja'),
@@ -190,12 +195,12 @@ class UsersController extends ControllerBase {
 			$users->ckey = $this->request->getPost('password'); 
 			$users->profile_image = 'nophoto.jpg';
 			$users->sms_setting = 1;
-			$users->role = 0;
+			$users->role = $this->request->getPost('role') == 11 ? 1 : 0;
 			$users->master_key = $this->generateRandomString($length = 6);
 			if($users->save()) {
 			    $last_id = $users->id;
 			    if($this->insert_wallet($last_id)) {
-					if($this->insert_insuran($last_id, $this->request->getPost('road_tax'), $this->request->getPost('sec_driver'), $this->request->getPost('windscreen'), $this->request->getPost('insuran_due_date'))) {
+					if($this->insert_insuran($last_id, $this->request->getPost('road_tax'), $this->request->getPost('sec_driver'), $this->request->getPost('windscreen'), $this->request->getPost('insuran_due_date')), $this->request->getPost('insuran_ncb')) {
 					    
 					    // Set token for validate next page
 					    $token = $this->generateRandomString($length = 12);
@@ -247,7 +252,7 @@ class UsersController extends ControllerBase {
 		return $wallet->save();
 	}
  
-	private function insert_insuran($id, $roadtax, $sec_driver, $windscreen, $due_date) {
+	private function insert_insuran($id, $roadtax, $sec_driver, $windscreen, $due_date, $ncd) {
  
 		$ins = new Insuran();
 		$ins->user_id = $id; 
@@ -265,7 +270,8 @@ class UsersController extends ControllerBase {
 		$ins->tracking_code = 0; 
 		$ins->delivery_method = 0; 
 		$ins->crp = 0; 
-		$ins->pa = 0;	 
+		$ins->pa = 0;
+		$ins->ncd = $ncd;	 
 		return $ins->save();
 	}
 	
@@ -319,7 +325,7 @@ class UsersController extends ControllerBase {
 		<legend>Maklumat Penaja</legend>
 		
 		<div class="form-group"> 
-			<label class="col-md-6 col-lg-6 col-sm12 col-xs-12">Username Penaja <b class="required">*</b></label>
+			<label class="col-md-6 col-lg-6 col-sm12 col-xs-12">Introducer <b class="required">*</b></label>
 			<div class="col-md-6">
 				<input type="text" class="form-control col-lg-6" name="username_sponsor" id="username_sponsor" 
 				value="<?=$sponsor?>">
@@ -335,7 +341,18 @@ class UsersController extends ControllerBase {
 
 	<fieldset>
 		<legend>Maklumat Peribadi</legend>
-
+        
+        <div class="form-group"> 
+        <label class="col-md-6 col-lg-6 col-sm12 col-xs-12"></label>
+        <div class="col-md-6">
+            <?php $radio = filter_input(INPUT_POST, 'role', FILTER_VALIDATE_INT); ?>
+			<input type="radio" name="role" value="11"<?=$radio == 11 ? 'checked' : ''?>> iKomuniti &nbsp; &nbsp; &nbsp; &nbsp;
+			<input type="radio" name="role" value="12"<?=$radio == 12 ? 'checked' : ''?>> iSahabat  &nbsp; &nbsp; &nbsp; &nbsp;
+			<a href="http://ishare.com.my/kelebihan.html" target="_blank">Lihat Perbandingan</a><br/>
+			<?php $this->display('role'); ?>
+			</div>
+		</div>
+		
 		<div class="form-group">
 			<label class="col-md-6 col-lg-6 col-sm12 col-xs-12">ID Pilihan <b class="required">*</b></label>
 			<div class="col-md-6">

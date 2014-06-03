@@ -2,6 +2,7 @@
 
 namespace JunMy\Frontend\Controllers;
 use JunMy\Models\Users; 
+use JunMy\Models\Insuran; 
 use JunMy\Models\Profiles; 
 
 class SettingsController extends ControllerBase {
@@ -25,20 +26,16 @@ class SettingsController extends ControllerBase {
 				$this->flash->error('Please fill your full name');
 			} elseif(!is_numeric($this->request->getPost('nric'))) {
 				$this->flash->error('Not valid NRIC, please enter number only');
-			} elseif(strlen($this->request->getPost('nric')) != 12) {
-				$this->flash->error('Not valid NRIC, it must be 12 character long');
-			} elseif(strlen($this->request->getPost('kin_nric')) != 12) { 
-				$this->flash->error('Not valid Kin NRIC, it must be 12 character long');
-			} elseif(!is_numeric($this->request->getPost('account_no'))) {
-				$this->flash->error('Not valid Account Number, please enter number only');
+			} elseif(strlen($this->request->getPost('nric')) == '') {
+				$this->flash->error('Please enter valid NRIC');
+			} elseif(strlen($this->request->getPost('kin_nric')) == '') { 
+				$this->flash->error('Not valid Kin NRIC');
 			} elseif(!is_numeric($this->request->getPost('postcode'))) {
 				$this->flash->error('Not valid Postcode, please enter number only');
 			} elseif(!is_numeric($this->request->getPost('telephone'))) {
 				$this->flash->error('Not valid Phone Number, please enter number only');
-			} elseif(strlen($this->request->getPost('telephone')) < 10 || strlen($this->request->getPost('telephone')) > 11) {
-				$this->flash->error('Name must be 10 or 11 character long');
-			} elseif(!filter_var($this->request->getPost('email'), FILTER_VALIDATE_EMAIL)) {
-				$this->flash->error('Not valid email address');
+			} elseif(strlen($this->request->getPost('telephone')) < 10 || strlen($this->request->getPost('telephone')) > 12) {
+				$this->flash->error('Name must be 10 to 12 character long');
 			} else {
 			    $id = $auth['id'];
 				$user = Users::findFirst($id); 
@@ -51,7 +48,10 @@ class SettingsController extends ControllerBase {
 				$user->bank_number = $this->request->getPost('account_no'); 
 				$user->bank_name = $this->request->getPost('bank_name'); 
 				$user->address = $this->request->getPost('address'); 
+				$user->second_address = $this->request->getPost('second_address'); 
 				$user->postcode = $this->request->getPost('postcode'); 
+				$user->city = $this->request->getPost('city');
+				$user->region = $this->request->getPost('region');
 				$user->telephone = $this->request->getPost('telephone'); 
 				$user->email = $this->request->getPost('email'); 
 				if($user->save()) { 
@@ -166,19 +166,17 @@ class SettingsController extends ControllerBase {
 	    $auth = $this->session->get('jun_user_auth');
 	    $this->view->role = $auth['role'];
 		$this->view->setVar('navigations', $this->get_user($auth['id']));	
-		$this->view->setVar('users', $this->get_user($auth['id']));
+		$this->view->setVar('users', $this->get_vehicle($auth['id']));
 		if($this->request->isPost()) {
 			
 			if($this->request->getPost('due_date') == '') {
 				$this->flash->error('Please enter valid insurance due date');
 			} elseif(!ctype_alnum($this->request->getPost('reg_no'))) {
-				$this->flash->error('Please enter valid vehicle registration number');
+				$this->flash->error('Please enter valid registration number (A-Y, 1-9 Without space)');
 			} elseif($this->request->getPost('owner_name') == '') {
 				$this->flash->error('Please enter valid vehicle owner name');
-			} elseif(!is_numeric($this->request->getPost('owner_nric'))) {
-				$this->flash->error('Please enter valid vehicle owner NRIC');
-			} elseif(strlen($this->request->getPost('owner_nric')) != 12) {
-				$this->flash->error('Owner NRIC must be 12 character long');
+			} elseif(strlen($this->request->getPost('owner_nric')) < 5 || strlen($this->request->getPost('owner_nric')) > 15) {
+				$this->flash->error('Please enter Owner NRIC or Company Reg. Number');
 			} elseif($this->request->getPost('owner_dob') == '') {
 				$this->flash->error('Please enter valid vehicle owner Date Of Birth');
 			} elseif($this->request->getPost('model') == '') {
@@ -191,8 +189,6 @@ class SettingsController extends ControllerBase {
 				$this->flash->error('Please enter valid Engine Number');
 			} elseif($this->request->getPost('chasis_no') == '') {
 				$this->flash->error('Please enter valid Chasis Number');
-			} elseif($this->request->getPost('grant_serial') == '') {
-				$this->flash->error('Please enter valid Grant Serial Number');
 			} else {
 			    //print_r($_POST);
 			    $id = $auth['id'];
@@ -215,8 +211,14 @@ class SettingsController extends ControllerBase {
 				$user->grant_serial_number = $this->request->getPost('grant_serial'); 
 				 //var_dump($user->save());
 				if($user->save()) {
-					$this->flashSession->success('Your vehicle information has been save');
-				    return $this->response->redirect('settings/vehicle');
+				    // Update insurance table
+				    $ins = Insuran::findFirst("user_id = '$id'");
+				    $ins->ncd = $this->request->getPost('ncd');
+				    if($ins->save()) {
+						$this->flashSession->success('Your vehicle information has been save');
+					    return $this->response->redirect('settings/vehicle');	
+					}
+					
 				} else {
 					$this->flash->error('Error on update vehicle informations E8934VI');
 				}
@@ -313,6 +315,19 @@ class SettingsController extends ControllerBase {
         }
         return $salt . sha1($pwd . $salt);
     }
+    
+    private function get_vehicle($id) {
+		$phql = "SELECT u.previous_insuran_company AS previous_insuran_company, u.cover_note AS cover_note, u.reg_number AS reg_number,
+		u.owner_name AS owner_name, u.owner_nric AS owner_nric, u.owner_dob AS owner_dob, u.model AS model, u.year_make AS year_make,
+		u.capacity AS capacity, u.engine_number AS engine_number, u.chasis_number AS chasis_number,
+		u.grant_serial_number AS grant_serial_number, 
+		i.next_renewal AS next_renewal, i.road_tax AS road_tax, i.ncd AS ncd 
+		FROM JunMy\Models\Users AS u
+		LEFT JOIN JunMy\Models\Insuran AS i ON(u.id = i.user_id)
+		WHERE u.id = '$id' LIMIT 1";
+		$rows = $this->modelsManager->executeQuery($phql);
+		return $rows; 
+	}
 	
 	private function get_user($id) {
 	    $phql = "SELECT * FROM JunMy\Models\Users WHERE id = '$id' LIMIT 1";

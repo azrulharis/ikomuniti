@@ -55,14 +55,14 @@
 			 
  
 	   <div class="form-group">
-	      <label>Change Password</label>: {{ password_field("password", "class": "form-control") }}
+	      <label>New Password</label>: {{ password_field("password", "class": "form-control") }}
 	      
 	      </div>
 	   <div class="form-group">
-	      <label>Retype Password</label>: {{ password_field("retype_password", "class": "form-control") }}
+	      <label>Retype New Password</label>: {{ password_field("retype_password", "class": "form-control") }}
 	      </div>
 	   <div class="form-group">
-	      <label>Old Password</label>: {{ password_field("old_password", "class": "form-control") }}
+	      <label>Current Password</label>: {{ password_field("old_password", "class": "form-control") }}
 	      </div> 
 	   <div class="form-group">
 	      {{ submit_button('submit', 'name': 'change_password', 'value': 'Change Password', 'class': 'btn btn-primary') }}
@@ -87,13 +87,13 @@
 		    {{ form('settings/account', 'method': 'post') }}	
 			 
 	   <div class="form-group"> 
-	      <label>Transaction Password</label>: {{ password_field("transaction_password", "class": "form-control") }}
+	      <label>New Transaction Password</label>: {{ password_field("transaction_password", "class": "form-control") }}
 	   </div>
 	   <div class="form-group"> 
-	      <label>Retype Transaction Password</label>: {{ password_field("retype_transaction_password", "class": "form-control") }}
+	      <label>Retype New Transaction Password</label>: {{ password_field("retype_transaction_password", "class": "form-control") }}
 	   </div>
 	   <div class="form-group"> 
-	      <label>Old Transaction Password</label>: {{ password_field("old_transaction_password", "class": "form-control") }}
+	      <label>Current Transaction Password</label>: {{ password_field("old_transaction_password", "class": "form-control") }}
 	   </div>
 	   
 	   <div class="form-group">

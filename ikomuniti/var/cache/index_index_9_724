@@ -79,14 +79,19 @@ setInterval(function(){
               </ul>
             </li>
             
-			<li><a href="/isharev1/ikomuniti/epins/index"><i class="fa fa-key"></i> iPin</a></li>
-			
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-unlock-alt"></i> iPin <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+			    <li><a href="/isharev1/ikomuniti/epins/index"><i class="fa fa-key"></i> iPin</a></li>
+			    <li><a href="/isharev1/ikomuniti/isahabatpins/index"><i class="fa fa-key"></i> iSahabat iPin</a></li>
+			  </ul>
+            </li>
 			
             <li><a href="/isharev1/ikomuniti/itakaful/index"><i class="fa fa-umbrella"></i> iTakaful</a></li>
             
             
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-users"></i> iKomuniti <b class="caret"></b></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> iKomuniti <b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li><a href="/isharev1/ikomuniti/activations/index"><i class="fa fa-plus-square"></i> Activate iKomuniti</a></li>
                 <li><a href="/isharev1/ikomuniti/tree/index"><i class="fa fa-sitemap"></i> iTree</a></li> 
@@ -159,7 +164,7 @@ setInterval(function(){
   </div>
   <div class="col-lg-4 col-xs-12"> 
 	<h4 style="padding-top: 14px;">Status: 
-	   iDeveloper
+	   iAccount 
 	  	</h4> 
   </div>
    
@@ -210,7 +215,7 @@ setInterval(function(){
                     <i class="fa fa-key"></i>
                   </div>
                   <div class="col-xs-6 text-left">
-                    <h4>2</h4>
+                    <h4>103</h4>
                     <p class="announcement-text">iPin</p>
                   </div>
                 </div>

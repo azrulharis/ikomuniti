@@ -47,42 +47,54 @@
 	      <label>Cover Note</label>: {{ text_field("cover_note", "size": 30, "value": user.cover_note, "class": "form-control") }}
 	      </div>
 	   <div class="form-group">
-	      <label>NCD</label>: {{ text_field("ncd", "size": 30, "value": user.insuran_ncb, "class": "form-control") }}
+	      <label>NCD</label>: 
+	      
+	      <select class="form-control" name="ncd">
+					<option value="">Select</option>
+					<option value="0"{% if user.ncd == 0 %} selected{%endif%}>0%</option>
+					<option value="25"{% if user.ncd == 25 %} selected{%endif%}>25%</option>
+					<option value="30"{% if user.ncd == 30 %} selected{%endif%}>30%</option>
+					<option value="38.33"{% if user.ncd == '38.33' %} selected{%endif%}>38.33%</option>
+					<option value="45"{% if user.ncd == 45 %} selected{%endif%}>45%</option>
+					<option value="55"{% if user.ncd == 55 %} selected{%endif%}>55%</option>
+				</select>
 	      </div>
 	   <div class="form-group">
 	      <label>Road Tax</label>: {{ text_field("road_tax_amount", "size": 30, "value": user.road_tax, "class": "form-control") }}
 	      </div>
 	   <div class="form-group">
-	      <label>Due Date</label>: <input type="text" name="due_date" value="{{user.insuran_due_date}}" class="form-control" disabled>
+	      <label>Due Date</label>: <input type="text" name="cvm" value="{{user.next_renewal}}" class="form-control" disabled>
+	      <input type="hidden" name="due_date" value="{{user.next_renewal}}" class="form-control">
 		   
 	      </div>
 	   <div class="form-group">
 	      
-	      <label>Reg No</label>: <input type="text" name="reg_no" value="{{user.reg_number}}" class="form-control" disabled> 
+	      <label>Reg No <span class="red">*</span></label>: <input type="text" name="nvmv" value="{{user.reg_number}}" class="form-control" disabled>
+		  <input type="hidden" name="reg_no" value="{{user.reg_number}}" class="form-control"> 
 	      </div>
 	   <div class="form-group">
-	      <label>Owner Name</label>: {{ text_field("owner_name", "size": 30, "value": user.owner_name, "class": "form-control") }}
+	      <label>Owner Name <span class="red">*</span></label>: {{ text_field("owner_name", "size": 30, "value": user.owner_name, "class": "form-control") }}
 	      </div>
 	   <div class="form-group">
-	      <label>Owner NRIC</label>: {{ text_field("owner_nric", "size": 30, "value": user.owner_nric, "class": "form-control") }}
+	      <label>Owner NRIC <span class="red">*</span></label>: {{ text_field("owner_nric", "size": 30, "value": user.owner_nric, "class": "form-control") }}
 	      </div>
 	   <div class="form-group">
-	      <label>Owner DOB</label>: {{ text_field("owner_dob", "id": "dob", "value": user.owner_dob, "class": "form-control") }}
+	      <label>Owner DOB <span class="red">*</span></label>: {{ text_field("owner_dob", "id": "dob", "value": user.owner_dob, "class": "form-control") }}
 	      </div>
 	   <div class="form-group">
-	      <label>Model</label>: {{ text_field("model", "size": 30, "value": user.model, "class": "form-control") }}
+	      <label>Model <span class="red">*</span></label>: {{ text_field("model", "size": 30, "value": user.model, "class": "form-control") }}
 	      </div>
 	   <div class="form-group">
-	      <label>Year Make</label>: {{ text_field("year_make", "size": 30, "value": user.year_make, "class": "form-control") }}
+	      <label>Year Make <span class="red">*</span></label>: {{ text_field("year_make", "size": 30, "value": user.year_make, "class": "form-control") }}
 	      </div>
 	   <div class="form-group">
-	      <label>Cubic Capacity</label>: {{ text_field("cubic_capacity", "size": 30, "value": user.capacity, "class": "form-control") }}
+	      <label>Cubic Capacity <span class="red">*</span></label>: {{ text_field("cubic_capacity", "size": 30, "value": user.capacity, "class": "form-control") }}
 	      </div>
 	   <div class="form-group">
-	      <label>Engine No</label>: {{ text_field("engine_no", "size": 30, "value": user.engine_number, "class": "form-control") }}
+	      <label>Engine No <span class="red">*</span></label>: {{ text_field("engine_no", "size": 30, "value": user.engine_number, "class": "form-control") }}
 	      </div>
 	   <div class="form-group">
-	      <label>Chasis No</label>: {{ text_field("chasis_no", "size": 30, "value": user.chasis_number, "class": "form-control") }}
+	      <label>Chasis Number <span class="red">*</span></label>: {{ text_field("chasis_no", "size": 30, "value": user.chasis_number, "class": "form-control") }}
 	      </div>
 	   <div class="form-group">
 	      

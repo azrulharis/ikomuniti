@@ -1,0 +1,3 @@
+[Mon, 02 Jun 14 21:27:19 +0200][ERROR] Undefined index: role C:\xampp\htdocs\isharev1\pages\apps\frontend\controllers\UsersController.php:736
+[Mon, 02 Jun 14 21:43:08 +0200][ERROR] Use of undefined constant FILTER_SANITIZE_INT - assumed 'FILTER_SANITIZE_INT' C:\xampp\htdocs\isharev1\pages\apps\frontend\controllers\UsersController.php:347
+[Mon, 02 Jun 14 21:43:08 +0200][ERROR] filter_input() expects parameter 3 to be long, string given C:\xampp\htdocs\isharev1\pages\apps\frontend\controllers\UsersController.php:347

@@ -4,7 +4,7 @@ namespace JunMy\Models;
 
 class Usercounters extends \Phalcon\Mvc\Model
 {
-    public $user_id, $is_one, $status;
+    public $user_id, $is_one, $status, $isahabat_one;
     
 	public function getSource()
 	{

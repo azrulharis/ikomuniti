@@ -19,7 +19,7 @@ class ActivationsController extends ControllerBase {
 		parent::pageProtect(); 
 		$auth = $this->session->get('jun_user_auth');
 	    // Role
-		$this->role($auth['role'], array(1, 2, 3, 4, 5, 6, 7, 8, 9));
+		$this->role($auth['role'], array(4, 5, 6, 7, 8, 9));
 		$this->flashSession->output();
 	    $this->view->setVar('users', $this->get_user($auth['id']));
 	    if(count($this->view_user($auth['username'], 0)) > 0) {
@@ -50,7 +50,7 @@ class ActivationsController extends ControllerBase {
 		parent::pageProtect(); 
 		$auth = $this->session->get('jun_user_auth');
 	    // Role
-		$this->role($auth['role'], array(1, 2, 3, 4, 5, 6, 7, 8, 9));
+		$this->role($auth['role'], array(4, 5, 6, 7, 8, 9));
 		$this->flashSession->output();
 	    $this->view->setVar('users', $this->get_user($auth['id']));
 	     
@@ -79,7 +79,7 @@ class ActivationsController extends ControllerBase {
 		parent::pageProtect(); 
 		$auth = $this->session->get('jun_user_auth');
 		// Role
-		$this->role($auth['role'], array(1, 2, 3, 4, 5, 6, 7, 8, 9));
+		$this->role($auth['role'], array(4, 5, 6, 7, 8, 9));
 		
 	    $this->view->setVar('users', $this->get_user($auth['id']));
 	    if($auth['role'] <= 1) {
@@ -108,7 +108,7 @@ class ActivationsController extends ControllerBase {
 		parent::pageProtect(); 
 		$auth = $this->session->get('jun_user_auth');
 		// Role
-		$this->role($auth['role'], array(1, 2, 3, 4, 5, 6, 7, 8, 9));
+		$this->role($auth['role'], array(4, 5, 6, 7, 8, 9));
 		$this->view->setVar('navigations', $this->get_user($auth['id']));
 		$username = $this->dispatcher->getParam('slug');
 		
@@ -196,7 +196,7 @@ Thank you very much for your priceless support. Please visit www.ishare.com.my a
 	private function activate_user($id) {
 	    $date = date('Y-m-d H:i:s');	
 	    $phql = "UPDATE JunMy\Models\Users SET 
-		role = '4', verified = '1', created = '$date' WHERE id = '$id'";
+		role = '4', verified = '1', created = '$date' WHERE id = '$id' AND role = '1'";
 		$update = $this->modelsManager->executeQuery($phql);
 		return $update;
 	}
@@ -280,7 +280,7 @@ Thank you very much for your priceless support. Please visit www.ishare.com.my a
 						verified,
 						role 
 			FROM JunMy\Models\Users 
-			WHERE verified = '$status' AND role = '0'
+			WHERE verified = '$status' AND role = '1'
 			ORDER BY id DESC";
 		$count = $this->modelsManager->executeQuery($phql);	
         $paginations->records(count($count));
@@ -305,7 +305,7 @@ Thank you very much for your priceless support. Please visit www.ishare.com.my a
 		$phql = "SELECT
 		    *
 			FROM JunMy\Models\Users 
-			WHERE username_sponsor != '$username' AND verified = '0' AND role = '0'
+			WHERE username_sponsor != '$username' AND verified = '0' AND role = '1'
 			ORDER BY id DESC";
 		$count = $this->modelsManager->executeQuery($phql);	
         $paginations->records(count($count));
@@ -320,7 +320,7 @@ Thank you very much for your priceless support. Please visit www.ishare.com.my a
 	
 	private function view_user_profile($username) {
 		$phql = "SELECT *
-						FROM JunMy\Models\Users WHERE username = '$username' AND role = '0' LIMIT 1";
+						FROM JunMy\Models\Users WHERE username = '$username' AND role = '1' LIMIT 1";
 		$rows = $this->modelsManager->executeQuery($phql); 
 		return $rows;
 	}

@@ -125,8 +125,8 @@ class InsuranController extends ControllerBase {
 					}
 				} else {
 					foreach ($quot->getMessages() as $message) {
-			                $this->flash->error((string) $message);
-			            }
+		                $this->flash->error((string) $message);
+		            }
 				}
 			}
 		}   
@@ -241,26 +241,39 @@ class InsuranController extends ControllerBase {
 	    $this->role($auth['role'], array(5, 6, 7));
 		$this->view->setVar('navigations', $this->get_user($auth['id']));
 		
-		$user_id = $_GET['user_id']; 
-		$user = Users::findFirst($user_id);
-		    
-		$telephone = $user->telephone;
-		$reg_number = $user->reg_number;
-		$username = $user->username;
-		
-		$insuran = Insuran::findFirst("user_id = '$user_id'");
-		$due_date = $insuran->next_renewal;
-		
-	    $phql = "UPDATE JunMy\Models\Insuran SET 
-		type = '1' WHERE user_id = '$user_id'";
-		$update = $this->modelsManager->executeQuery($phql);
-		if($update) { 
-		    $this->send_sms_problem($username, $reg_number, $telephone, $due_date);
-		    return $this->response->redirect('gghadmin/insuran/manage');
-		    
-		} else {
-			$this->flash->error('Cant save');
+		if(isset($_GET['action'])) {
+			if($_GET['action'] == 'problem') {
+				$type = 1;
+				$action = 'Problem Lists';
+			} elseif($_GET['action'] == 'kiv') {
+				$type = 2;
+				$action = 'Kiv Lists';
+			}
+			
+			$user_id = $_GET['user_id']; 
+			$user = Users::findFirst($user_id);
+			    
+			$telephone = $user->telephone;
+			$reg_number = $user->reg_number;
+			$username = $user->username;
+			
+			$insuran = Insuran::findFirst("user_id = '$user_id'");
+			$due_date = $insuran->next_renewal;
+			
+		    $phql = "UPDATE JunMy\Models\Insuran SET 
+			type = '$type' WHERE user_id = '$user_id'";
+			$update = $this->modelsManager->executeQuery($phql);
+			if($update) { 
+			    //$this->send_sms_problem($username, $reg_number, $telephone, $due_date);
+			    $this->flashSession->success($username.' has been store to '.$action);
+				return $this->response->redirect('gghadmin/insuran/manage');
+			    
+			} else {
+				$this->flash->error('Cant save');
+			}	
+			
 		}
+		
 	
 	}
 	
@@ -685,7 +698,8 @@ class InsuranController extends ControllerBase {
 									    if($user_due->save()) {
 											// HEADER LOCATION payout/user_id FOR PAYOUT AND SMS
 											$this->sms_renew($reg_no, $total, $telephone, $tracking_code, $next_renewal);
-											$this->response->redirect('gghadmin/commissions/payout?user_id='.$user_id.'&ins_amount='.$insuran_amount);	
+											$_SESSION['COMMISSION_TOKEN'] = date('YmdHis').$auth['id'];
+											$this->response->redirect('gghadmin/commissions/payout?user_id='.$user_id.'&ins_amount='.$insuran_amount.'&role='.$user_due->role.'&token='.$_SESSION['COMMISSION_TOKEN']);	
 										} else {
 											$this->flash->error('Error on insert payout renewal. Please contact Azrul Haris (Ref: InsuranceController 690)');
 										}
